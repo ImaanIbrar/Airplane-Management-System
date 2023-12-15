@@ -33,21 +33,6 @@ import java.awt.Font;
 
 public class Login extends javax.swing.JFrame {
 	
-	/**
-     * Creates new form addCustomer
-     */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login frame = new Login();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
     /**
      * Creates new form Login
