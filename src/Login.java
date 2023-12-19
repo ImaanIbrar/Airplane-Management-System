@@ -364,8 +364,7 @@ public class Login extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "UserName or Password Blank");
                 } else {
                         try {
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                con = DriverManager.getConnection("jdbc:mysql://localhost/airline", "root", "1234");
+                                con = connectionManager.getConnection();
                                 pst = con.prepareStatement("select * from user where username = ? and password = ?");
                                 pst.setString(1, username);
                                 pst.setString(2, password);
@@ -384,11 +383,20 @@ public class Login extends javax.swing.JFrame {
                                         usernameText.requestFocus();
 
                                 }
-
-                        } catch (ClassNotFoundException ex) {
-                                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                         } catch (SQLException ex) {
                                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                        } finally {
+                                // Close the connection and other resources if needed
+                                try {
+                                        if (con != null) {
+                                                con.close();
+                                        }
+                                        if (pst != null) {
+                                                pst.close();
+                                        }
+                                } catch (SQLException ex) {
+                                        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                                }
                         }
 
                 }
