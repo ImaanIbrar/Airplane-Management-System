@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
-
 import java.awt.Font;
 
 /*
@@ -41,10 +40,11 @@ public class Login extends javax.swing.JFrame {
         public Login() {
                 initComponents();
                 setExtendedState(JFrame.MAXIMIZED_BOTH);
+                admindomainObj = new admindomain();
         }
 
         // Instance variables
-        Connection con;
+        public Connection con;
         PreparedStatement pst;
 
         /**
@@ -63,8 +63,8 @@ public class Login extends javax.swing.JFrame {
                 passwordLabel = new javax.swing.JLabel();
                 loginBtn = new javax.swing.JButton();
                 cancelBtn = new javax.swing.JButton();
-                usernameText = new javax.swing.JTextField();
-                paswordText = new javax.swing.JPasswordField();
+                setUsernameText(new javax.swing.JTextField());
+                setPaswordText(new javax.swing.JPasswordField());
                 panel2 = new javax.swing.JPanel();
                 loginLabel = new javax.swing.JLabel();
                 panel3 = new javax.swing.JPanel();
@@ -268,7 +268,7 @@ public class Login extends javax.swing.JFrame {
                                                                                                                                 ComponentPlacement.RELATED)))
                                                                 .addGroup(groupLayoutPanel1
                                                                                 .createParallelGroup(Alignment.LEADING)
-                                                                                .addComponent(usernameText,
+                                                                                .addComponent(getUsernameText(),
                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                 177,
                                                                                                 GroupLayout.PREFERRED_SIZE)
@@ -276,7 +276,7 @@ public class Login extends javax.swing.JFrame {
                                                                                                 .createSequentialGroup()
                                                                                                 .addPreferredGap(
                                                                                                                 ComponentPlacement.RELATED)
-                                                                                                .addComponent(paswordText,
+                                                                                                .addComponent(getPaswordText(),
                                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                                 177,
                                                                                                                 GroupLayout.PREFERRED_SIZE))
@@ -296,7 +296,7 @@ public class Login extends javax.swing.JFrame {
                                                                 .addGap(146)
                                                                 .addGroup(groupLayoutPanel1
                                                                                 .createParallelGroup(Alignment.BASELINE)
-                                                                                .addComponent(usernameText,
+                                                                                .addComponent(getUsernameText(),
                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                 GroupLayout.DEFAULT_SIZE,
                                                                                                 GroupLayout.PREFERRED_SIZE)
@@ -304,7 +304,7 @@ public class Login extends javax.swing.JFrame {
                                                                 .addGap(41)
                                                                 .addGroup(groupLayoutPanel1
                                                                                 .createParallelGroup(Alignment.BASELINE)
-                                                                                .addComponent(paswordText,
+                                                                                .addComponent(getPaswordText(),
                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                 GroupLayout.DEFAULT_SIZE,
                                                                                                 GroupLayout.PREFERRED_SIZE)
@@ -356,11 +356,11 @@ public class Login extends javax.swing.JFrame {
          *                                with the database.
          */
 
-        private void loginBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_loginBtnAction
+        public void loginBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_loginBtnAction
                 // TODO add your handling code here:
 
-                String username = usernameText.getText();
-                String password = paswordText.getText();
+                String username = getUsernameText().getText();
+                String password = getPaswordText().getText();
 
                 if (username.isEmpty() || password.isEmpty()) {
                         JOptionPane.showMessageDialog(this, "UserName or Password Blank");
@@ -376,13 +376,13 @@ public class Login extends javax.swing.JFrame {
 
                                 if (rs.next()) {
                                         this.dispose();
-                                        admindomainObj = new admindomain();
-                                        admindomainObj.setVisible(true);
+                                        setAdmindomainObj(new admindomain());
+                                        getAdmindomainObj().setVisible(true);
                                 } else {
                                         JOptionPane.showMessageDialog(this, "UserName or Password do not Match");
-                                        usernameText.setText("");
-                                        paswordText.setText("");
-                                        usernameText.requestFocus();
+                                        getUsernameText().setText("");
+                                        getPaswordText().setText("");
+                                        getUsernameText().requestFocus();
 
                                 }
                         } catch (SQLException ex) {
@@ -404,6 +404,10 @@ public class Login extends javax.swing.JFrame {
                 }
 
         }// GEN-LAST:event_loginBtnAction
+        
+        public void setConnection(Connection mockConnection) throws SQLException {
+			mockConnection = connectionManager.getConnection();	
+		}
 
         /**
          * Event handler for the "Cancel" button.
@@ -411,14 +415,304 @@ public class Login extends javax.swing.JFrame {
          *
          * @param evt The ActionEvent generated by the button click.
          */
-        private void cancelBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cancelBtnAction
+        void cancelBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cancelBtnAction
                 // TODO add your handling code here:
                 super.dispose();
                 welcomeObj = new welcome();
                 welcomeObj.setVisible(true);
         }// GEN-LAST:event_cancelBtnAction
 
-        /**
+        public javax.swing.JTextField getUsernameText() {
+			return usernameText;
+		}
+
+		public void setUsernameText(javax.swing.JTextField usernameText) {
+			this.usernameText = usernameText;
+		}
+
+		public javax.swing.JPasswordField getPaswordText() {
+			return paswordText;
+		}
+
+		public void setPaswordText(javax.swing.JPasswordField paswordText) {
+			this.paswordText = paswordText;
+		}
+
+		public admindomain getAdmindomainObj() {
+			return admindomainObj;
+		}
+
+		public void setAdmindomainObj(admindomain admindomainObj) {
+			this.admindomainObj = admindomainObj;
+		}
+
+		/**
+		 * @return the con
+		 */
+		public Connection getCon() {
+			return con;
+		}
+
+		/**
+		 * @param con the con to set
+		 */
+		public void setCon(Connection con) {
+			this.con = con;
+		}
+
+		/**
+		 * @return the pst
+		 */
+		public PreparedStatement getPst() {
+			return pst;
+		}
+
+		/**
+		 * @param pst the pst to set
+		 */
+		public void setPst(PreparedStatement pst) {
+			this.pst = pst;
+		}
+
+		/**
+		 * @return the loginBtn
+		 */
+		public javax.swing.JButton getLoginBtn() {
+			return loginBtn;
+		}
+
+		/**
+		 * @param loginBtn the loginBtn to set
+		 */
+		public void setLoginBtn(javax.swing.JButton loginBtn) {
+			this.loginBtn = loginBtn;
+		}
+
+		/**
+		 * @return the cancelBtn
+		 */
+		public javax.swing.JButton getCancelBtn() {
+			return cancelBtn;
+		}
+
+		/**
+		 * @param cancelBtn the cancelBtn to set
+		 */
+		public void setCancelBtn(javax.swing.JButton cancelBtn) {
+			this.cancelBtn = cancelBtn;
+		}
+
+		/**
+		 * @return the frame
+		 */
+		public javax.swing.JFrame getFrame() {
+			return frame;
+		}
+
+		/**
+		 * @param frame the frame to set
+		 */
+		public void setFrame(javax.swing.JFrame frame) {
+			this.frame = frame;
+		}
+
+		/**
+		 * @return the usernameLabel
+		 */
+		public javax.swing.JLabel getUsernameLabel() {
+			return usernameLabel;
+		}
+
+		/**
+		 * @param usernameLabel the usernameLabel to set
+		 */
+		public void setUsernameLabel(javax.swing.JLabel usernameLabel) {
+			this.usernameLabel = usernameLabel;
+		}
+
+		/**
+		 * @return the contactUsLabel
+		 */
+		public javax.swing.JLabel getContactUsLabel() {
+			return contactUsLabel;
+		}
+
+		/**
+		 * @param contactUsLabel the contactUsLabel to set
+		 */
+		public void setContactUsLabel(javax.swing.JLabel contactUsLabel) {
+			this.contactUsLabel = contactUsLabel;
+		}
+
+		/**
+		 * @return the passwordLabel
+		 */
+		public javax.swing.JLabel getPasswordLabel() {
+			return passwordLabel;
+		}
+
+		/**
+		 * @param passwordLabel the passwordLabel to set
+		 */
+		public void setPasswordLabel(javax.swing.JLabel passwordLabel) {
+			this.passwordLabel = passwordLabel;
+		}
+
+		/**
+		 * @return the backgroundAdjustLabel1
+		 */
+		public javax.swing.JLabel getBackgroundAdjustLabel1() {
+			return backgroundAdjustLabel1;
+		}
+
+		/**
+		 * @param backgroundAdjustLabel1 the backgroundAdjustLabel1 to set
+		 */
+		public void setBackgroundAdjustLabel1(javax.swing.JLabel backgroundAdjustLabel1) {
+			this.backgroundAdjustLabel1 = backgroundAdjustLabel1;
+		}
+
+		/**
+		 * @return the numberLabel
+		 */
+		public javax.swing.JLabel getNumberLabel() {
+			return numberLabel;
+		}
+
+		/**
+		 * @param numberLabel the numberLabel to set
+		 */
+		public void setNumberLabel(javax.swing.JLabel numberLabel) {
+			this.numberLabel = numberLabel;
+		}
+
+		/**
+		 * @return the backgroundAdjustLabel2
+		 */
+		public javax.swing.JLabel getBackgroundAdjustLabel2() {
+			return backgroundAdjustLabel2;
+		}
+
+		/**
+		 * @param backgroundAdjustLabel2 the backgroundAdjustLabel2 to set
+		 */
+		public void setBackgroundAdjustLabel2(javax.swing.JLabel backgroundAdjustLabel2) {
+			this.backgroundAdjustLabel2 = backgroundAdjustLabel2;
+		}
+
+		/**
+		 * @return the jskyIcon
+		 */
+		public javax.swing.JLabel getJskyIcon() {
+			return jskyIcon;
+		}
+
+		/**
+		 * @param jskyIcon the jskyIcon to set
+		 */
+		public void setJskyIcon(javax.swing.JLabel jskyIcon) {
+			this.jskyIcon = jskyIcon;
+		}
+
+		/**
+		 * @return the instaIcon
+		 */
+		public javax.swing.JLabel getInstaIcon() {
+			return instaIcon;
+		}
+
+		/**
+		 * @param instaIcon the instaIcon to set
+		 */
+		public void setInstaIcon(javax.swing.JLabel instaIcon) {
+			this.instaIcon = instaIcon;
+		}
+
+		/**
+		 * @return the linkedInIcon
+		 */
+		public javax.swing.JLabel getLinkedInIcon() {
+			return linkedInIcon;
+		}
+
+		/**
+		 * @param linkedInIcon the linkedInIcon to set
+		 */
+		public void setLinkedInIcon(javax.swing.JLabel linkedInIcon) {
+			this.linkedInIcon = linkedInIcon;
+		}
+
+		/**
+		 * @return the loginLabel
+		 */
+		public javax.swing.JLabel getLoginLabel() {
+			return loginLabel;
+		}
+
+		/**
+		 * @param loginLabel the loginLabel to set
+		 */
+		public void setLoginLabel(javax.swing.JLabel loginLabel) {
+			this.loginLabel = loginLabel;
+		}
+
+		/**
+		 * @return the panel1
+		 */
+		public javax.swing.JPanel getPanel1() {
+			return panel1;
+		}
+
+		/**
+		 * @param panel1 the panel1 to set
+		 */
+		public void setPanel1(javax.swing.JPanel panel1) {
+			this.panel1 = panel1;
+		}
+
+		/**
+		 * @return the panel2
+		 */
+		public javax.swing.JPanel getPanel2() {
+			return panel2;
+		}
+
+		/**
+		 * @param panel2 the panel2 to set
+		 */
+		public void setPanel2(javax.swing.JPanel panel2) {
+			this.panel2 = panel2;
+		}
+
+		/**
+		 * @return the panel3
+		 */
+		public javax.swing.JPanel getPanel3() {
+			return panel3;
+		}
+
+		/**
+		 * @param panel3 the panel3 to set
+		 */
+		public void setPanel3(javax.swing.JPanel panel3) {
+			this.panel3 = panel3;
+		}
+
+		/**
+		 * @return the welcomeObj
+		 */
+		public welcome getWelcomeObj() {
+			return welcomeObj;
+		}
+
+		/**
+		 * @param welcomeObj the welcomeObj to set
+		 */
+		public void setWelcomeObj(welcome welcomeObj) {
+			this.welcomeObj = welcomeObj;
+		}
+
+		/**
          * @param args the command line arguments
          */
 
