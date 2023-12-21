@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.GroupLayout.Alignment;
@@ -23,13 +22,11 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 
 /**
  * This class represents the user creation interface in a Swing application.
@@ -44,7 +41,6 @@ import javax.swing.ImageIcon;
  */
 public class userCreation extends javax.swing.JFrame {
 
-
         /**
          * Creates new form userCreation
          */
@@ -54,10 +50,8 @@ public class userCreation extends javax.swing.JFrame {
                 setExtendedState(JFrame.MAXIMIZED_BOTH);
         }
 
-
         Connection con;
         PreparedStatement pst;
-
 
         /**
          * This method is called from within the constructor to initialize the form.
@@ -68,7 +62,6 @@ public class userCreation extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
-
 
                 panel1 = new javax.swing.JPanel();
                 userIdLabel = new javax.swing.JLabel();
@@ -88,42 +81,33 @@ public class userCreation extends javax.swing.JFrame {
                 warningFirstName = new javax.swing.JLabel();
                 warningLastName = new javax.swing.JLabel();
 
-
                 setTitle("Registration");
                 setBackground(new java.awt.Color(242, 226, 135));
                 // setBorder(new
                 // javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-
                 panel1.setBackground(new java.awt.Color(162, 201, 201));
                 // jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("REGISTRATION"));
-
 
                 userIdLabel.setFont(new Font("Tahoma", Font.BOLD, 24)); // NOI18N
                 userIdLabel.setText("User ID");
 
-
                 firstNameLabel.setFont(new Font("Tahoma", Font.BOLD, 20)); // NOI18N
                 firstNameLabel.setText("FirstName");
-
 
                 LastNameLabel.setFont(new Font("Tahoma", Font.BOLD, 20)); // NOI18N
                 LastNameLabel.setText("LastName");
 
-
                 userNameLabel.setFont(new Font("Tahoma", Font.BOLD, 20)); // NOI18N
                 userNameLabel.setText("User Name");
 
-
                 paswordLabel.setFont(new Font("Tahoma", Font.BOLD, 20)); // NOI18N
                 paswordLabel.setText("Password");
-
 
                 txtuserid.setBackground(new java.awt.Color(102, 102, 102));
                 txtuserid.setFont(new Font("Tahoma", Font.BOLD, 20)); // NOI18N
                 txtuserid.setForeground(new java.awt.Color(102, 102, 102));
                 // txtuserid.setText("jLabel6");
-
 
                 txtfirstname.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +120,6 @@ public class userCreation extends javax.swing.JFrame {
                         }
                 });
 
-
                 txtlastname.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 txtlastnameActionPerformed(evt);
@@ -148,7 +131,6 @@ public class userCreation extends javax.swing.JFrame {
                         }
                 });
 
-
                 addBtn.setBackground(new java.awt.Color(0, 102, 102));
                 addBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
                 addBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -158,7 +140,6 @@ public class userCreation extends javax.swing.JFrame {
                                 addBtnAction(evt);
                         }
                 });
-
 
                 backBtn.setBackground(new java.awt.Color(0, 102, 102));
                 backBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -170,14 +151,11 @@ public class userCreation extends javax.swing.JFrame {
                         }
                 });
 
-
                 panel2.setBackground(new java.awt.Color(0, 102, 102));
-
 
                 registerAdminLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
                 registerAdminLabel.setForeground(new java.awt.Color(255, 255, 255));
                 registerAdminLabel.setText("REGISTER ADMIN");
-
 
                 javax.swing.GroupLayout groupLayoutPanel2 = new javax.swing.GroupLayout(panel2);
                 groupLayoutPanel2.setHorizontalGroup(
@@ -196,28 +174,22 @@ public class userCreation extends javax.swing.JFrame {
                                                                 .addContainerGap(35, Short.MAX_VALUE)));
                 panel2.setLayout(groupLayoutPanel2);
 
-
                 warningFirstName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 warningFirstName.setForeground(new java.awt.Color(255, 0, 0));
                 // flab.setText("jLabel8");
 
-
                 warningLastName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 warningLastName.setForeground(new java.awt.Color(255, 0, 0));
-
 
                 JPanel panel7 = new JPanel();
                 panel7.setBackground(new Color(0, 102, 102));
 
-
                 JLabel adjustBackgroundLabel1 = new JLabel();
-
 
                 JLabel numberLabel = new JLabel();
                 numberLabel.setText("+51 789543");
                 numberLabel.setForeground(Color.WHITE);
                 numberLabel.setFont(new Font("Segoe UI Light", Font.BOLD, 14));
-
 
                 JLabel contactUsLabel = new JLabel();
                 contactUsLabel.setToolTipText("");
@@ -225,21 +197,15 @@ public class userCreation extends javax.swing.JFrame {
                 contactUsLabel.setForeground(Color.WHITE);
                 contactUsLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
-
                 JLabel adjustBackgroundLabel2 = new JLabel();
-
 
                 JLabel adjustBackgroundLabel6 = new JLabel();
 
-
                 JLabel adjustBackgroundLabel3 = new JLabel();
-
 
                 JLabel adjustBackgroundLabel4 = new JLabel();
 
-
                 JLabel adjustBackgroundLabel5 = new JLabel();
-
 
                 JLabel jskyIcon = new JLabel();
                 jskyIcon.setIcon(new ImageIcon(userCreation.class
@@ -340,7 +306,6 @@ public class userCreation extends javax.swing.JFrame {
                                                                 .addContainerGap(34, Short.MAX_VALUE)));
                 panel7.setLayout(groupLayoutPanel7);
                 // llab.setText("jLabel8");
-
 
                 javax.swing.GroupLayout groupLayoutPanel1 = new javax.swing.GroupLayout(panel1);
                 groupLayoutPanel1.setHorizontalGroup(
@@ -514,7 +479,6 @@ public class userCreation extends javax.swing.JFrame {
                                                                                 GroupLayout.PREFERRED_SIZE)));
                 panel1.setLayout(groupLayoutPanel1);
 
-
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 layout.setHorizontalGroup(
                                 layout.createParallelGroup(Alignment.LEADING)
@@ -532,10 +496,8 @@ public class userCreation extends javax.swing.JFrame {
                                                                                 Short.MAX_VALUE)));
                 getContentPane().setLayout(layout);
 
-
                 pack();
         }// </editor-fold>//GEN-END:initComponents
-
 
         /**
          * Handles the event when the "Create User" button is clicked.
@@ -551,31 +513,26 @@ public class userCreation extends javax.swing.JFrame {
         private void addBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addBtnAction
                 // TODO add your handling code here:
 
-
                 String id = txtuserid.getText();
                 String firstname = txtfirstname.getText();
                 String lastname = txtlastname.getText();
                 String username = txtusername.getText();
                 String password = txtpassword.getText();
 
-
                 if (firstname.equals("") || lastname.equals("") || username.equals("") || password.equals("")) {
                         JOptionPane.showMessageDialog(this, "Please enter the missing fields");
                 }
 
-
                 else if (!firstname.matches("^[A-Za-z]{3,29}$") || !lastname.matches("^[A-Za-z]{3,29}$")) {
                         JOptionPane.showMessageDialog(this, "Please correct Name");
 
-
                 } else {
                         try {
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                con = DriverManager.getConnection("jdbc:mysql://localhost/airline", "root", "1234");
+
+                                con = connectionManager.getConnection();
                                 pst = con
                                                 .prepareStatement(
                                                                 "insert into user(id,firstname,lastname,username,password)values(?,?,?,?,?)");
-
 
                                 pst.setString(1, id);
                                 pst.setString(2, firstname);
@@ -583,20 +540,27 @@ public class userCreation extends javax.swing.JFrame {
                                 pst.setString(4, username);
                                 pst.setString(5, password);
 
-
                                 pst.executeUpdate();
-
 
                                 JOptionPane.showMessageDialog(null, "User Created");
                                 addBtn.setEnabled(false);
-                        } catch (ClassNotFoundException ex) {
-                                Logger.getLogger(addflight.class.getName()).log(Level.SEVERE, null, ex);
                         } catch (SQLException ex) {
                                 Logger.getLogger(addflight.class.getName()).log(Level.SEVERE, null, ex);
+                        } finally {
+                                try {
+                                        // Close the connection and other resources
+                                        if (pst != null) {
+                                                pst.close();
+                                        }
+                                        if (con != null) {
+                                                con.close();
+                                        }
+                                } catch (SQLException ex) {
+                                        ex.printStackTrace();
+                                }
                         }
                 }
         }// GEN-LAST:event_addBtnAction
-
 
         private void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
                 // TODO add your handling code here:
@@ -605,16 +569,13 @@ public class userCreation extends javax.swing.JFrame {
                 adminDomainObj.setVisible(true);
         }// GEN-LAST:event_backBtnAction
 
-
         private void txtfirstnameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtfirstnameActionPerformed
                 // TODO add your handling code here:
         }// GEN-LAST:event_txtfirstnameActionPerformed
 
-
         private void txtlastnameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtlastnameActionPerformed
                 // TODO add your handling code here:
         }// GEN-LAST:event_txtlastnameActionPerformed
-
 
         private void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
                 // TODO add your handling code here:
@@ -626,10 +587,8 @@ public class userCreation extends javax.swing.JFrame {
                 } else {
                         warningFirstName.setText(null);
 
-
                 }
         }// GEN-LAST:event_txtfirstnameKeyReleased
-
 
         private void txtlastnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtlastnameKeyReleased
                 // TODO add your handling code here:
@@ -641,10 +600,8 @@ public class userCreation extends javax.swing.JFrame {
                 } else {
                         warningLastName.setText(null);
 
-
                 }
         }// GEN-LAST:event_txtlastnameKeyReleased
-
 
         /**
          * Auto-generates a unique user ID based on the existing IDs in the database.
@@ -671,14 +628,12 @@ public class userCreation extends javax.swing.JFrame {
                                 txtuserid.setText("UO" + String.format("%03d", id));
                         }
 
-
                 } catch (ClassNotFoundException ex) {
                         Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (SQLException ex) {
                         Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                 }
         }
-
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JLabel warningFirstName;
@@ -700,5 +655,3 @@ public class userCreation extends javax.swing.JFrame {
         private javax.swing.JTextField txtusername;
         private admindomain adminDomainObj;
 }
-
-

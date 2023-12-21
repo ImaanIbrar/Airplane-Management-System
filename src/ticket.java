@@ -971,12 +971,10 @@ public class ticket extends javax.swing.JFrame {
                                 SimpleDateFormat df = new SimpleDateFormat("yyyy");
                                 String year = df.format(txtdate.getDate());
                                 int yr = Integer.parseInt(year);
-                                if (!(yr == 2022)) {
+                                if (!(yr == 2024)) {
                                         JOptionPane.showMessageDialog(this, "Can only book for the current year");
                                 } else {
-                                        Class.forName("com.mysql.cj.jdbc.Driver");
-                                        con = DriverManager.getConnection("jdbc:mysql://localhost/airline", "root",
-                                                        "1234");
+                                        con = connectionManager.getConnection();
                                         pst = con.prepareStatement(
                                                         "insert into ticket(id,flightid,flightname,custid,firstname,lastname,passport,class,price,seats,date,deptime,arrtime,source,depart)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
@@ -1007,6 +1005,17 @@ public class ticket extends javax.swing.JFrame {
                                 Logger.getLogger(addflight.class.getName()).log(Level.SEVERE, null, ex);
                         } catch (NullPointerException e) {
                                 JOptionPane.showMessageDialog(this, "Please enter the Date");
+                        } finally {
+                                try {
+                                        if (con != null) {
+                                                con.close();
+                                        }
+                                        if (pst != null) {
+                                                pst.close();
+                                        }
+                                } catch (SQLException ex) {
+                                        ex.printStackTrace();
+                                }
                         }
                 }
         }// GEN-LAST:event_bookBtnAction
@@ -1107,4 +1116,3 @@ public class ticket extends javax.swing.JFrame {
         private cusdomain cusDomainObj;
         // End of variables declaration//GEN-END:variables
 }
-
