@@ -58,7 +58,7 @@ public class cancels extends javax.swing.JFrame {
                 idTextField = new javax.swing.JTextField();
                 proceedBtn = new javax.swing.JButton();
                 backBtn = new javax.swing.JButton();
-                backgroundAdjustLabel1 = new javax.swing.JLabel();
+                successfulMessaage = new javax.swing.JLabel();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,8 +70,8 @@ public class cancels extends javax.swing.JFrame {
                 cancelBookingLabel.setForeground(new java.awt.Color(255, 255, 255));
                 cancelBookingLabel.setText("CANCEL BOOKING");
 
-                backgroundAdjustLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-                backgroundAdjustLabel1.setForeground(new java.awt.Color(255, 255, 255));
+                successfulMessaage.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+                successfulMessaage.setForeground(new java.awt.Color(255, 255, 255));
 
                 javax.swing.GroupLayout groupLayoutPanel2 = new javax.swing.GroupLayout(panel2);
                 groupLayoutPanel2.setHorizontalGroup(
@@ -202,7 +202,7 @@ public class cancels extends javax.swing.JFrame {
                                                 .addComponent(panel2, GroupLayout.PREFERRED_SIZE, 686, Short.MAX_VALUE)
                                                 .addGroup(groupLayoutPanel1.createSequentialGroup()
                                                                 .addGap(210)
-                                                                .addComponent(backgroundAdjustLabel1,
+                                                                .addComponent(successfulMessaage,
                                                                                 GroupLayout.PREFERRED_SIZE, 400,
                                                                                 GroupLayout.PREFERRED_SIZE)
                                                                 .addContainerGap(924, Short.MAX_VALUE))
@@ -247,7 +247,7 @@ public class cancels extends javax.swing.JFrame {
                                                                 .addComponent(proceedBtn, GroupLayout.PREFERRED_SIZE,
                                                                                 40, GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(79)
-                                                                .addComponent(backgroundAdjustLabel1)
+                                                                .addComponent(successfulMessaage)
                                                                 .addPreferredGap(ComponentPlacement.RELATED, 225,
                                                                                 Short.MAX_VALUE)
                                                                 .addComponent(panel3, GroupLayout.PREFERRED_SIZE, 103,
@@ -305,7 +305,7 @@ public class cancels extends javax.swing.JFrame {
                                 pst.setString(1, id);
                                 pst.executeUpdate();
                                 proceedBtn.setEnabled(false);
-                                backgroundAdjustLabel1.setText("RECORD DELETED SUCCESSFULLY");
+                                successfulMessaage.setText("RECORD DELETED SUCCESSFULLY");
                         }
                 } catch (SQLException excep) {
                         excep.printStackTrace();
@@ -328,7 +328,7 @@ public class cancels extends javax.swing.JFrame {
         private javax.swing.JLabel jskyIcon;
         private javax.swing.JLabel instaIcon;
         private javax.swing.JLabel linkedInIcon;
-        private javax.swing.JLabel backgroundAdjustLabel1;
+        private javax.swing.JLabel successfulMessaage;
         private javax.swing.JPanel panel1;
         private javax.swing.JPanel panel2;
         private javax.swing.JPanel panel3;
@@ -355,8 +355,8 @@ public class cancels extends javax.swing.JFrame {
 			return proceedBtn;
 		}
 
-		public javax.swing.JLabel getBackgroundAdjustLabel1() {
+		public javax.swing.JLabel getsuccessfulMessaage() {
 			// TODO Auto-generated method stub
-			return backgroundAdjustLabel1;
+			return successfulMessaage;
 		}
 }
