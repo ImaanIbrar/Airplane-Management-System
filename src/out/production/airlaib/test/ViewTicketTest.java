@@ -1,8 +1,9 @@
 package out.production.airlaib.test;
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -11,14 +12,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mockito;
-
+import out.production.airlaib.bill;
 import out.production.airlaib.viewTicket;
 
 /**
@@ -74,17 +71,18 @@ public class ViewTicketTest {
         // Arrange
         viewTicket viewTicket = new viewTicket();
         viewTicket.setConnection(mockConnection);
-        viewTicket.getTicketText().setText("TO001");
+        viewTicket.getTicketText().setText("TO002");
 
         // Act
         viewTicket.proceedBtnAction(null);
 
         // Assert
-        // TODO: Add assertions based on the expected behavior
-        // For example, check if the billing window is opened
-        // You may need to add a method in viewTicket to retrieve the billing window instance for validation
+        // Check if the billing window is opened
+        bill billingWindow = viewTicket.getBillObj();
+        assertNotNull("Billing window should not be null", billingWindow);
+        assertTrue("Billing window should be visible", billingWindow.isVisible());
+        // Add more assertions based on the expected behavior of the billing window
     }
-
     /**
      * Test the {@code proceedBtnAction} method when a record is not found.
      * Verifies that the expected error message is shown using JOptionPane.
@@ -97,17 +95,12 @@ public class ViewTicketTest {
         viewTicket.setConnection(mockConnection);
         viewTicket.getTicketText().setText("nonexistentID");
 
-        // Mock JOptionPane.showMessageDialog
-        ArgumentCaptor<Object> messageCaptor = ArgumentCaptor.forClass(Object.class);
-        Mockito.mockStatic(JOptionPane.class);
-        // Capture the argument passed to showMessageDialog
-        doNothing().when(JOptionPane.class);
-        JOptionPane.showMessageDialog(eq(null), messageCaptor.capture());
-        // Act
+        //Act
         viewTicket.proceedBtnAction(null);
+        bill billingWindow = viewTicket.getBillObj();
 
         // Assert
-        // Verify that showMessageDialog was called
-        assertEquals("Record not Found", viewTicket.getShowMessageDialogMessage());
+        // Verify that billingWindow is not declared because ticket is is not matched
+        assertNull("Billing window should be null", billingWindow);
     }
 }
