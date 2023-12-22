@@ -98,9 +98,10 @@ public class ViewTicketTest {
         //Act
         viewTicket.proceedBtnAction(null);
         bill billingWindow = viewTicket.getBillObj();
-
         // Assert
         // Verify that billingWindow is not declared because ticket is is not matched
         assertNull("Billing window should be null", billingWindow);
     }
+    
+    
 }
