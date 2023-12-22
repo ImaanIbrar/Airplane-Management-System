@@ -281,212 +281,102 @@ public class addflight extends javax.swing.JFrame {
 
                 javax.swing.GroupLayout groupLayoutPanel1 = new javax.swing.GroupLayout(panel1);
                 groupLayoutPanel1.setHorizontalGroup(
-                                groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
-                                                                .addGroup(groupLayoutPanel1
-                                                                                .createParallelGroup(Alignment.TRAILING)
-                                                                                .addGroup(groupLayoutPanel1
-                                                                                                .createSequentialGroup()
-                                                                                                .addContainerGap(113,
-                                                                                                                Short.MAX_VALUE)
-                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                .createParallelGroup(
-                                                                                                                                Alignment.LEADING)
-                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                .createSequentialGroup()
-                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                Alignment.LEADING)
-                                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                                Alignment.TRAILING)
-                                                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                                                                Alignment.LEADING)
-                                                                                                                                                                                                .addComponent(
-                                                                                                                                                                                                                departureLabel)
-                                                                                                                                                                                                .addComponent(
-                                                                                                                                                                                                                sourceLabel)
-                                                                                                                                                                                                .addComponent(
-                                                                                                                                                                                                                arrivalTimeLabel))
-                                                                                                                                                                                .addGap(64))
-                                                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                                                .addComponent(flightNameLabel)
-                                                                                                                                                                                .addGap(61)))
-                                                                                                                                                .addComponent(departureTimeLabel))
-                                                                                                                                .addGap(41)
-                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                Alignment.LEADING)
-                                                                                                                                                .addComponent(flightNameText,
-                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                136,
-                                                                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                .addComponent(sourceText,
-                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                136,
-                                                                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                .addComponent(departuretext,
-                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                136,
-                                                                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                                                Alignment.LEADING,
-                                                                                                                                                                                                false)
-                                                                                                                                                                                .addComponent(departureTimeText,
-                                                                                                                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                                                                                                                187,
-                                                                                                                                                                                                Short.MAX_VALUE)
-                                                                                                                                                                                .addComponent(flightChargeText,
-                                                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                                172,
-                                                                                                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                                                .addComponent(arrivalTimeText))
-                                                                                                                                                                .addGap(38)
-                                                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                                                Alignment.LEADING)
-                                                                                                                                                                                .addComponent(
-                                                                                                                                                                                                warningFlightCharge,
-                                                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                                213,
-                                                                                                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                                                                Alignment.LEADING)
-                                                                                                                                                                                                .addComponent(
-                                                                                                                                                                                                                warningArrivalTime,
-                                                                                                                                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                                                                                                                                213,
-                                                                                                                                                                                                                Short.MAX_VALUE)
-                                                                                                                                                                                                .addComponent(
-                                                                                                                                                                                                                warningDepartureTime,
-                                                                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                                                118,
-                                                                                                                                                                                                                GroupLayout.PREFERRED_SIZE))))))
-                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                .createSequentialGroup()
-                                                                                                                                .addComponent(flightIdLabel)
-                                                                                                                                .addGap(63)
-                                                                                                                                .addComponent(flightIdText))
-                                                                                                                .addComponent(flightChargeLabel)))
-                                                                                .addGroup(groupLayoutPanel1
-                                                                                                .createSequentialGroup()
-                                                                                                .addGap(622)
-                                                                                                .addComponent(AddBtn,
-                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                117,
-                                                                                                                GroupLayout.PREFERRED_SIZE)))
-                                                                .addGap(31)
-                                                                .addComponent(BackBtn, GroupLayout.PREFERRED_SIZE, 110,
-                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(858))
-                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
-                                                                .addComponent(panel3, GroupLayout.DEFAULT_SIZE, 1728,
-                                                                                Short.MAX_VALUE)
-                                                                .addContainerGap()));
+                	groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                		.addGroup(groupLayoutPanel1.createSequentialGroup()
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.TRAILING)
+                				.addGroup(groupLayoutPanel1.createSequentialGroup()
+                					.addContainerGap(113, Short.MAX_VALUE)
+                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                						.addGroup(groupLayoutPanel1.createSequentialGroup()
+                							.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                								.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.TRAILING)
+                									.addGroup(groupLayoutPanel1.createSequentialGroup()
+                										.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                											.addComponent(departureLabel)
+                											.addComponent(sourceLabel)
+                											.addComponent(arrivalTimeLabel))
+                										.addGap(64))
+                									.addGroup(groupLayoutPanel1.createSequentialGroup()
+                										.addComponent(flightNameLabel)
+                										.addGap(61)))
+                								.addComponent(departureTimeLabel))
+                							.addGap(41)
+                							.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                								.addComponent(flightNameText, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE)
+                								.addComponent(sourceText, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE)
+                								.addComponent(departuretext, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE)
+                								.addGroup(groupLayoutPanel1.createSequentialGroup()
+                									.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING, false)
+                										.addComponent(departureTimeText, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                										.addComponent(flightChargeText, GroupLayout.PREFERRED_SIZE, 172, GroupLayout.PREFERRED_SIZE)
+                										.addComponent(arrivalTimeText))
+                									.addGap(38)
+                									.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                										.addComponent(warningFlightCharge, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE)
+                										.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                											.addComponent(warningArrivalTime, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                											.addComponent(warningDepartureTime, GroupLayout.PREFERRED_SIZE, 257, GroupLayout.PREFERRED_SIZE))))))
+                						.addGroup(groupLayoutPanel1.createSequentialGroup()
+                							.addComponent(flightIdLabel)
+                							.addGap(63)
+                							.addComponent(flightIdText))
+                						.addComponent(flightChargeLabel)))
+                				.addGroup(groupLayoutPanel1.createSequentialGroup()
+                					.addGap(622)
+                					.addComponent(AddBtn, GroupLayout.PREFERRED_SIZE, 117, GroupLayout.PREFERRED_SIZE)))
+                			.addGap(31)
+                			.addComponent(BackBtn, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+                			.addGap(858))
+                		.addGroup(groupLayoutPanel1.createSequentialGroup()
+                			.addComponent(panel3, GroupLayout.DEFAULT_SIZE, 1728, Short.MAX_VALUE)
+                			.addContainerGap())
+                );
                 groupLayoutPanel1.setVerticalGroup(
-                                groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
-                                                                .addGap(35)
-                                                                .addGroup(groupLayoutPanel1
-                                                                                .createParallelGroup(Alignment.BASELINE)
-                                                                                .addComponent(flightIdLabel)
-                                                                                .addComponent(flightIdText))
-                                                                .addGap(46)
-                                                                .addGroup(groupLayoutPanel1
-                                                                                .createParallelGroup(Alignment.LEADING)
-                                                                                .addGroup(groupLayoutPanel1
-                                                                                                .createSequentialGroup()
-                                                                                                .addPreferredGap(
-                                                                                                                ComponentPlacement.RELATED)
-                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                .createParallelGroup(
-                                                                                                                                Alignment.BASELINE)
-                                                                                                                .addComponent(flightNameLabel)
-                                                                                                                .addComponent(flightNameText,
-                                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                                                GroupLayout.PREFERRED_SIZE))
-                                                                                                .addGap(18)
-                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                .createParallelGroup(
-                                                                                                                                Alignment.BASELINE)
-                                                                                                                .addComponent(sourceText,
-                                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addComponent(sourceLabel))
-                                                                                                .addGap(18)
-                                                                                                .addComponent(departuretext,
-                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                                GroupLayout.PREFERRED_SIZE))
-                                                                                .addGroup(groupLayoutPanel1
-                                                                                                .createSequentialGroup()
-                                                                                                .addGap(76)
-                                                                                                .addComponent(departureLabel)))
-                                                                .addGap(18)
-                                                                .addGroup(groupLayoutPanel1
-                                                                                .createParallelGroup(Alignment.LEADING)
-                                                                                .addGroup(groupLayoutPanel1
-                                                                                                .createParallelGroup(
-                                                                                                                Alignment.BASELINE)
-                                                                                                .addComponent(departureTimeText,
-                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                                .addComponent(warningDepartureTime,
-                                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                                22,
-                                                                                                                GroupLayout.PREFERRED_SIZE))
-                                                                                .addComponent(departureTimeLabel))
-                                                                .addGap(21)
-                                                                .addGroup(groupLayoutPanel1
-                                                                                .createParallelGroup(Alignment.BASELINE)
-                                                                                .addComponent(arrivalTimeLabel)
-                                                                                .addComponent(arrivalTimeText,
-                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(warningArrivalTime,
-                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                22,
-                                                                                                GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(42)
-                                                                .addGroup(groupLayoutPanel1
-                                                                                .createParallelGroup(Alignment.BASELINE)
-                                                                                .addComponent(flightChargeLabel)
-                                                                                .addComponent(flightChargeText,
-                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(warningFlightCharge,
-                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                22,
-                                                                                                GroupLayout.PREFERRED_SIZE))
-                                                                .addPreferredGap(ComponentPlacement.RELATED,
-                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)
-                                                                .addGroup(groupLayoutPanel1
-                                                                                .createParallelGroup(Alignment.BASELINE)
-                                                                                .addComponent(BackBtn,
-                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                46,
-                                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(AddBtn,
-                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                46,
-                                                                                                GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(124)
-                                                                .addComponent(panel3, GroupLayout.PREFERRED_SIZE, 172,
-                                                                                GroupLayout.PREFERRED_SIZE)));
+                	groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                		.addGroup(groupLayoutPanel1.createSequentialGroup()
+                			.addGap(35)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                				.addComponent(flightIdLabel)
+                				.addComponent(flightIdText))
+                			.addGap(46)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                				.addGroup(groupLayoutPanel1.createSequentialGroup()
+                					.addPreferredGap(ComponentPlacement.RELATED)
+                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                						.addComponent(flightNameLabel)
+                						.addComponent(flightNameText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                					.addGap(18)
+                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                						.addComponent(sourceText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                						.addComponent(sourceLabel))
+                					.addGap(18)
+                					.addComponent(departuretext, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                				.addGroup(groupLayoutPanel1.createSequentialGroup()
+                					.addGap(76)
+                					.addComponent(departureLabel)))
+                			.addGap(18)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                				.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                					.addComponent(departureTimeText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                					.addComponent(warningDepartureTime, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+                				.addComponent(departureTimeLabel))
+                			.addGap(21)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                				.addComponent(arrivalTimeLabel)
+                				.addComponent(arrivalTimeText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                				.addComponent(warningArrivalTime, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+                			.addGap(42)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                				.addComponent(flightChargeLabel)
+                				.addComponent(flightChargeText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                				.addComponent(warningFlightCharge, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+                			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                				.addComponent(BackBtn, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
+                				.addComponent(AddBtn, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
+                			.addGap(124)
+                			.addComponent(panel3, GroupLayout.PREFERRED_SIZE, 172, GroupLayout.PREFERRED_SIZE))
+                );
                 panel1.setLayout(groupLayoutPanel1);
 
                 panel2.setBackground(new java.awt.Color(0, 102, 102));
@@ -674,7 +564,7 @@ public class addflight extends javax.swing.JFrame {
                 Pattern patt = Pattern.compile(regex);
                 Matcher match = patt.matcher(departureTimeText.getText());
                 if (!match.matches()) {
-                        warningDepartureTime.setText("Format: XX:XX");
+                        warningDepartureTime.setText("Format: XX:XX (24 Hour Format)");
                 } else {
                         warningDepartureTime.setText(null);
 
@@ -694,7 +584,7 @@ public class addflight extends javax.swing.JFrame {
                 Pattern patt = Pattern.compile(regex);
                 Matcher match = patt.matcher(arrivalTimeText.getText());
                 if (!match.matches()) {
-                        warningArrivalTime.setText("Format: XX:XX ");
+                        warningArrivalTime.setText("Format: XX:XX (24 Hour Format)");
                 } else {
                         warningArrivalTime.setText(null);
 
