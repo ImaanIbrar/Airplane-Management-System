@@ -984,7 +984,6 @@ public class ticket extends javax.swing.JFrame {
             });
         }
         
-        
 
         /**
          * Handle the button click event to search for a customer by ID.
