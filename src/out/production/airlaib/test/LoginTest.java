@@ -1,4 +1,5 @@
 package out.production.airlaib.test;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,11 +18,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
-
 /**
  * JUnit test class for the {@Login} class.
  * Author: Imaan Ibrar
@@ -36,7 +32,7 @@ public class LoginTest {
      * Set up the mock database connection, statement, and result set.
      * 
      * @throws SQLException If a SQL exception occurs during setup.
-     */ 
+     */
     @Before
     public void setUp() throws SQLException {
         // Mock the database connection, statement, and result set
