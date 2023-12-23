@@ -1492,7 +1492,15 @@ public class ticket extends javax.swing.JFrame {
 
         }
 
-        // Helper method to get booked seats for a specific flight
+        /**
+         * Helper method to retrieve the total number of booked seats for a specific
+         * flight on a given date.
+         *
+         * @param flightId The unique identifier of the flight.
+         * @param date     The date for which the booked seats are to be retrieved.
+         * @return The total number of booked seats for the specified flight on the
+         *         given date.
+         */
         private int getBookedSeatsForFlight(String flightId, String date) {
                 int bookedSeats = 0;
 
