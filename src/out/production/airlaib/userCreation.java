@@ -26,6 +26,8 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
@@ -78,13 +80,13 @@ public class userCreation extends javax.swing.JFrame {
                 LastNameLabel = new javax.swing.JLabel();
                 userNameLabel = new javax.swing.JLabel();
                 paswordLabel = new javax.swing.JLabel();
-                txtuserid = new javax.swing.JLabel();
-                txtfirstname = new javax.swing.JTextField();
-                txtlastname = new javax.swing.JTextField();
-                txtusername = new javax.swing.JTextField();
-                addBtn = new javax.swing.JButton();
+                setTxtuserid(new javax.swing.JLabel());
+                setTxtfirstname(new javax.swing.JTextField());
+                setTxtlastname(new javax.swing.JTextField());
+                setTxtusername(new javax.swing.JTextField());
+                setAddBtn(new javax.swing.JButton());
                 backBtn = new javax.swing.JButton();
-                txtpassword = new javax.swing.JPasswordField();
+                setTxtpassword(new javax.swing.JPasswordField());
                 panel2 = new javax.swing.JPanel();
                 registerAdminLabel = new javax.swing.JLabel();
                 warningFirstName = new javax.swing.JLabel();
@@ -113,38 +115,38 @@ public class userCreation extends javax.swing.JFrame {
                 paswordLabel.setFont(new Font("Tahoma", Font.BOLD, 20)); // NOI18N
                 paswordLabel.setText("Password");
 
-                txtuserid.setBackground(new java.awt.Color(102, 102, 102));
-                txtuserid.setFont(new Font("Tahoma", Font.BOLD, 20)); // NOI18N
-                txtuserid.setForeground(new java.awt.Color(102, 102, 102));
+                getTxtuserid().setBackground(new java.awt.Color(102, 102, 102));
+                getTxtuserid().setFont(new Font("Tahoma", Font.BOLD, 20)); // NOI18N
+                getTxtuserid().setForeground(new java.awt.Color(102, 102, 102));
                 // txtuserid.setText("jLabel6");
 
-                txtfirstname.addActionListener(new java.awt.event.ActionListener() {
+                getTxtfirstname().addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 txtfirstnameActionPerformed(evt);
                         }
                 });
-                txtfirstname.addKeyListener(new java.awt.event.KeyAdapter() {
+                getTxtfirstname().addKeyListener(new java.awt.event.KeyAdapter() {
                         public void keyReleased(java.awt.event.KeyEvent evt) {
                                 txtfirstnameKeyReleased(evt);
                         }
                 });
 
-                txtlastname.addActionListener(new java.awt.event.ActionListener() {
+                getTxtlastname().addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 txtlastnameActionPerformed(evt);
                         }
                 });
-                txtlastname.addKeyListener(new java.awt.event.KeyAdapter() {
+                getTxtlastname().addKeyListener(new java.awt.event.KeyAdapter() {
                         public void keyReleased(java.awt.event.KeyEvent evt) {
                                 txtlastnameKeyReleased(evt);
                         }
                 });
 
-                addBtn.setBackground(new java.awt.Color(0, 102, 102));
-                addBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                addBtn.setForeground(new java.awt.Color(255, 255, 255));
-                addBtn.setText("Add");
-                addBtn.addActionListener(new java.awt.event.ActionListener() {
+                getAddBtn().setBackground(new java.awt.Color(0, 102, 102));
+                getAddBtn().setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                getAddBtn().setForeground(new java.awt.Color(255, 255, 255));
+                getAddBtn().setText("Add");
+                getAddBtn().addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 addBtnAction(evt);
                         }
@@ -370,21 +372,21 @@ public class userCreation extends javax.swing.JFrame {
                                                                                                                                                                 .addGroup(groupLayoutPanel1
                                                                                                                                                                                 .createParallelGroup(
                                                                                                                                                                                                 Alignment.LEADING)
-                                                                                                                                                                                .addComponent(txtusername,
+                                                                                                                                                                                .addComponent(getTxtusername(),
                                                                                                                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                                                                                                                 140,
                                                                                                                                                                                                 GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                                                .addComponent(txtfirstname,
+                                                                                                                                                                                .addComponent(getTxtfirstname(),
                                                                                                                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                                                                                                                 140,
                                                                                                                                                                                                 GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                                                .addComponent(txtpassword,
+                                                                                                                                                                                .addComponent(getTxtpassword(),
                                                                                                                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                                                                                                                 140,
                                                                                                                                                                                                 GroupLayout.PREFERRED_SIZE))
                                                                                                                                                                 .addPreferredGap(
                                                                                                                                                                                 ComponentPlacement.RELATED))
-                                                                                                                                                .addComponent(txtlastname,
+                                                                                                                                                .addComponent(getTxtlastname(),
                                                                                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                                                                                 140,
                                                                                                                                                                 GroupLayout.PREFERRED_SIZE))
@@ -403,7 +405,7 @@ public class userCreation extends javax.swing.JFrame {
                                                                                                                 .addGroup(groupLayoutPanel1
                                                                                                                                 .createSequentialGroup()
                                                                                                                                 .addGap(88)
-                                                                                                                                .addComponent(txtuserid)))
+                                                                                                                                .addComponent(getTxtuserid())))
                                                                                                 .addContainerGap(497,
                                                                                                                 Short.MAX_VALUE))
                                                                                 .addGroup(groupLayoutPanel1
@@ -413,7 +415,7 @@ public class userCreation extends javax.swing.JFrame {
                                                                                                                 Short.MAX_VALUE))))
                                                 .addGroup(groupLayoutPanel1.createSequentialGroup()
                                                                 .addGap(710)
-                                                                .addComponent(addBtn, GroupLayout.PREFERRED_SIZE, 109,
+                                                                .addComponent(getAddBtn(), GroupLayout.PREFERRED_SIZE, 109,
                                                                                 GroupLayout.PREFERRED_SIZE)
                                                                 .addContainerGap(735, Short.MAX_VALUE))
                                                 .addGroup(groupLayoutPanel1.createSequentialGroup()
@@ -437,13 +439,13 @@ public class userCreation extends javax.swing.JFrame {
                                                                 .addGap(53)
                                                                 .addGroup(groupLayoutPanel1
                                                                                 .createParallelGroup(Alignment.BASELINE)
-                                                                                .addComponent(txtuserid)
+                                                                                .addComponent(getTxtuserid())
                                                                                 .addComponent(userIdLabel))
                                                                 .addGap(53)
                                                                 .addGroup(groupLayoutPanel1
                                                                                 .createParallelGroup(Alignment.BASELINE)
                                                                                 .addComponent(firstNameLabel)
-                                                                                .addComponent(txtfirstname,
+                                                                                .addComponent(getTxtfirstname(),
                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                 GroupLayout.DEFAULT_SIZE,
                                                                                                 GroupLayout.PREFERRED_SIZE)
@@ -455,7 +457,7 @@ public class userCreation extends javax.swing.JFrame {
                                                                 .addGroup(groupLayoutPanel1
                                                                                 .createParallelGroup(Alignment.BASELINE)
                                                                                 .addComponent(LastNameLabel)
-                                                                                .addComponent(txtlastname,
+                                                                                .addComponent(getTxtlastname(),
                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                 GroupLayout.DEFAULT_SIZE,
                                                                                                 GroupLayout.PREFERRED_SIZE)
@@ -467,7 +469,7 @@ public class userCreation extends javax.swing.JFrame {
                                                                 .addGroup(groupLayoutPanel1
                                                                                 .createParallelGroup(Alignment.BASELINE)
                                                                                 .addComponent(userNameLabel)
-                                                                                .addComponent(txtusername,
+                                                                                .addComponent(getTxtusername(),
                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                 GroupLayout.DEFAULT_SIZE,
                                                                                                 GroupLayout.PREFERRED_SIZE))
@@ -475,12 +477,12 @@ public class userCreation extends javax.swing.JFrame {
                                                                 .addGroup(groupLayoutPanel1
                                                                                 .createParallelGroup(Alignment.BASELINE)
                                                                                 .addComponent(paswordLabel)
-                                                                                .addComponent(txtpassword,
+                                                                                .addComponent(getTxtpassword(),
                                                                                                 GroupLayout.PREFERRED_SIZE,
                                                                                                 22,
                                                                                                 GroupLayout.PREFERRED_SIZE))
                                                                 .addGap(48)
-                                                                .addComponent(addBtn, GroupLayout.PREFERRED_SIZE, 48,
+                                                                .addComponent(getAddBtn(), GroupLayout.PREFERRED_SIZE, 48,
                                                                                 GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(ComponentPlacement.RELATED, 113,
                                                                                 Short.MAX_VALUE)
@@ -509,6 +511,30 @@ public class userCreation extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         /**
+		 * @return the warningLastName
+		 */
+		public javax.swing.JLabel getWarningLastName() {
+			return warningLastName;
+		}
+
+		/**
+		 * @param warningLastName the warningLastName to set
+		 */
+		public void setWarningLastName(javax.swing.JLabel warningLastName) {
+			this.warningLastName = warningLastName;
+		}
+
+		protected void txtlastnameActionPerformed(ActionEvent evt) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		protected void txtfirstnameActionPerformed(ActionEvent evt) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		/**
          * Handles the event when the "Create User" button is clicked.
          * Validates user input and inserts user details into the database.
          * Displays appropriate messages based on the success or failure of the
@@ -519,14 +545,14 @@ public class userCreation extends javax.swing.JFrame {
          * @throws ClassNotFoundException if the MySQL JDBC driver class is not found.
          * @throws SQLException           if a database access error occurs.
          */
-        private void addBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addBtnAction
+        public void addBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addBtnAction
                 // TODO add your handling code here:
 
-                String id = txtuserid.getText();
-                String firstname = txtfirstname.getText();
-                String lastname = txtlastname.getText();
-                String username = txtusername.getText();
-                String password = txtpassword.getText();
+                String id = getTxtuserid().getText();
+                String firstname = getTxtfirstname().getText();
+                String lastname = getTxtlastname().getText();
+                String username = getTxtusername().getText();
+                String password = getTxtpassword().getText();
 
                 if (firstname.equals("") || lastname.equals("") || username.equals("") || password.equals("")) {
                         JOptionPane.showMessageDialog(this, "Please enter the missing fields");
@@ -536,7 +562,8 @@ public class userCreation extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "Please correct Name");
 
                 }else if (!isStrongPassword(password)) {
-                    JOptionPane.showMessageDialog(this, "Password is not strong. Please use a stronger password.Use Atleast One Capital Letter and One Special Charachter.");} 
+                    JOptionPane.showMessageDialog(this, "Password is not strong. Please use a stronger password. Password should have atleast 8 letters."
+                    		+ " Use Atleast One Capital Letter, One Special Character, And a  Number");} 
                 else {
                         try {
 
@@ -554,7 +581,7 @@ public class userCreation extends javax.swing.JFrame {
                                 pst.executeUpdate();
 
                                 JOptionPane.showMessageDialog(null, "User Created");
-                                addBtn.setEnabled(false);
+                                getAddBtn().setEnabled(false);
                         } catch (SQLException ex) {
                                 Logger.getLogger(addflight.class.getName()).log(Level.SEVERE, null, ex);
                         } finally {
@@ -575,26 +602,17 @@ public class userCreation extends javax.swing.JFrame {
         
         
 
-        private void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
+        public void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
                 // TODO add your handling code here:
                 this.dispose();
                 adminDomainObj = new admindomain();
                 adminDomainObj.setVisible(true);
         }// GEN-LAST:event_backBtnAction
-
-        private void txtfirstnameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtfirstnameActionPerformed
-                // TODO add your handling code here:
-        }// GEN-LAST:event_txtfirstnameActionPerformed
-
-        private void txtlastnameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtlastnameActionPerformed
-                // TODO add your handling code here:
-        }// GEN-LAST:event_txtlastnameActionPerformed
-
-        private void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
+        public void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[A-Za-z]{3,29}$";
                 Pattern patt = Pattern.compile(regex);
-                Matcher match = patt.matcher(txtfirstname.getText());
+                Matcher match = patt.matcher(getTxtfirstname().getText());
                 if (!match.matches()) {
                         warningFirstName.setText("Incorrect Name entry");
                 } else {
@@ -603,11 +621,11 @@ public class userCreation extends javax.swing.JFrame {
                 }
         }// GEN-LAST:event_txtfirstnameKeyReleased
 
-        private void txtlastnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtlastnameKeyReleased
+        public void txtlastnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtlastnameKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[A-Za-z]{3,29}$";
                 Pattern patt = Pattern.compile(regex);
-                Matcher match = patt.matcher(txtlastname.getText());
+                Matcher match = patt.matcher(getTxtlastname().getText());
                 if (!match.matches()) {
                         warningLastName.setText("Incorrect Name entry");
                 } else {
@@ -633,12 +651,12 @@ public class userCreation extends javax.swing.JFrame {
                         rs.next();
                         rs.getString("MAX(id)");
                         if (rs.getString("MAX(id)") == null) {
-                                txtuserid.setText("UO001");
+                                getTxtuserid().setText("UO001");
                         } else {
                                 long id = Long.parseLong(
                                                 rs.getString("MAX(id)").substring(2, rs.getString("MAX(id)").length()));
                                 id++;
-                                txtuserid.setText("UO" + String.format("%03d", id));
+                                getTxtuserid().setText("UO" + String.format("%03d", id));
                         }
 
                 } catch (ClassNotFoundException ex) {
@@ -654,14 +672,98 @@ public class userCreation extends javax.swing.JFrame {
          * @param password The password to be checked.
          * @return True if the password is strong, false if weak.
          */
-        private boolean isStrongPassword(String password) {
+        public boolean isStrongPassword(String password) {
             // Add your criteria for a strong password (e.g., minimum length, mix of uppercase, lowercase, digits, special characters)
             return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
         }
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
+        /**
+		 * @return the txtuserid
+		 */
+		public javax.swing.JLabel getTxtuserid() {
+			return txtuserid;
+		}
+
+		/**
+		 * @param txtuserid the txtuserid to set
+		 */
+		public void setTxtuserid(javax.swing.JLabel txtuserid) {
+			this.txtuserid = txtuserid;
+		}
+
+		/**
+		 * @return the txtfirstname
+		 */
+		public javax.swing.JTextField getTxtfirstname() {
+			return txtfirstname;
+		}
+
+		/**
+		 * @param txtfirstname the txtfirstname to set
+		 */
+		public void setTxtfirstname(javax.swing.JTextField txtfirstname) {
+			this.txtfirstname = txtfirstname;
+		}
+
+		/**
+		 * @return the txtlastname
+		 */
+		public javax.swing.JTextField getTxtlastname() {
+			return txtlastname;
+		}
+
+		/**
+		 * @param txtlastname the txtlastname to set
+		 */
+		public void setTxtlastname(javax.swing.JTextField txtlastname) {
+			this.txtlastname = txtlastname;
+		}
+
+		/**
+		 * @return the txtusername
+		 */
+		public javax.swing.JTextField getTxtusername() {
+			return txtusername;
+		}
+
+		/**
+		 * @param txtusername the txtusername to set
+		 */
+		public void setTxtusername(javax.swing.JTextField txtusername) {
+			this.txtusername = txtusername;
+		}
+
+		/**
+		 * @return the txtpassword
+		 */
+		public javax.swing.JPasswordField getTxtpassword() {
+			return txtpassword;
+		}
+
+		/**
+		 * @param txtpassword the txtpassword to set
+		 */
+		public void setTxtpassword(javax.swing.JPasswordField txtpassword) {
+			this.txtpassword = txtpassword;
+		}
+
+		// Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JLabel warningFirstName;
-        private javax.swing.JButton addBtn;
+        /**
+		 * @return the warningFirstName
+		 */
+		public javax.swing.JLabel getWarningFirstName() {
+			return warningFirstName;
+		}
+
+		/**
+		 * @param warningFirstName the warningFirstName to set
+		 */
+		public void setWarningFirstName(javax.swing.JLabel warningFirstName) {
+			this.warningFirstName = warningFirstName;
+		}
+
+		private javax.swing.JButton addBtn;
         private javax.swing.JButton backBtn;
         private javax.swing.JLabel userIdLabel;
         private javax.swing.JLabel firstNameLabel;
@@ -678,4 +780,37 @@ public class userCreation extends javax.swing.JFrame {
         private javax.swing.JLabel txtuserid;
         private javax.swing.JTextField txtusername;
         private admindomain adminDomainObj;
+
+		/**
+		 * @return the adminDomainObj
+		 */
+		public admindomain getAdminDomainObj() {
+			return adminDomainObj;
+		}
+
+		/**
+		 * @param adminDomainObj the adminDomainObj to set
+		 */
+		public void setAdminDomainObj(admindomain adminDomainObj) {
+			this.adminDomainObj = adminDomainObj;
+		}
+
+		public void setConnection(Connection mockConnection) throws SQLException {
+			mockConnection = connectionManager.getConnection();	
+			
+		}
+
+		/**
+		 * @return the addBtn
+		 */
+		public javax.swing.JButton getAddBtn() {
+			return addBtn;
+		}
+
+		/**
+		 * @param addBtn the addBtn to set
+		 */
+		public void setAddBtn(javax.swing.JButton addBtn) {
+			this.addBtn = addBtn;
+		}
 }
