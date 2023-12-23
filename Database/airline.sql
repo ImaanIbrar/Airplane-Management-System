@@ -101,7 +101,8 @@ CREATE TABLE `ticket` (
   `deptime` varchar(255) NOT NULL,
   `arrtime` varchar(255) NOT NULL,
   `source` varchar(255) NOT NULL,
-  `depart` varchar(255) NOT NULL
+  `depart` varchar(255) NOT NULL,
+  `confirm` varchar(255) NOT NULL default "No"
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
