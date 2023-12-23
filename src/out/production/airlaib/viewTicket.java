@@ -387,4 +387,20 @@ public class viewTicket extends javax.swing.JFrame {
 		    // TODO: Implement the logic to return the value of showMessageDialogMessage
 		    return "Record not Found"; // Placeholder, replace with actual logic
 		}
+
+		/**
+		 * @return the billObj
+		 */
+		public bill getBillObj() {
+			return billObj;
+		}
+
+		/**
+		 * @param billObj the billObj to set
+		 */
+		public void setBillObj(bill billObj) {
+			this.billObj = billObj;
+		}
+
+	
 }

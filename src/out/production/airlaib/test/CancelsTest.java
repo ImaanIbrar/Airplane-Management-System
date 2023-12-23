@@ -1,4 +1,5 @@
 package out.production.airlaib.test;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -33,6 +34,7 @@ public class CancelsTest {
 
     /**
      * Set up the mock database connection, statement, and result set.
+     * 
      * @throws SQLException If a SQL exception occurs during setup.
      */
     @Before
@@ -51,6 +53,7 @@ public class CancelsTest {
 
     /**
      * Close the mock connection after each test.
+     * 
      * @throws SQLException If a SQL exception occurs during teardown.
      */
     @After
@@ -64,6 +67,7 @@ public class CancelsTest {
     /**
      * Test the {@code proceedBtnAction} method when a record is found.
      * Verifies that the proceed button is disabled and the success message is set.
+     * 
      * @throws SQLException If a SQL exception occurs during the test.
      */
     @Test
@@ -80,12 +84,13 @@ public class CancelsTest {
         // Add your assertions based on the expected behavior
         // For example, check if the proceed button is disabled and a message is set
         assertEquals(false, cancels.getProceedBtn().isEnabled());
-        assertEquals("RECORD DELETED SUCCESSFULLY", cancels.getBackgroundAdjustLabel1().getText());
+        assertEquals("RECORD DELETED SUCCESSFULLY", cancels.getsuccessfulMessaage().getText());
     }
 
     /**
      * Test the {@code proceedBtnAction} method when a record is not found.
      * Verifies that the expected error message is shown using JOptionPane.
+     * 
      * @throws SQLException If a SQL exception occurs during the test.
      */
     @Test
@@ -106,7 +111,7 @@ public class CancelsTest {
 
         // Assert
         // Verify that showMessageDialog was called
-        assertEquals("Record not Found", cancels.getShowMessageDialogMessage());
+        assertEquals("Record not Found", messageCaptor.capture());
 
-    }   
+    }
 }

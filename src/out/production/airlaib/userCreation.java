@@ -1,5 +1,12 @@
 package out.production.airlaib;
 import java.sql.Connection;
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.spec.KeySpec;
+import java.util.Base64;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -528,7 +535,9 @@ public class userCreation extends javax.swing.JFrame {
                 else if (!firstname.matches("^[A-Za-z]{3,29}$") || !lastname.matches("^[A-Za-z]{3,29}$")) {
                         JOptionPane.showMessageDialog(this, "Please correct Name");
 
-                } else {
+                }else if (!isStrongPassword(password)) {
+                    JOptionPane.showMessageDialog(this, "Password is not strong. Please use a stronger password.Use Atleast One Capital Letter and One Special Charachter.");} 
+                else {
                         try {
 
                                 con = connectionManager.getConnection();
@@ -563,6 +572,8 @@ public class userCreation extends javax.swing.JFrame {
                         }
                 }
         }// GEN-LAST:event_addBtnAction
+        
+        
 
         private void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
                 // TODO add your handling code here:
@@ -635,6 +646,17 @@ public class userCreation extends javax.swing.JFrame {
                 } catch (SQLException ex) {
                         Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                 }
+        }
+        
+        /**
+         * Checks whether the given password is strong or weak.
+         *
+         * @param password The password to be checked.
+         * @return True if the password is strong, false if weak.
+         */
+        private boolean isStrongPassword(String password) {
+            // Add your criteria for a strong password (e.g., minimum length, mix of uppercase, lowercase, digits, special characters)
+            return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
         }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
