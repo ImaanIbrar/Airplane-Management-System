@@ -63,7 +63,7 @@ public class ticket extends javax.swing.JFrame {
                 setExtendedState(JFrame.MAXIMIZED_BOTH);
         }
 
-        Connection con;
+        private Connection con;
         PreparedStatement pst;
 
         /**
@@ -790,22 +790,7 @@ public class ticket extends javax.swing.JFrame {
                 txtsource.addActionListener(e -> updateDestinationDropdown());
         }// </editor-fold>//GEN-END:initComponents
         
-        public javax.swing.JComboBox<String> getTxtdepart() {
-			return txtdepart;
-		}
-
-		public void setTxtdepart(javax.swing.JComboBox<String> txtdepart) {
-			this.txtdepart = txtdepart;
-		}
-
-		public javax.swing.JComboBox<String> getTxtsource() {
-			return txtsource;
-		}
-
-		public void setTxtsource(javax.swing.JComboBox<String> txtsource) {
-			this.txtsource = txtsource;
-		}
-
+        
 		/**
          * Updates the destination dropdown based on the selected source.
          * It removes the selected source from the destination dropdown and sets the updated
@@ -828,26 +813,8 @@ public class ticket extends javax.swing.JFrame {
 
             // Set the updated list of destinations to the destination dropdown
             txtdepart.setModel(destinationModel);
-            setTxtdepart((JComboBox<String>) txtdepart); 
            
         }
-
-
-        public javax.swing.JComboBox<String> getTxtclass() {
-			return txtclass;
-		}
-
-		public void setTxtclass(javax.swing.JComboBox<String> txtclass) {
-			this.txtclass = txtclass;
-		}
-
-		public javax.swing.JSpinner getTxtseats() {
-			return txtseats;
-		}
-
-		public void setTxtseats(javax.swing.JSpinner txtseats) {
-			this.txtseats = txtseats;
-		}
 
 		/**
          * Handle a change in the 'class' combo box selection.
@@ -868,30 +835,6 @@ public class ticket extends javax.swing.JFrame {
                         }
                 }
         }
-        
-
-        public javax.swing.JLabel getTxtprice() {
-			return txtprice;
-		}
-
-		public void setTxtprice(JLabel jTextField) {
-			this.txtprice = jTextField;
-		}
-
-		/**
-		 * @return the bookBtn
-		 */
-		public javax.swing.JButton getBookBtn() {
-			return BookBtn;
-		}
-
-		/**
-		 * @param bookBtn the bookBtn to set
-		 */
-		public void setBookBtn(javax.swing.JButton bookBtn) {
-			BookBtn = bookBtn;
-		}
-
 		/**
          * Handle a change in the 'seats' spinner state.
          *
@@ -912,38 +855,6 @@ public class ticket extends javax.swing.JFrame {
                         }
                 }
         }
-        
-        public javax.swing.JLabel getTxtpassport() {
-			return txtpassport;
-		}
-
-		public void setTxtpassport(javax.swing.JLabel txtpassport) {
-			this.txtpassport = txtpassport;
-		}
-
-		public javax.swing.JButton getSeachBtn() {
-			return seachBtn;
-		}
-
-		public void setSeachBtn(javax.swing.JButton seachBtn) {
-			this.seachBtn = seachBtn;
-		}
-
-		public javax.swing.JButton getSearchBtn() {
-			return searchBtn;
-		}
-
-		public void setSearchBtn(javax.swing.JButton searchBtn) {
-			this.searchBtn = searchBtn;
-		}
-
-		public com.toedter.calendar.JDateChooser getTxtdate() {
-			return txtdate;
-		}
-
-		public void setTxtdate(com.toedter.calendar.JDateChooser txtdate) {
-			this.txtdate = txtdate;
-		}
 
 		/**
          * Disables dates earlier than the current date in a JDateChooser component.
@@ -1029,22 +940,6 @@ public class ticket extends javax.swing.JFrame {
                 }
         }// GEN-LAST:event_searchBtnAction
 
-        public javax.swing.JLabel getFlightnamelabel() {
-			return flightnamelabel;
-		}
-
-		public void setFlightnamelabel(javax.swing.JLabel flightnamelabel) {
-			this.flightnamelabel = flightnamelabel;
-		}
-
-		public javax.swing.JTable getTicketTable() {
-			return ticketTable;
-		}
-
-		public void setTicketTable(javax.swing.JTable ticketTable) {
-			this.ticketTable = ticketTable;
-		}
-
 		/**
          * Handle the button click event to search for available flights based on source
          * and destination.
@@ -1098,89 +993,6 @@ public class ticket extends javax.swing.JFrame {
                 }
 
         }// GEN-LAST:event_checkAvailableFlightBtnAction
-        
-        
-
-        /**
-		 * @return the txtdept
-		 */
-		public javax.swing.JLabel getTxtdept() {
-			return txtdept;
-		}
-
-		/**
-		 * @param txtdept the txtdept to set
-		 */
-		public void setTxtdept(javax.swing.JLabel txtdept) {
-			this.txtdept = txtdept;
-		}
-
-		
-
-		/**
-		 * @return the firstNameLabel
-		 */
-		public javax.swing.JLabel getFirstNameLabel() {
-			return firstNameLabel;
-		}
-
-		/**
-		 * @param firstNameLabel the firstNameLabel to set
-		 */
-		public void setFirstNameLabel(javax.swing.JLabel firstNameLabel) {
-			this.firstNameLabel = firstNameLabel;
-		}
-
-		public javax.swing.JLabel getFlightno() {
-			return flightno;
-		}
-
-		/**
-		 * @return the priceLabel
-		 */
-		public javax.swing.JLabel getPriceLabel() {
-			return priceLabel;
-		}
-
-		/**
-		 * @param priceLabel the priceLabel to set
-		 */
-		public void setPriceLabel(javax.swing.JLabel priceLabel) {
-			this.priceLabel = priceLabel;
-		}
-
-		/**
-		 * @return the price
-		 */
-		public int getPrice() {
-			return price;
-		}
-
-		/**
-		 * @param price the price to set
-		 */
-		public void setPrice(int price) {
-			this.price = price;
-		}
-
-		public void setFlightno(javax.swing.JLabel flightno) {
-			this.flightno = flightno;
-		}
-
-		/**
-		 * @return the txtticketno
-		 */
-		public javax.swing.JLabel getTxtticketno() {
-			return txtticketno;
-		}
-
-		/**
-		 * @param txtticketno the txtticketno to set
-		 */
-		public void setTxtticketno(javax.swing.JLabel txtticketno) {
-			this.txtticketno = txtticketno;
-		}
-
 		/**
          * Handle a mouse click event on the flight selection table.
          *
@@ -1236,9 +1048,7 @@ public class ticket extends javax.swing.JFrame {
                                         JOptionPane.showMessageDialog(this, "Can only book for the current year");
                                 } else {
                                         con = connectionManager.getConnection();
-                                        pst = con.prepareStatement(
-                                                        "insert into ticket(id,flightid,flightname,custid,firstname,lastname,passport,class,price,seats,date,deptime,arrtime,source,depart)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-
+                                        pst = con.prepareStatement(                                                        "insert into ticket(id,flightid,flightname,custid,firstname,lastname,passport,class,price,seats,date,deptime,arrtime,source,depart)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
                                         pst.setString(1, ticketid);
                                         pst.setString(2, flightid);
                                         pst.setString(3, flightname);
@@ -1248,7 +1058,6 @@ public class ticket extends javax.swing.JFrame {
                                         pst.setString(7, txtpassport.getText());
                                         pst.setString(8, flightclass);
                                         pst.setString(9, txtprice.getText());
-
                                         pst.setString(10, seats);
                                         pst.setString(11, date);
                                         pst.setString(12, departTime);
@@ -1271,7 +1080,7 @@ public class ticket extends javax.swing.JFrame {
                                         if (con != null) {
                                                 con.close();
                                         }
-                                        if (pst != null) {
+                                        if (pst != null) { 
                                                 pst.close();
                                         }
                                 } catch (SQLException ex) {
@@ -1282,6 +1091,278 @@ public class ticket extends javax.swing.JFrame {
         }// GEN-LAST:event_bookBtnAction
 
         /**
+		 * @return the bookBtn
+		 */
+		public javax.swing.JButton getBookBtn() {
+			return BookBtn;
+		}
+
+
+		/**
+		 * @param bookBtn the bookBtn to set
+		 */
+		public void setBookBtn(javax.swing.JButton bookBtn) {
+			BookBtn = bookBtn;
+		}
+
+
+		/**
+		 * @return the flightname
+		 */
+		public String getFlightname() {
+			return flightname;
+		}
+
+
+		/**
+		 * @return the txtfirstname
+		 */
+		public javax.swing.JLabel getTxtfirstname() {
+			return txtfirstname;
+		}
+
+
+		/**
+		 * @param txtfirstname the txtfirstname to set
+		 */
+		public void setTxtfirstname(javax.swing.JLabel txtfirstname) {
+			this.txtfirstname = txtfirstname;
+		}
+
+
+		/**
+		 * @return the txtlastname
+		 */
+		public javax.swing.JLabel getTxtlastname() {
+			return txtlastname;
+		}
+
+
+		/**
+		 * @param txtlastname the txtlastname to set
+		 */
+		public void setTxtlastname(javax.swing.JLabel txtlastname) {
+			this.txtlastname = txtlastname;
+		}
+
+
+		/**
+		 * @return the txtpassport
+		 */
+		public javax.swing.JLabel getTxtpassport() {
+			return txtpassport;
+		}
+
+
+		/**
+		 * @return the txtprice
+		 */
+		public JLabel getTxtprice() {
+			return txtprice;
+		}
+
+
+		/**
+		 * @return the departTime
+		 */
+		public String getDepartTime() {
+			return departTime;
+		}
+
+
+		/**
+		 * @param departTime the departTime to set
+		 */
+		public void setDepartTime(String departTime) {
+			this.departTime = departTime;
+		}
+
+
+		/**
+		 * @return the arrivaltime
+		 */
+		public String getArrivaltime() {
+			return arrivaltime;
+		}
+
+
+		/**
+		 * @param arrivaltime the arrivaltime to set
+		 */
+		public void setArrivaltime(String arrivaltime) {
+			this.arrivaltime = arrivaltime;
+		}
+
+
+		/**
+		 * @return the sourceCity
+		 */
+		public String getSourceCity() {
+			return sourceCity;
+		}
+
+
+		/**
+		 * @param sourceCity the sourceCity to set
+		 */
+		public void setSourceCity(String sourceCity) {
+			this.sourceCity = sourceCity;
+		}
+
+
+		/**
+		 * @return the departCity
+		 */
+		public String getDepartCity() {
+			return departCity;
+		}
+
+
+		/**
+		 * @param departCity the departCity to set
+		 */
+		public void setDepartCity(String departCity) {
+			this.departCity = departCity;
+		}
+
+
+		/**
+		 * @param txtprice the txtprice to set
+		 */
+		public void setTxtprice(JLabel txtprice) {
+			this.txtprice = txtprice;
+		}
+
+
+		/**
+		 * @param txtpassport the txtpassport to set
+		 */
+		public void setTxtpassport(javax.swing.JLabel txtpassport) {
+			this.txtpassport = txtpassport;
+		}
+
+
+		/**
+		 * @param flightname the flightname to set
+		 */
+		public void setFlightname(String flightname) {
+			this.flightname = flightname;
+		}
+
+
+		/**
+		 * @return the txtdate
+		 */
+		public com.toedter.calendar.JDateChooser getTxtdate() {
+			return txtdate;
+		}
+
+
+		/**
+		 * @param txtdate the txtdate to set
+		 */
+		public void setTxtdate(com.toedter.calendar.JDateChooser txtdate) {
+			this.txtdate = txtdate;
+		}
+
+
+		/**
+		 * @return the billObj
+		 */
+		public bill getBillObj() {
+			return billObj;
+		}
+
+
+		/**
+		 * @param billObj the billObj to set
+		 */
+		public void setBillObj(bill billObj) {
+			this.billObj = billObj;
+		}
+
+
+		/**
+		 * @return the txtclass
+		 */
+		public javax.swing.JComboBox<String> getTxtclass() {
+			return txtclass;
+		}
+
+
+		/**
+		 * @param txtclass the txtclass to set
+		 */
+		public void setTxtclass(javax.swing.JComboBox<String> txtclass) {
+			this.txtclass = txtclass;
+		}
+
+
+		/**
+		 * @return the txtcustid
+		 */
+		public javax.swing.JTextField getTxtcustid() {
+			return txtcustid;
+		}
+
+
+		/**
+		 * @param txtcustid the txtcustid to set
+		 */
+		public void setTxtcustid(javax.swing.JTextField txtcustid) {
+			this.txtcustid = txtcustid;
+		}
+
+
+		/**
+		 * @return the txtseats
+		 */
+		public javax.swing.JSpinner getTxtseats() {
+			return txtseats;
+		}
+
+
+		/**
+		 * @param txtseats the txtseats to set
+		 */
+		public void setTxtseats(javax.swing.JSpinner txtseats) {
+			this.txtseats = txtseats;
+		}
+
+
+		/**
+		 * @return the flightno
+		 */
+		public javax.swing.JLabel getFlightno() {
+			return flightno;
+		}
+
+
+		/**
+		 * @param flightno the flightno to set
+		 */
+		public void setFlightno(javax.swing.JLabel flightno) {
+			this.flightno = flightno;
+		}
+
+
+		/**
+		 * @return the txtticketno
+		 */
+		public javax.swing.JLabel getTxtticketno() {
+			return txtticketno;
+		}
+
+
+		/**
+		 * @param txtticketno the txtticketno to set
+		 */
+		public void setTxtticketno(javax.swing.JLabel txtticketno) {
+			this.txtticketno = txtticketno;
+		}
+
+
+		/**
          * Handle the button click event to go back to the customer domain.
          *
          * @param evt The ActionEvent triggered by the button click.
@@ -1370,31 +1451,7 @@ public class ticket extends javax.swing.JFrame {
         private javax.swing.JLabel txtticketno;
         private String departTime, arrivaltime, sourceCity, departCity, flightname;
         private int price;
-        public javax.swing.JTextField getTxtcustid() {
-			return txtcustid;
-		}
-
-		public void setTxtcustid(javax.swing.JTextField txtcustid) {
-			this.txtcustid = txtcustid;
-		}
-
-		public javax.swing.JLabel getTxtfirstname() {
-			return txtfirstname;
-		}
-
-		public void setTxtfirstname(javax.swing.JLabel txtfirstname) {
-			this.txtfirstname = txtfirstname;
-		}
-
-		public javax.swing.JLabel getTxtlastname() {
-			return txtlastname;
-		}
-
-		public void setTxtlastname(javax.swing.JLabel txtlastname) {
-			this.txtlastname = txtlastname;
-		}
-
-		private bill billObj;
+		private bill billObj = new bill();
         private cusdomain cusDomainObj;
         // End of variables declaration//GEN-END:variables
 
