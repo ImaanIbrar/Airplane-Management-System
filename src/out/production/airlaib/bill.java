@@ -39,7 +39,11 @@ public class bill extends javax.swing.JFrame {
         billprint(id, ticket);
     }
 
-    public Connection con;
+    public bill() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Connection con;
     PreparedStatement pst;
 
     /**
