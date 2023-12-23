@@ -1031,7 +1031,7 @@ public class ticket extends javax.swing.JFrame {
                 txtclass.setEnabled(true);
                 BookBtn.setEnabled(true);
 
-        }// GEN-LAST:event_flightsTableMouseClicked
+        }
 
         /**
 		 * @return the ticketTable
