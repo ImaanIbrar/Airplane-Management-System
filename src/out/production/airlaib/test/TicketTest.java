@@ -117,7 +117,7 @@ public class TicketTest {
         ticket.setDepartTime("MockTime");
         ticket.setArrivaltime("MockTime");
         ticket.setSourceCity("mockCity"); 
-        ticket.setDepartCity("mmockCIty");
+        ticket.setDepartCity("mockCity");
         
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String dateString = "2024-12-13";
@@ -133,24 +133,4 @@ public class TicketTest {
         // Check if the admin domain window is opened
         assertFalse(ticket.getBillObj().isVisible());
     }
-    
-    
-//    @Test
-//    public void testFlightsTableMouseClicked() {
-//        // Arrange
-//        ticket ticket = new ticket(); // Replace YourClass with the actual name of your class
-//
-//        // Act
-//        ticket.flightsTableMouseClicked(null);
-//
-//        // Add more assertions based on the expected behavior
-//        assertEquals("100", ticket.getTxtprice().getText()); // Assuming getTxtprice() is a method in your class
-//        assertEquals(true, ticket.getTxtseats().isEnabled());
-//        assertEquals(true, ticket.getTxtclass().isEnabled());
-//        assertEquals(true, ticket.getBookBtn().isEnabled());
-//    }
-    
-    
-    
-    
 }
