@@ -507,28 +507,93 @@ public class admindomain extends javax.swing.JFrame {
         private searchCustomer searchCustomerObj;
         private ticketreport ticketReportObj;
         private welcome welcomeObj;
-		public void setAddFlightObj(addflight mockAddFlight) {
-			// TODO Auto-generated method stub
-			
-		}
+        /**
+         * Gets the AddFlight object.
+         *
+         * @return The AddFlight object.
+         */
+        public addflight getAddFlightObj() {
+            return addFlightObj;
+        }
 
-		public void setSearchCustomerObj(searchCustomer mockSearchCustomer) {
-			// TODO Auto-generated method stub
-			
-		}
+        /**
+         * Sets the AddFlight object.
+         *
+         * @param setAddFlightObj The AddFlight object to set.
+         */
+        public void setAddFlightObj(addflight setAddFlightObj) {
+            this.addFlightObj = setAddFlightObj;
+        }
 
-		public void setTicketReportObj(ticketreport mockTicketReport) {
-			// TODO Auto-generated method stub
-			
-		}
+        /**
+         * Gets the UserCreation object.
+         *
+         * @return The UserCreation object.
+         */
+        public userCreation getUserCreationObj() {
+            return userCreationObj;
+        }
 
-		public void setWelcomeObj(welcome mockWelcome) {
-			// TODO Auto-generated method stub
-			
-		}
+        /**
+         * Sets the UserCreation object.
+         *
+         * @param setUserCreationObj The UserCreation object to set.
+         */
+        public void setUserCreationObj(userCreation setUserCreationObj) {
+            this.userCreationObj = setUserCreationObj;
+        }
 
-		public void setUserCreationObj(userCreation mockUserCreation) {
-			// TODO Auto-generated method stub
-			
-		}
+        /**
+         * Gets the SearchCustomer object.
+         *
+         * @return The SearchCustomer object.
+         */
+        public searchCustomer getSearchCustomerObj() {
+            return searchCustomerObj;
+        }
+
+        /**
+         * Sets the SearchCustomer object.
+         *
+         * @param setSearchCustomerObj The SearchCustomer object to set.
+         */
+        public void setSearchCustomerObj(searchCustomer setSearchCustomerObj) {
+            this.searchCustomerObj = setSearchCustomerObj;
+        }
+
+        /**
+         * Gets the TicketReport object.
+         *
+         * @return The TicketReport object.
+         */
+        public ticketreport getTicketReportObj() {
+            return ticketReportObj;
+        }
+
+        /**
+         * Sets the TicketReport object.
+         *
+         * @param setTicketReportObj The TicketReport object to set.
+         */
+        public void setTicketReportObj(ticketreport setTicketReportObj) {
+            this.ticketReportObj = setTicketReportObj;
+        }
+
+        /**
+         * Gets the Welcome object.
+         *
+         * @return The Welcome object.
+         */
+        public welcome getWelcomeObj() {
+            return welcomeObj;
+        }
+
+        /**
+         * Sets the Welcome object.
+         *
+         * @param setWelcomeObj The Welcome object to set.
+         */
+        public void setWelcomeObj(welcome setWelcomeObj) {
+            this.welcomeObj = setWelcomeObj;
+        }
 }
