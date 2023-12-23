@@ -6,17 +6,24 @@ import org.junit.Test;
 import out.production.airlaib.ticket;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class TicketTest {
 
@@ -54,7 +61,7 @@ public class TicketTest {
     }
     
     @Test
-    public void testAddSuccessful() throws SQLException, ClassNotFoundException, ParseException {
+    public void testBookSuccessful() throws SQLException, ClassNotFoundException, ParseException {
     	//Arrange 
         ticket ticket = new ticket();
         ticket.setConnection(mockConnection);
@@ -65,9 +72,10 @@ public class TicketTest {
         ticket.getTxtfirstname().setText("Maryam");
         ticket.getTxtlastname().setText("Naeem");
         ticket.getTxtpassport().setText("123456789");
-        ticket.getTxtclass().setToolTipText("Business");
-        ticket.getTxtprice().setText("13500");
+        ticket.getTxtclass().setSelectedItem("Business");
         ticket.getTxtseats().setValue(1);
+        ticket.setPrice(9000);
+        ticket.getTxtprice().setText("13500");
         ticket.setDepartTime("9.00AM");
         ticket.setArrivaltime("10.00AM");
         ticket.setSourceCity("Srilanka"); 
@@ -79,21 +87,70 @@ public class TicketTest {
         // Convert java.util.Date to java.sql.Date
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         ticket.getTxtdate().setDate(sqlDate);
-        System.out.println(sqlDate);
         
-        // Print information for debugging
-        System.out.println("Before calling bookBtnAction - billObj visibility: " + ticket.getBillObj().isVisible());
-      
-     
         // Act
         ticket.bookBtnAction(null);
         
-         // Print information for debugging
-        System.out.println("After calling bookBtnAction - billObj visibility: " + ticket.getBillObj().isVisible());
-
         // Assert
         // Check if the admin domain window is opened
         assertEquals(false, ticket.getBookBtn().isEnabled());
         assertTrue(ticket.getBillObj().isVisible());
     }
+    
+    
+    @Test
+    public void testBookUnSuccessful() throws SQLException, ClassNotFoundException, ParseException {
+    	//Arrange 
+        ticket ticket = new ticket();
+        ticket.setConnection(mockConnection);
+        ticket.getTxtticketno().setText("mockID");
+        ticket.getFlightno().setText("MockFlightId");
+        ticket.setFlightname("MockFlightName");
+        ticket.getTxtcustid().setText("MockCusID");
+        ticket.getTxtfirstname().setText("MockName");
+        ticket.getTxtlastname().setText("MockName");
+        ticket.getTxtpassport().setText("MockID");
+        ticket.getTxtclass().setSelectedItem("MockClass");
+        ticket.getTxtseats().setValue(0);
+        ticket.setPrice(0);
+        ticket.getTxtprice().setText("mockPrice");
+        ticket.setDepartTime("MockTime");
+        ticket.setArrivaltime("MockTime");
+        ticket.setSourceCity("mockCity"); 
+        ticket.setDepartCity("mmockCIty");
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = "2024-12-13";
+        java.util.Date utilDate = dateFormat.parse(dateString);
+        // Convert java.util.Date to java.sql.Date
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        ticket.getTxtdate().setDate(sqlDate);
+        
+        // Act
+        ticket.bookBtnAction(null);
+        
+        // Assert
+        // Check if the admin domain window is opened
+        assertFalse(ticket.getBillObj().isVisible());
+    }
+    
+    
+//    @Test
+//    public void testFlightsTableMouseClicked() {
+//        // Arrange
+//        ticket ticket = new ticket(); // Replace YourClass with the actual name of your class
+//
+//        // Act
+//        ticket.flightsTableMouseClicked(null);
+//
+//        // Add more assertions based on the expected behavior
+//        assertEquals("100", ticket.getTxtprice().getText()); // Assuming getTxtprice() is a method in your class
+//        assertEquals(true, ticket.getTxtseats().isEnabled());
+//        assertEquals(true, ticket.getTxtclass().isEnabled());
+//        assertEquals(true, ticket.getBookBtn().isEnabled());
+//    }
+    
+    
+    
+    
 }

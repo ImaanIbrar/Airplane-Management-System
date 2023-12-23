@@ -836,6 +836,22 @@ public class ticket extends javax.swing.JFrame {
                 }
         }
 		/**
+		 * @return the price
+		 */
+		public int getPrice() {
+			return price;
+		}
+
+
+		/**
+		 * @param price the price to set
+		 */
+		public void setPrice(int price) {
+			this.price = price;
+		}
+
+
+		/**
          * Handle a change in the 'seats' spinner state.
          *
          * @param evt The ChangeEvent triggered by the user's action.
@@ -938,7 +954,7 @@ public class ticket extends javax.swing.JFrame {
                 } catch (SQLException ex) {
                         Logger.getLogger(ticket.class.getName()).log(Level.SEVERE, null, ex);
                 }
-        }// GEN-LAST:event_searchBtnAction
+        }
 
 		/**
          * Handle the button click event to search for available flights based on source
@@ -1018,6 +1034,22 @@ public class ticket extends javax.swing.JFrame {
         }// GEN-LAST:event_flightsTableMouseClicked
 
         /**
+		 * @return the ticketTable
+		 */
+		public javax.swing.JTable getTicketTable() {
+			return ticketTable;
+		}
+
+
+		/**
+		 * @param ticketTable the ticketTable to set
+		 */
+		public void setTicketTable(javax.swing.JTable ticketTable) {
+			this.ticketTable = ticketTable;
+		}
+
+
+		/**
          * Handle the button click event to book a ticket.
          *
          * @param evt The ActionEvent triggered by the button click.
