@@ -515,6 +515,23 @@ public class bill extends javax.swing.JFrame {
      * @throws ClassNotFoundException If the JDBC driver is not found.
      * @throws SQLException         If a database access error occurs.
      */
+    private String fname;
+    private String lname;
+    private String Cnic;
+    private String passport;
+    private String gen;
+    private String flightno;
+    private String flightName;
+    private String departs;
+    private String seatClass;
+    private String bill;
+    private String seatss;
+    private String sources;
+    private String departss;
+    private String cusId;
+    
+    
+    
     public void billprint(String id, String ticket) throws ClassNotFoundException, SQLException {
 
         try {
@@ -528,11 +545,12 @@ public class bill extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Record not Found");
             } else {
 
-                String fname = rs.getString("firstname");
-                String lname = rs.getString("lastname");
-                String Cnic = rs.getString("nic");
-                String passport = rs.getString("passport");
-                String gen = rs.getString("gender");
+                fname = rs.getString("firstname");
+                lname = rs.getString("lastname");
+                Cnic = rs.getString("nic");
+                passport = rs.getString("passport");
+                gen = rs.getString("gender");
+                cusId=rs.getString("id");
 
                 ticketNoLabel.setText(ticket);
                 cusIDLabel.setText(id.trim());
@@ -556,14 +574,14 @@ public class bill extends javax.swing.JFrame {
 
             if (rs1.next() == true) {
 
-                String flightno = rs1.getString("flightid");
-                String flightName = rs1.getString("flightname");
-                String departs = rs1.getString("deptime");
-                String seatClass = rs1.getString("class");
-                String bill = rs1.getString("price");
-                String seats = rs1.getString("seats");
-                String source = rs1.getString("source");
-                String depart = rs1.getString("depart");
+                flightno = rs1.getString("flightid");
+                flightName = rs1.getString("flightname");
+                departs = rs1.getString("deptime");
+                seatClass = rs1.getString("class");
+                bill = rs1.getString("price");
+                seatss = rs1.getString("seats");
+                sources = rs1.getString("source");
+                departss = rs1.getString("depart");
 
                 flightNoText.setText(flightno.trim());
                 flightNameText.setText(flightName.trim());
@@ -605,8 +623,8 @@ public class bill extends javax.swing.JFrame {
     private javax.swing.JLabel depTimeLabel;
     private javax.swing.JLabel classLabel;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel flightNoText;
-    private javax.swing.JLabel flightNameText;
+    javax.swing.JLabel flightNoText;
+     javax.swing.JLabel flightNameText;
     private javax.swing.JLabel depTimeText;
     private javax.swing.JLabel lineLabel2;
     private javax.swing.JLabel classText;
@@ -628,29 +646,146 @@ public class bill extends javax.swing.JFrame {
     private javax.swing.JLabel arrivalLabel;
     private javax.swing.JLabel departureText;
     private javax.swing.JLabel arrivalText;
-    private javax.swing.JLabel fNameTxt;
+    		javax.swing.JLabel fNameTxt;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JLabel lastNameText;
     private javax.swing.JLabel passNoText;
     private javax.swing.JLabel cnicLabel;
     private javax.swing.JPanel backgroundPanel;
     private cusdomain C1;
-    // End of variables declaration//GEN-END:variables
+    /**
+     * Sets the connection for the instance.
+     *
+     * @param mockConnection The mock connection to set.
+     * @throws SQLException If there is an issue with the SQL connection.
+     */
     public void setConnection(Connection mockConnection) throws SQLException {
-		mockConnection = connectionManager.getConnection();	
-	}
-	public Object getFNameTxt() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+        mockConnection = connectionManager.getConnection();
+    }
 
-	public Object getFlightNoText() {
-		// TODO Auto-generated method stub
-		return flightNoText;
-	}
+    /**
+     * Gets the first name of the customer.
+     *
+     * @return The first name of the customer.
+     */
+    public String getFNameTxt() {
+        return fname;
+    }
 
-	public Object getFlightNameText() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    /**
+     * Gets the flight number associated with the ticket.
+     *
+     * @return The flight number.
+     */
+    public String getFlightNoText() {
+        return flightno;
+    }
+
+    /**
+     * Gets the flight name associated with the ticket.
+     *
+     * @return The flight name.
+     */
+    public String getFlightNameText() {
+        return flightName;
+    }
+
+    /**
+     * Gets the last name of the customer.
+     *
+     * @return The last name of the customer.
+     */
+    public String getLastNameText() {
+        return lname;
+    }
+
+    /**
+     * Gets the customer ID label.
+     *
+     * @return The customer ID label.
+     */
+    public String getCusIDLabel() {
+        return cusId;
+    }
+
+    /**
+     * Gets the CNIC (National Identity Card) of the customer.
+     *
+     * @return The CNIC of the customer.
+     */
+    public String getCnic() {
+        return Cnic;
+    }
+
+    /**
+     * Gets the passport number of the customer.
+     *
+     * @return The passport number of the customer.
+     */
+    public String getPassport() {
+        return passport;
+    }
+
+    /**
+     * Gets the gender of the customer.
+     *
+     * @return The gender of the customer.
+     */
+    public String getGen() {
+        return gen;
+    }
+
+    /**
+     * Gets the departure time of the flight.
+     *
+     * @return The departure time of the flight.
+     */
+    public String getDeparts() {
+        return departs;
+    }
+
+    /**
+     * Gets the seat class of the ticket.
+     *
+     * @return The seat class of the ticket.
+     */
+    public String getSeatClass() {
+        return seatClass;
+    }
+
+    /**
+     * Gets the bill amount for the ticket.
+     *
+     * @return The bill amount for the ticket.
+     */
+    public String getBill() {
+        return bill;
+    }
+
+    /**
+     * Gets the number of seats for the ticket.
+     *
+     * @return The number of seats for the ticket.
+     */
+    public String getSeatss() {
+        return seatss;
+    }
+
+    /**
+     * Gets the source location of the flight.
+     *
+     * @return The source location of the flight.
+     */
+    public String getSources() {
+        return sources;
+    }
+
+    /**
+     * Gets the destination location of the flight.
+     *
+     * @return The destination location of the flight.
+     */
+    public String getDepartss() {
+        return departss;
+    }
 }
