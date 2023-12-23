@@ -1,3 +1,13 @@
+/**
+ * This class contains JUnit test cases for the 'ticket' class functionalities.
+ * It utilizes Mockito for mocking database interactions and covers various scenarios.
+ * The test cases include booking tickets, updating destination dropdown, and handling date selection.
+ *
+ * @author Marriam Naeem
+ * @version 1.0
+ * @since 2023-12-23
+ */
+
 package out.production.airlaib.test;
 import org.junit.After;
 import org.junit.Before;
@@ -18,6 +28,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 import javax.swing.JComboBox;
@@ -30,6 +42,11 @@ public class TicketTest {
     private ResultSet mockResultSet;
    
 
+    /**
+     * Set up before each test case.
+     *
+     * @throws SQLException If a SQL-related error occurs.
+     */
     @Before
     public void setUp() throws SQLException {
         // Mock the database connection, statement, and result set
@@ -49,6 +66,11 @@ public class TicketTest {
         
     }
 
+    /**
+     * Tear down after each test case.
+     *
+     * @throws SQLException If a SQL-related error occurs.
+     */
     @After
     public void tearDown() throws SQLException {
         // Close the mock connection after each test
@@ -57,6 +79,13 @@ public class TicketTest {
         }
     }
     
+    /**
+     * Tests the successful booking of a ticket.
+     *
+     * @throws SQLException           If a SQL-related error occurs.
+     * @throws ClassNotFoundException If the required class is not found.
+     * @throws ParseException         If a parsing error occurs.
+     */
     @Test
     public void testBookSuccessful() throws SQLException, ClassNotFoundException, ParseException {
     	//Arrange 
@@ -94,7 +123,13 @@ public class TicketTest {
         assertTrue(ticket.getBillObj().isVisible());
     }
     
-    
+    /**
+     * Tests the unsuccessful booking of a ticket.
+     *
+     * @throws SQLException           If a SQL-related error occurs.
+     * @throws ClassNotFoundException If the required class is not found.
+     * @throws ParseException         If a parsing error occurs.
+     */
     @Test
     public void testBookUnSuccessful() throws SQLException, ClassNotFoundException, ParseException {
     	//Arrange 
@@ -131,6 +166,9 @@ public class TicketTest {
         assertFalse(ticket.getBillObj().isVisible());
     }
     
+    /**
+     * Tests the update of the destination dropdown based on the selected source.
+     */
     @Test
     public void testupdateDestinationDropdown() {
     	ticket ticket = new ticket();
@@ -151,7 +189,13 @@ public class TicketTest {
         assertTrue(itemExistsInComboBox(ticket.getTxtdepart(), "China"));
     }
     
-    // Helper method to check if an item exists in a JComboBox
+    /**
+     * Helper method to check if an item exists in a JComboBox.
+     *
+     * @param comboBox The JComboBox to check.
+     * @param item     The item to search for.
+     * @return True if the item exists, false otherwise.
+     */
     private boolean itemExistsInComboBox(JComboBox<String> comboBox, String item) {
         for (int i = 0; i < comboBox.getItemCount(); i++) {
             if (comboBox.getItemAt(i).equals(item)) {
@@ -162,6 +206,11 @@ public class TicketTest {
     }
     
     
+    /**
+     * Tests the method to disable past dates in the date chooser component.
+     *
+     * @throws ParseException If a parsing error occurs.
+     */
     @Test
     public void testDisablePastDates() throws ParseException {
         
@@ -176,8 +225,23 @@ public class TicketTest {
 
         // Call the method to be tested
         ticket.disablePastDates(ticket.getTxtdate());
+        LocalDate currentDate = LocalDate.now();
+        LocalDate ticketDate = ticket.getTxtdate().getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
         // Verify that the date was reset to the current date
-        assertEquals(new Date(), ticket.getTxtdate().getDate());
+        assertEquals(currentDate, ticketDate);
     }
+    
+    /**
+     * Tests the back button action.
+     */
+    @Test
+    public void testBackBtnAction() {
+        // Action: Call the back button action
+        ticket.backBtnAction(null);
+
+        // After the action, check if the adminDomainObj window is visible
+        assertTrue(ticket.getCusDomainObj().isVisible());
+    }  
+    
 }
