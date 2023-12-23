@@ -21,6 +21,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
@@ -46,13 +48,15 @@ public class addflight extends javax.swing.JFrame {
         // Variables for database connection and prepared statement.
         Connection con;
         PreparedStatement pst;
+        
 
         /**
          * Creates new form addflight
          */
         public addflight() {
+        	    initComponents();
                 getContentPane().setBackground(new Color(162, 201, 201));
-                initComponents();
+                
                 autoID();
                 setExtendedState(JFrame.MAXIMIZED_BOTH);
         }
@@ -66,6 +70,8 @@ public class addflight extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
+        	
+
 
                 panel1 = new javax.swing.JPanel();
                 flightIdLabel = new javax.swing.JLabel();
@@ -481,7 +487,7 @@ public class addflight extends javax.swing.JFrame {
          * @throws SQLException           If a SQL exception occurs while interacting
          *                                with the database.
          */
-        private void AddBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_AddBtnAction
+        public void AddBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_AddBtnAction
 
                 String id = flightIdText.getText();
                 String flightname = flightNameText.getText();
@@ -493,7 +499,7 @@ public class addflight extends javax.swing.JFrame {
                 String arrtime = arrivalTimeText.getText();
                 String flightcharge = flightChargeText.getText();
 
-                int fc = Integer.parseInt(flightcharge);
+               
                 if (flightname.equals("") || departtime.equals("") || arrtime.equals("") || flightcharge.equals("")) {
                         JOptionPane.showMessageDialog(this, "Please enter the missing fields");
                 } else if (departtime.equals(arrtime) || !departtime.matches("^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$")) {
@@ -505,13 +511,15 @@ public class addflight extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "Please enter wisely");
                 } else if (source.equals(depart) || depart.equals(source)) {
                         JOptionPane.showMessageDialog(this, "Source and Arrival cannot be same");
-                } else if (fc < 15000 || fc > 200000) {
-                        JOptionPane.showMessageDialog(this, "Invalid Charges");
+                } else if (flightcharge.isEmpty() || !flightcharge.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(this, "Invalid Flight Charge");
+                    
                 }
-
+ 
                 else {
                         try {
                                 con = connectionManager.getConnection();
+                                int fc = Integer.parseInt(flightcharge);
                                 pst = con.prepareStatement(
                                                 "insert into flight(id,flightname,source,depart,deptime,arrtime,flightcharge)values(?,?,?,?,?,?,?)");
 
@@ -537,7 +545,7 @@ public class addflight extends javax.swing.JFrame {
          * Action performed when the "Back" button is clicked.
          * This method closes the current window and returns to the admin domain window.
          */
-        private void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
+        public void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
                 this.dispose();
                 adminDomainObj = new admindomain();
                 adminDomainObj.setVisible(true);
@@ -558,7 +566,7 @@ public class addflight extends javax.swing.JFrame {
          * @param evt KeyEvent object representing the key release event on the
          *            departure time field.
          */
-        private void txtdtimeKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtdtimeKeyReleased
+        public void txtdtimeKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtdtimeKeyReleased
                 // TODO add your handling code here:
                 String regex = "^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$";
                 Pattern patt = Pattern.compile(regex);
@@ -578,7 +586,7 @@ public class addflight extends javax.swing.JFrame {
          * @param evt KeyEvent object representing the key release event on the arrival
          *            time field.
          */
-        private void txtarrtimeKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtarrtimeKeyReleased
+        public void txtarrtimeKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtarrtimeKeyReleased
                 // TODO add your handling code here:
                 String regex = "^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$";
                 Pattern patt = Pattern.compile(regex);
@@ -602,7 +610,7 @@ public class addflight extends javax.swing.JFrame {
          * @param evt KeyEvent object representing the key release event on the flight
          *            charge field.
          */
-        private void txtflightchargeKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtflightchargeKeyReleased
+        public void txtflightchargeKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtflightchargeKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[0-9]{5,6}$";
                 Pattern patt = Pattern.compile(regex);
@@ -648,4 +656,73 @@ public class addflight extends javax.swing.JFrame {
         private javax.swing.JComboBox<String> sourceText;
         private admindomain adminDomainObj;
         // End of variables declaration//GEN-END:variables
+        
+        public void setConnection(Connection mockConnection) throws SQLException {
+			mockConnection = connectionManager.getConnection();	
+		}
+
+                
+        public admindomain getAdminDomainObj() {
+            return adminDomainObj;
+        }
+
+
+		public Component getAddBtn() {
+			// TODO Auto-generated method stub
+			return AddBtn;
+		}
+		public javax.swing.JTextField getArrivalTimeText() {
+		    return arrivalTimeText;
+		}
+
+		public javax.swing.JComboBox<String> getDepartureText() {
+		    return departuretext;
+		}
+
+		public javax.swing.JTextField getDepartureTimeText() {
+		    return departureTimeText;
+		}
+
+		public javax.swing.JTextField getFlightChargeText() {
+		    return flightChargeText;
+		}
+
+		public javax.swing.JLabel getFlightIdText() {
+		    return flightIdText;
+		}
+
+		public javax.swing.JTextField getFlightNameText() {
+		    return flightNameText;
+		}
+
+		public javax.swing.JComboBox<String> getSourceText() {
+		    return sourceText;
+		}
+
+		public boolean isWindowDisposed() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		public JLabel getWarningDepartureTime() {
+			// TODO Auto-generated method stub
+			return warningDepartureTime;
+		}
+
+		public JLabel getWarningArrivalTime() {
+			// TODO Auto-generated method stub
+			return warningArrivalTime;
+		}
+
+		public JLabel getWarningFlightCharge() {
+			// TODO Auto-generated method stub
+			return warningFlightCharge;
+		}
+
+		
+
+		
+
+		
+		  
 }
