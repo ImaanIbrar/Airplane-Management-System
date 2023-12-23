@@ -376,6 +376,20 @@ public class cusdomain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
+	 * @return the ticketObj
+	 */
+	public ticket getTicketObj() {
+		return ticketObj;
+	}
+
+	/**
+	 * @param ticketObj the ticketObj to set
+	 */
+	public void setTicketObj(ticket ticketObj) {
+		this.ticketObj = ticketObj;
+	}
+
+	/**
      * Event handler for the "Make a Booking" button.
      * Disposes of the current frame and opens a new instance of the ticket class.
      *
@@ -494,38 +508,76 @@ public class cusdomain extends javax.swing.JFrame {
     private viewTicket VT;
     private JLabel portalLabel;
     private JTextArea txtWelcomeAboardJsky;
-	public void setTicket(ticket mockTicket) {
-		// TODO Auto-generated method stub
-		
+
+	
+	/**
+	 * @return the addCustomerObj
+	 */
+	public addCustomer getAddCustomerObj() {
+		return addCustomerObj;
 	}
 
-	public void setAddCustomer(addCustomer mockAddCustomer) {
-		// TODO Auto-generated method stub
-		
+	/**
+	 * @param addCustomerObj the addCustomerObj to set
+	 */
+	public void setAddCustomerObj(addCustomer addCustomerObj) {
+		this.addCustomerObj = addCustomerObj;
 	}
 
-	public void setWelcome(welcome mockWelcome) {
-		// TODO Auto-generated method stub
-		
+	/**
+	 * @return the welcomeObj
+	 */
+	public welcome getWelcomeObj() {
+		return welcomeObj;
 	}
 
-	public void setUpdate(out.production.airlaib.update mockUpdate) {
-		// TODO Auto-generated method stub
-		
+	/**
+	 * @param welcomeObj the welcomeObj to set
+	 */
+	public void setWelcomeObj(welcome welcomeObj) {
+		this.welcomeObj = welcomeObj;
 	}
 
-	public void setCancels(cancels mockCancels) {
-		// TODO Auto-generated method stub
-		
+	/**
+	 * @return the updateObj
+	 */
+	public update getUpdateObj() {
+		return updateObj;
 	}
 
-	public void setVT(viewTicket mockViewTicket) {
-		// TODO Auto-generated method stub
-		
+	/**
+	 * @param updateObj the updateObj to set
+	 */
+	public void setUpdateObj(update updateObj) {
+		this.updateObj = updateObj;
 	}
 
-	public void setViewTicket(viewTicket mockViewTicket) {
-		// TODO Auto-generated method stub
-		
+
+	/**
+	 * @return the vT
+	 */
+	public viewTicket getVT() {
+		return VT;
+	}
+
+	/**
+	 * @param vT the vT to set
+	 */
+	public void setVT(viewTicket vT) {
+		VT = vT;
+	}
+
+	/**
+	 * @return the cancelsObj
+	 */
+	public cancels getCancelsObj() {
+		return cancelsObj;
+	}
+
+	/**
+	 * @param cancelsObj the cancelsObj to set
+	 */
+	public void setCancelsObj(cancels cancelsObj) {
+		this.cancelsObj = cancelsObj;
 	}
 }
