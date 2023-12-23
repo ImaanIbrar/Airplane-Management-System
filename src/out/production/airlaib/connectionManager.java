@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class connectionManager {
 
   /** The URL of the MySQL database. */
-  private static final String URL = "jdbc:mysql://localhost/airline";
+  public static final String URL = "jdbc:mysql://localhost/airline";
 
   /** The username for connecting to the database. */
   private static final String USER = "root";
@@ -47,4 +47,11 @@ public class connectionManager {
       throw new SQLException("Database driver not found", ex);
     }
   }
+
+/**
+ * @return the url
+ */
+public static String getUrl() {
+	return URL;
+}
 }
