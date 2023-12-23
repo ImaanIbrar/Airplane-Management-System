@@ -1,12 +1,14 @@
 package out.production.airlaib.test;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -199,5 +201,43 @@ public class UserCreationTest {
         // After the action, check if the adminDomainObj window is visible
         assertTrue("Admin Domain window should be visible after back button action",
                 userCreationObj.getAdminDomainObj().isVisible());
+    }
+    
+    /**
+     * Tests the key released event for the first name text field.
+     */
+    @Test
+    public void testTxtfirstnameKeyReleased() {
+    	
+    	userCreation userCreationObj = new userCreation();
+        // Set initial values
+    	userCreationObj.getTxtfirstname().setText("Marriam123");
+
+        // Call your method with a mock key event
+        KeyEvent mockKeyEvent = mock(KeyEvent.class);
+        userCreationObj.txtfirstnameKeyReleased(mockKeyEvent);
+
+        // Assert any relevant behavior or state changes
+        assertNotNull(userCreationObj.getWarningFirstName().getText()); 
+                                                                  
+    }
+    
+    /**
+     * Tests the key released event for the last name text field.
+     */
+    @Test
+    public void testTxtLastnameKeyReleased() {
+    	
+    	userCreation userCreationObj = new userCreation();
+        // Set initial values
+    	userCreationObj.getTxtlastname().setText("Naeem123");
+
+        // Call your method with a mock key event
+        KeyEvent mockKeyEvent = mock(KeyEvent.class);
+        userCreationObj.txtlastnameKeyReleased(mockKeyEvent);
+
+        // Assert any relevant behavior or state changes
+        assertNotNull(userCreationObj.getWarningLastName().getText()); 
+                                                                  
     }
 }
