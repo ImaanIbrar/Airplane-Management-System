@@ -1399,7 +1399,7 @@ public class ticket extends javax.swing.JFrame {
          *
          * @param evt The ActionEvent triggered by the button click.
          */
-        private void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
+        public void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
                 // TODO add your handling code here:
 
                 this.dispose();
@@ -1431,7 +1431,35 @@ public class ticket extends javax.swing.JFrame {
                 }
         }
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
+        /**
+		 * @return the cusDomainObj
+		 */
+		public cusdomain getCusDomainObj() {
+			return cusDomainObj;
+		}
+
+		/**
+		 * @return the cancelBtn
+		 */
+		public javax.swing.JButton getCancelBtn() {
+			return CancelBtn;
+		}
+
+		/**
+		 * @param cancelBtn the cancelBtn to set
+		 */
+		public void setCancelBtn(javax.swing.JButton cancelBtn) {
+			CancelBtn = cancelBtn;
+		}
+
+		/**
+		 * @param cusDomainObj the cusDomainObj to set
+		 */
+		public void setCusDomainObj(cusdomain cusDomainObj) {
+			this.cusDomainObj = cusDomainObj;
+		}
+
+		// Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JLabel flightnamelabel;
         private javax.swing.JLabel flightno;
         private javax.swing.JButton BookBtn;
