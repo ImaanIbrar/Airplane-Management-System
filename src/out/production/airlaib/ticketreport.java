@@ -367,7 +367,7 @@ public class ticketreport extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(ticketreport.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return "Successful";
+        return "Unsuccessful";
     }
 
     /**
@@ -376,18 +376,32 @@ public class ticketreport extends javax.swing.JFrame {
      *
      * @param evt ActionEvent triggered by the Back button.
      */
-    private void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
+    public void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
         // TODO add your handling code here:
         this.dispose();
-        adminDomainObj = new admindomain();
-        adminDomainObj.setVisible(true);
+        setAdminDomainObj(new admindomain());
+        getAdminDomainObj().setVisible(true);
     }// GEN-LAST:event_backBtnAction
 
     public void setConnection(Connection mockConnection) throws SQLException {
         mockConnection = connectionManager.getConnection();
     }
 
-    private javax.swing.JLabel ticketReportTitle;
+    /**
+	 * @return the adminDomainObj
+	 */
+	public admindomain getAdminDomainObj() {
+		return adminDomainObj;
+	}
+
+	/**
+	 * @param adminDomainObj the adminDomainObj to set
+	 */
+	public void setAdminDomainObj(admindomain adminDomainObj) {
+		this.adminDomainObj = adminDomainObj;
+	}
+
+	private javax.swing.JLabel ticketReportTitle;
     private javax.swing.JLabel contactUsLabel;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel phoneNumLabel;
@@ -400,6 +414,6 @@ public class ticketreport extends javax.swing.JFrame {
     private javax.swing.JPanel basePanel;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane ticketReportTable;
-    private javax.swing.JTable ticketsTable;
+    public javax.swing.JTable ticketsTable;
     private admindomain adminDomainObj;
 }
