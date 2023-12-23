@@ -789,34 +789,62 @@ public class ticket extends javax.swing.JFrame {
                 pack();
                 txtsource.addActionListener(e -> updateDestinationDropdown());
         }// </editor-fold>//GEN-END:initComponents
-        
-        
-		/**
+
+        /**
+         * @return the txtsource
+         */
+        public javax.swing.JComboBox<String> getTxtsource() {
+                return txtsource;
+        }
+
+        /**
+         * @return the txtdepart
+         */
+        public javax.swing.JComboBox<String> getTxtdepart() {
+                return txtdepart;
+        }
+
+        /**
+         * @param txtdepart the txtdepart to set
+         */
+        public void setTxtdepart(javax.swing.JComboBox<String> txtdepart) {
+                this.txtdepart = txtdepart;
+        }
+
+        /**
+         * @param txtsource the txtsource to set
+         */
+        public void setTxtsource(javax.swing.JComboBox<String> txtsource) {
+                this.txtsource = txtsource;
+        }
+
+        /**
          * Updates the destination dropdown based on the selected source.
-         * It removes the selected source from the destination dropdown and sets the updated
+         * It removes the selected source from the destination dropdown and sets the
+         * updated
          * list of destinations to the destination dropdown.
          */
         public void updateDestinationDropdown() {
-            // Get the selected source from the sourceText dropdown
-            String selectedSource = txtsource.getSelectedItem().toString();
+                // Get the selected source from the sourceText dropdown
+                String selectedSource = txtsource.getSelectedItem().toString();
 
-            // Remove the selected source from the destinationText dropdown
-            DefaultComboBoxModel<String> destinationModel = new DefaultComboBoxModel<>();
-            for (int i = 0; i < txtsource.getItemCount(); i++) {
-                String item = txtsource.getItemAt(i).toString();
+                // Remove the selected source from the destinationText dropdown
+                DefaultComboBoxModel<String> destinationModel = new DefaultComboBoxModel<>();
+                for (int i = 0; i < txtsource.getItemCount(); i++) {
+                        String item = txtsource.getItemAt(i).toString();
 
-                // Add only non-selected sources to the destination dropdown
-                if (!item.equals(selectedSource)) {
-                    destinationModel.addElement(item);
+                        // Add only non-selected sources to the destination dropdown
+                        if (!item.equals(selectedSource)) {
+                                destinationModel.addElement(item);
+                        }
                 }
-            }
 
-            // Set the updated list of destinations to the destination dropdown
-            txtdepart.setModel(destinationModel);
-           
+                // Set the updated list of destinations to the destination dropdown
+                txtdepart.setModel(destinationModel);
+
         }
 
-		/**
+        /**
          * Handle a change in the 'class' combo box selection.
          *
          * @param evt The ActionEvent triggered by the user's action.
@@ -835,7 +863,22 @@ public class ticket extends javax.swing.JFrame {
                         }
                 }
         }
-		/**
+
+        /**
+         * @return the price
+         */
+        public int getPrice() {
+                return price;
+        }
+
+        /**
+         * @param price the price to set
+         */
+        public void setPrice(int price) {
+                this.price = price;
+        }
+
+        /**
          * Handle a change in the 'seats' spinner state.
          *
          * @param evt The ChangeEvent triggered by the user's action.
@@ -856,45 +899,46 @@ public class ticket extends javax.swing.JFrame {
                 }
         }
 
-		/**
+        /**
          * Disables dates earlier than the current date in a JDateChooser component.
          * Displays a dialog box if the user tries to select a past date.
          *
-         * @param dateChooser The JDateChooser component for which to disable past dates.
+         * @param dateChooser The JDateChooser component for which to disable past
+         *                    dates.
          */
         public void disablePastDates(final JDateChooser dateChooser) {
-            // Get the current date
-            Date currentDate = new Date();
+                // Get the current date
+                Date currentDate = new Date();
 
-            // Set the minimum selectable date to the current date
-            dateChooser.setDate(currentDate);
+                // Set the minimum selectable date to the current date
+                dateChooser.setDate(currentDate);
 
-            // Disable the date cells before the current date in the calendar
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(currentDate);
+                // Disable the date cells before the current date in the calendar
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(currentDate);
 
-            // Set the lower bound for the date cells
-            dateChooser.addPropertyChangeListener("date", new PropertyChangeListener() {
-                @Override
-                public void propertyChange(PropertyChangeEvent e) {
-                    if ("date".equals(e.getPropertyName())) {
-                        Date selectedDate = (Date) e.getNewValue();
-                        if (selectedDate != null && selectedDate.before(calendar.getTime())) {
-                            // Display a dialog box notifying the user
-                            JOptionPane.showMessageDialog(
-                                    null,
-                                    "Please select a date equal to or after the current date.",
-                                    "Invalid Date",
-                                    JOptionPane.WARNING_MESSAGE);
+                // Set the lower bound for the date cells
+                dateChooser.addPropertyChangeListener("date", new PropertyChangeListener() {
+                        @Override
+                        public void propertyChange(PropertyChangeEvent e) {
+                                if ("date".equals(e.getPropertyName())) {
+                                        Date selectedDate = (Date) e.getNewValue();
+                                        if (selectedDate != null && selectedDate.before(calendar.getTime())) {
+                                                // Display a dialog box notifying the user
+                                                JOptionPane.showMessageDialog(
+                                                                null,
+                                                                "Please select a date equal to or after the current date.",
+                                                                "Invalid Date",
+                                                                JOptionPane.WARNING_MESSAGE);
 
-                            // Reset the date to the current date
-                            dateChooser.setDate(calendar.getTime());
+                                                // Reset the date to the current date
+                                                dateChooser.setDate(calendar.getTime());
+                                                setTxtdate(dateChooser);
+                                        }
+                                }
                         }
-                    }
-                }
-            });
+                });
         }
-        
 
         /**
          * Handle the button click event to search for a customer by ID.
@@ -938,9 +982,9 @@ public class ticket extends javax.swing.JFrame {
                 } catch (SQLException ex) {
                         Logger.getLogger(ticket.class.getName()).log(Level.SEVERE, null, ex);
                 }
-        }// GEN-LAST:event_searchBtnAction
+        }
 
-		/**
+        /**
          * Handle the button click event to search for available flights based on source
          * and destination.
          *
@@ -993,7 +1037,8 @@ public class ticket extends javax.swing.JFrame {
                 }
 
         }// GEN-LAST:event_checkAvailableFlightBtnAction
-		/**
+
+        /**
          * Handle a mouse click event on the flight selection table.
          *
          * @param evt The MouseEvent triggered by the mouse click.
@@ -1015,7 +1060,21 @@ public class ticket extends javax.swing.JFrame {
                 txtclass.setEnabled(true);
                 BookBtn.setEnabled(true);
 
-        }// GEN-LAST:event_flightsTableMouseClicked
+        }
+
+        /**
+         * @return the ticketTable
+         */
+        public javax.swing.JTable getTicketTable() {
+                return ticketTable;
+        }
+
+        /**
+         * @param ticketTable the ticketTable to set
+         */
+        public void setTicketTable(javax.swing.JTable ticketTable) {
+                this.ticketTable = ticketTable;
+        }
 
         /**
          * Handle the button click event to book a ticket.
@@ -1032,14 +1091,20 @@ public class ticket extends javax.swing.JFrame {
                 String custid = txtcustid.getText();
                 String flightclass = txtclass.getSelectedItem().toString().trim();
                 String seats = txtseats.getValue().toString();
-
                 DateFormat da = new SimpleDateFormat("yyyy-MM-dd");
+                String date = da.format(txtdate.getDate());
+
+                // Add the check for available seats
+                int bookedSeats = getBookedSeatsForFlight(flightid, date);
+                int remainingSeats = 200 - bookedSeats;
 
                 if (seats.equals("") || Integer.parseInt(seats) < 1 || Integer.parseInt(seats) > 9) {
                         JOptionPane.showMessageDialog(this, "Seats must be between 1-9");
+                } else if (Integer.parseInt(seats) > remainingSeats) {
+                        JOptionPane.showMessageDialog(this,
+                                        "Seats are already booked. Only " + remainingSeats + " seats available.");
                 } else {
                         try {
-                                String date = da.format(txtdate.getDate());
 
                                 SimpleDateFormat df = new SimpleDateFormat("yyyy");
                                 String year = df.format(txtdate.getDate());
@@ -1048,7 +1113,8 @@ public class ticket extends javax.swing.JFrame {
                                         JOptionPane.showMessageDialog(this, "Can only book for the current year");
                                 } else {
                                         con = connectionManager.getConnection();
-                                        pst = con.prepareStatement(                                                        "insert into ticket(id,flightid,flightname,custid,firstname,lastname,passport,class,price,seats,date,deptime,arrtime,source,depart)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                                        pst = con.prepareStatement(
+                                                        "insert into ticket(id,flightid,flightname,custid,firstname,lastname,passport,class,price,seats,date,deptime,arrtime,source,depart)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
                                         pst.setString(1, ticketid);
                                         pst.setString(2, flightid);
                                         pst.setString(3, flightname);
@@ -1080,7 +1146,7 @@ public class ticket extends javax.swing.JFrame {
                                         if (con != null) {
                                                 con.close();
                                         }
-                                        if (pst != null) { 
+                                        if (pst != null) {
                                                 pst.close();
                                         }
                                 } catch (SQLException ex) {
@@ -1091,278 +1157,244 @@ public class ticket extends javax.swing.JFrame {
         }// GEN-LAST:event_bookBtnAction
 
         /**
-		 * @return the bookBtn
-		 */
-		public javax.swing.JButton getBookBtn() {
-			return BookBtn;
-		}
-
-
-		/**
-		 * @param bookBtn the bookBtn to set
-		 */
-		public void setBookBtn(javax.swing.JButton bookBtn) {
-			BookBtn = bookBtn;
-		}
-
-
-		/**
-		 * @return the flightname
-		 */
-		public String getFlightname() {
-			return flightname;
-		}
-
-
-		/**
-		 * @return the txtfirstname
-		 */
-		public javax.swing.JLabel getTxtfirstname() {
-			return txtfirstname;
-		}
-
-
-		/**
-		 * @param txtfirstname the txtfirstname to set
-		 */
-		public void setTxtfirstname(javax.swing.JLabel txtfirstname) {
-			this.txtfirstname = txtfirstname;
-		}
-
-
-		/**
-		 * @return the txtlastname
-		 */
-		public javax.swing.JLabel getTxtlastname() {
-			return txtlastname;
-		}
-
-
-		/**
-		 * @param txtlastname the txtlastname to set
-		 */
-		public void setTxtlastname(javax.swing.JLabel txtlastname) {
-			this.txtlastname = txtlastname;
-		}
-
-
-		/**
-		 * @return the txtpassport
-		 */
-		public javax.swing.JLabel getTxtpassport() {
-			return txtpassport;
-		}
-
-
-		/**
-		 * @return the txtprice
-		 */
-		public JLabel getTxtprice() {
-			return txtprice;
-		}
-
-
-		/**
-		 * @return the departTime
-		 */
-		public String getDepartTime() {
-			return departTime;
-		}
-
-
-		/**
-		 * @param departTime the departTime to set
-		 */
-		public void setDepartTime(String departTime) {
-			this.departTime = departTime;
-		}
-
-
-		/**
-		 * @return the arrivaltime
-		 */
-		public String getArrivaltime() {
-			return arrivaltime;
-		}
-
-
-		/**
-		 * @param arrivaltime the arrivaltime to set
-		 */
-		public void setArrivaltime(String arrivaltime) {
-			this.arrivaltime = arrivaltime;
-		}
-
-
-		/**
-		 * @return the sourceCity
-		 */
-		public String getSourceCity() {
-			return sourceCity;
-		}
-
-
-		/**
-		 * @param sourceCity the sourceCity to set
-		 */
-		public void setSourceCity(String sourceCity) {
-			this.sourceCity = sourceCity;
-		}
-
-
-		/**
-		 * @return the departCity
-		 */
-		public String getDepartCity() {
-			return departCity;
-		}
-
-
-		/**
-		 * @param departCity the departCity to set
-		 */
-		public void setDepartCity(String departCity) {
-			this.departCity = departCity;
-		}
-
-
-		/**
-		 * @param txtprice the txtprice to set
-		 */
-		public void setTxtprice(JLabel txtprice) {
-			this.txtprice = txtprice;
-		}
-
-
-		/**
-		 * @param txtpassport the txtpassport to set
-		 */
-		public void setTxtpassport(javax.swing.JLabel txtpassport) {
-			this.txtpassport = txtpassport;
-		}
-
-
-		/**
-		 * @param flightname the flightname to set
-		 */
-		public void setFlightname(String flightname) {
-			this.flightname = flightname;
-		}
-
-
-		/**
-		 * @return the txtdate
-		 */
-		public com.toedter.calendar.JDateChooser getTxtdate() {
-			return txtdate;
-		}
-
-
-		/**
-		 * @param txtdate the txtdate to set
-		 */
-		public void setTxtdate(com.toedter.calendar.JDateChooser txtdate) {
-			this.txtdate = txtdate;
-		}
-
-
-		/**
-		 * @return the billObj
-		 */
-		public bill getBillObj() {
-			return billObj;
-		}
-
-
-		/**
-		 * @param billObj the billObj to set
-		 */
-		public void setBillObj(bill billObj) {
-			this.billObj = billObj;
-		}
-
-
-		/**
-		 * @return the txtclass
-		 */
-		public javax.swing.JComboBox<String> getTxtclass() {
-			return txtclass;
-		}
-
-
-		/**
-		 * @param txtclass the txtclass to set
-		 */
-		public void setTxtclass(javax.swing.JComboBox<String> txtclass) {
-			this.txtclass = txtclass;
-		}
-
-
-		/**
-		 * @return the txtcustid
-		 */
-		public javax.swing.JTextField getTxtcustid() {
-			return txtcustid;
-		}
-
-
-		/**
-		 * @param txtcustid the txtcustid to set
-		 */
-		public void setTxtcustid(javax.swing.JTextField txtcustid) {
-			this.txtcustid = txtcustid;
-		}
-
-
-		/**
-		 * @return the txtseats
-		 */
-		public javax.swing.JSpinner getTxtseats() {
-			return txtseats;
-		}
-
-
-		/**
-		 * @param txtseats the txtseats to set
-		 */
-		public void setTxtseats(javax.swing.JSpinner txtseats) {
-			this.txtseats = txtseats;
-		}
-
-
-		/**
-		 * @return the flightno
-		 */
-		public javax.swing.JLabel getFlightno() {
-			return flightno;
-		}
-
-
-		/**
-		 * @param flightno the flightno to set
-		 */
-		public void setFlightno(javax.swing.JLabel flightno) {
-			this.flightno = flightno;
-		}
-
-
-		/**
-		 * @return the txtticketno
-		 */
-		public javax.swing.JLabel getTxtticketno() {
-			return txtticketno;
-		}
-
-
-		/**
-		 * @param txtticketno the txtticketno to set
-		 */
-		public void setTxtticketno(javax.swing.JLabel txtticketno) {
-			this.txtticketno = txtticketno;
-		}
-
-
-		/**
+         * @return the bookBtn
+         */
+        public javax.swing.JButton getBookBtn() {
+                return BookBtn;
+        }
+
+        /**
+         * @param bookBtn the bookBtn to set
+         */
+        public void setBookBtn(javax.swing.JButton bookBtn) {
+                BookBtn = bookBtn;
+        }
+
+        /**
+         * @return the flightname
+         */
+        public String getFlightname() {
+                return flightname;
+        }
+
+        /**
+         * @return the txtfirstname
+         */
+        public javax.swing.JLabel getTxtfirstname() {
+                return txtfirstname;
+        }
+
+        /**
+         * @param txtfirstname the txtfirstname to set
+         */
+        public void setTxtfirstname(javax.swing.JLabel txtfirstname) {
+                this.txtfirstname = txtfirstname;
+        }
+
+        /**
+         * @return the txtlastname
+         */
+        public javax.swing.JLabel getTxtlastname() {
+                return txtlastname;
+        }
+
+        /**
+         * @param txtlastname the txtlastname to set
+         */
+        public void setTxtlastname(javax.swing.JLabel txtlastname) {
+                this.txtlastname = txtlastname;
+        }
+
+        /**
+         * @return the txtpassport
+         */
+        public javax.swing.JLabel getTxtpassport() {
+                return txtpassport;
+        }
+
+        /**
+         * @return the txtprice
+         */
+        public JLabel getTxtprice() {
+                return txtprice;
+        }
+
+        /**
+         * @return the departTime
+         */
+        public String getDepartTime() {
+                return departTime;
+        }
+
+        /**
+         * @param departTime the departTime to set
+         */
+        public void setDepartTime(String departTime) {
+                this.departTime = departTime;
+        }
+
+        /**
+         * @return the arrivaltime
+         */
+        public String getArrivaltime() {
+                return arrivaltime;
+        }
+
+        /**
+         * @param arrivaltime the arrivaltime to set
+         */
+        public void setArrivaltime(String arrivaltime) {
+                this.arrivaltime = arrivaltime;
+        }
+
+        /**
+         * @return the sourceCity
+         */
+        public String getSourceCity() {
+                return sourceCity;
+        }
+
+        /**
+         * @param sourceCity the sourceCity to set
+         */
+        public void setSourceCity(String sourceCity) {
+                this.sourceCity = sourceCity;
+        }
+
+        /**
+         * @return the departCity
+         */
+        public String getDepartCity() {
+                return departCity;
+        }
+
+        /**
+         * @param departCity the departCity to set
+         */
+        public void setDepartCity(String departCity) {
+                this.departCity = departCity;
+        }
+
+        /**
+         * @param txtprice the txtprice to set
+         */
+        public void setTxtprice(JLabel txtprice) {
+                this.txtprice = txtprice;
+        }
+
+        /**
+         * @param txtpassport the txtpassport to set
+         */
+        public void setTxtpassport(javax.swing.JLabel txtpassport) {
+                this.txtpassport = txtpassport;
+        }
+
+        /**
+         * @param flightname the flightname to set
+         */
+        public void setFlightname(String flightname) {
+                this.flightname = flightname;
+        }
+
+        /**
+         * @return the txtdate
+         */
+        public com.toedter.calendar.JDateChooser getTxtdate() {
+                return txtdate;
+        }
+
+        /**
+         * @param txtdate the txtdate to set
+         */
+        public void setTxtdate(com.toedter.calendar.JDateChooser txtdate) {
+                this.txtdate = txtdate;
+        }
+
+        /**
+         * @return the billObj
+         */
+        public bill getBillObj() {
+                return billObj;
+        }
+
+        /**
+         * @param billObj the billObj to set
+         */
+        public void setBillObj(bill billObj) {
+                this.billObj = billObj;
+        }
+
+        /**
+         * @return the txtclass
+         */
+        public javax.swing.JComboBox<String> getTxtclass() {
+                return txtclass;
+        }
+
+        /**
+         * @param txtclass the txtclass to set
+         */
+        public void setTxtclass(javax.swing.JComboBox<String> txtclass) {
+                this.txtclass = txtclass;
+        }
+
+        /**
+         * @return the txtcustid
+         */
+        public javax.swing.JTextField getTxtcustid() {
+                return txtcustid;
+        }
+
+        /**
+         * @param txtcustid the txtcustid to set
+         */
+        public void setTxtcustid(javax.swing.JTextField txtcustid) {
+                this.txtcustid = txtcustid;
+        }
+
+        /**
+         * @return the txtseats
+         */
+        public javax.swing.JSpinner getTxtseats() {
+                return txtseats;
+        }
+
+        /**
+         * @param txtseats the txtseats to set
+         */
+        public void setTxtseats(javax.swing.JSpinner txtseats) {
+                this.txtseats = txtseats;
+        }
+
+        /**
+         * @return the flightno
+         */
+        public javax.swing.JLabel getFlightno() {
+                return flightno;
+        }
+
+        /**
+         * @param flightno the flightno to set
+         */
+        public void setFlightno(javax.swing.JLabel flightno) {
+                this.flightno = flightno;
+        }
+
+        /**
+         * @return the txtticketno
+         */
+        public javax.swing.JLabel getTxtticketno() {
+                return txtticketno;
+        }
+
+        /**
+         * @param txtticketno the txtticketno to set
+         */
+        public void setTxtticketno(javax.swing.JLabel txtticketno) {
+                this.txtticketno = txtticketno;
+        }
+
+        /**
          * Handle the button click event to go back to the customer domain.
          *
          * @param evt The ActionEvent triggered by the button click.
@@ -1451,12 +1483,54 @@ public class ticket extends javax.swing.JFrame {
         private javax.swing.JLabel txtticketno;
         private String departTime, arrivaltime, sourceCity, departCity, flightname;
         private int price;
-		private bill billObj = new bill();
+        private bill billObj = new bill();
         private cusdomain cusDomainObj;
         // End of variables declaration//GEN-END:variables
 
-		public void setConnection(Connection mockConnection) throws SQLException {
-			mockConnection = connectionManager.getConnection();
-			
-		}
+        public void setConnection(Connection mockConnection) throws SQLException {
+                mockConnection = connectionManager.getConnection();
+
+        }
+
+        /**
+         * Helper method to retrieve the total number of booked seats for a specific
+         * flight on a given date.
+         *
+         * @param flightId The unique identifier of the flight.
+         * @param date     The date for which the booked seats are to be retrieved.
+         * @return The total number of booked seats for the specified flight on the
+         *         given date.
+         */
+        private int getBookedSeatsForFlight(String flightId, String date) {
+                int bookedSeats = 0;
+
+                try {
+                        con = connectionManager.getConnection();
+                        pst = con.prepareStatement(
+                                        "SELECT sum(seats) as totalSeats FROM ticket WHERE flightid = ? and date = ?");
+                        pst.setString(1, flightId);
+                        pst.setString(2, date);
+                        ResultSet rs = pst.executeQuery();
+
+                        if (rs.next()) {
+                                bookedSeats = rs.getInt("totalSeats");
+                        }
+                } catch (SQLException ex) {
+                        Logger.getLogger(ticket.class.getName()).log(Level.SEVERE, null, ex);
+                } finally {
+                        // Close resources
+                        try {
+                                if (con != null) {
+                                        con.close();
+                                }
+                                if (pst != null) {
+                                        pst.close();
+                                }
+                        } catch (SQLException ex) {
+                                ex.printStackTrace();
+                        }
+                }
+
+                return bookedSeats;
+        }
 }

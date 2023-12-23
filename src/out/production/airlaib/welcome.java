@@ -257,8 +257,8 @@ public class welcome extends javax.swing.JFrame {
      */
     private void openAdminDomain(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_openAdminDomain
         super.dispose();
-        L1 = new Login();
-        L1.setVisible(true);
+        loginObj = new Login();
+        loginObj.setVisible(true);
 
     }
 
@@ -270,8 +270,8 @@ public class welcome extends javax.swing.JFrame {
      */
     private void openCustomerDomain(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_openCustomerDomain
         super.dispose();
-        C1 = new cusdomain();
-        C1.setVisible(true);
+        cusDomainObj = new cusdomain();
+        cusDomainObj.setVisible(true);
     }
 
     /**
@@ -338,16 +338,42 @@ public class welcome extends javax.swing.JFrame {
     private javax.swing.JPanel footerPanel;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
-    private cusdomain C1;
-    private Login L1;
+    private cusdomain cusDomainObj;
+    private Login loginObj;
     // End of variables declaration//GEN-END:variables
-	public void setLogin(Login mockLogin) {
-		// TODO Auto-generated method stub
-		
-	}
+    /**
+     * Gets the Login object.
+     *
+     * @return The Login object.
+     */
+    public Login getLogin() {
+        return loginObj;
+    }
 
-	public void setCusdomain(cusdomain mockCusdomain) {
-		// TODO Auto-generated method stub
-		
-	}
+    /**
+     * Sets the Login object.
+     *
+     * @param setLogin The Login object to set.
+     */
+    public void setLogin(Login setLogin) {
+        this.loginObj = setLogin;
+    }
+
+    /**
+     * Gets the Customer Domain object.
+     *
+     * @return The Customer Domain object.
+     */
+    public cusdomain getCusdomain() {
+        return cusDomainObj;
+    }
+
+    /**
+     * Sets the Customer Domain object.
+     *
+     * @param setCusdomain The Customer Domain object to set.
+     */
+    public void setCusdomain(cusdomain setCusdomain) {
+        this.cusDomainObj = setCusdomain;
+    }
 }

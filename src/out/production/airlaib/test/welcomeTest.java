@@ -13,10 +13,15 @@ import out.production.airlaib.welcome;
 
 import javax.swing.*;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
-
+/**
+ * JUnit test class for the {@code welcome} class.
+ * Author: Laiba Atiq
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class welcomeTest {
 
@@ -27,7 +32,9 @@ public class welcomeTest {
     @Mock
     private cusdomain mockCusdomain;
     private welcome welcome;
-
+    /**
+     * Set up the mock frame, login, and cusdomain objects before each test.
+     */
     @Before
     public void setUp() {
         mockFrame = mock(JFrame.class);
@@ -38,12 +45,17 @@ public class welcomeTest {
         welcome.setExtendedState(JFrame.MAXIMIZED_BOTH);
         welcome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
+    /**
+     * Reset the mock objects after each test.
+     */
     @After
     public void tearDown() {
         reset(mockFrame, mockLogin, mockCusdomain);
     }
-
+    /**
+     * Test the {@code adminButtonActionPerformed} method.
+     * Verifies that the frame is disposed, login is set visible, and login is visible.
+     */
     @Test
     public void testAdminButtonActionPerformed() {
         SwingUtilities.invokeLater(() -> {
@@ -56,9 +68,13 @@ public class welcomeTest {
             // Assert
             verify(mockFrame).dispose();
             verify(mockLogin).setVisible(true);
+            assertTrue(welcome.getLogin().isVisible());
         });
     }
-
+    /**
+     * Test the {@code passengerButtonActionPerformed} method.
+     * Verifies that the frame is disposed, cusdomain is set visible, and cusdomain is visible.
+     */
     @Test
     public void testPassengerButtonActionPerformed() {
         SwingUtilities.invokeLater(() -> {
@@ -71,9 +87,13 @@ public class welcomeTest {
             // Assert
             verify(mockFrame).dispose();
             verify(mockCusdomain).setVisible(true);
+            assertTrue(welcome.getCusdomain().isVisible());
         });
     }
-
+    /**
+     * Test the {@code exitButtonActionPerformed} method.
+     * Verifies that the frame is disposed, login and cusdomain are not visible after confirmation.
+     */
     @Test
     public void testExitButtonActionPerformed() {
         SwingUtilities.invokeLater(() -> {
@@ -88,8 +108,9 @@ public class welcomeTest {
 
             // Assert
             verify(mockFrame).dispose();
+            assertFalse(welcome.getLogin().isVisible());
+            assertFalse(welcome.getCusdomain().isVisible());
         });
     }
 
-    // Add more tests for other methods in the Welcome class
 }
