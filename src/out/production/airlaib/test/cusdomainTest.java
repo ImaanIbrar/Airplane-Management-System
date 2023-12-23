@@ -17,6 +17,7 @@ import out.production.airlaib.welcome;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -60,61 +61,68 @@ public class cusdomainTest {
     @Test
     public void testMakeBookingBtnAction() {
         SwingUtilities.invokeLater(() -> {
-            cusdomain.setTicket(mockTicket);
+            cusdomain.setTicketObj(mockTicket);
             cusdomain.makeBookingBtnAction(mock(ActionEvent.class));
             verify(mockFrame).dispose();
             verify(mockTicket).setVisible(true);
+            assertTrue(cusdomain.getTicketObj().isVisible());
         });
     }
 
     @Test
     public void testRegisterBtnAction() {
         SwingUtilities.invokeLater(() -> {
-            cusdomain.setAddCustomer(mockAddCustomer);
+            cusdomain.setAddCustomerObj(mockAddCustomer);
             cusdomain.registerBtnAction(mock(ActionEvent.class));
             verify(mockFrame).dispose();
             verify(mockAddCustomer).setVisible(true);
+            assertTrue(cusdomain.getAddCustomerObj().isVisible());
         });
     }
 
     @Test
     public void testMainMenuBtnAction() {
         SwingUtilities.invokeLater(() -> {
-            cusdomain.setWelcome(mockWelcome);
+            cusdomain.setWelcomeObj(mockWelcome);
             cusdomain.mainMenuBtnAction(mock(ActionEvent.class));
             verify(mockFrame).dispose();
             verify(mockWelcome).setVisible(true);
+            assertTrue(cusdomain.getWelcomeObj().isVisible());
+            
         });
     }
 
     @Test
     public void testUpdateBookingBtnAction() {
         SwingUtilities.invokeLater(() -> {
-            cusdomain.setUpdate(mockUpdate);
+            cusdomain.setUpdateObj(mockUpdate);
             cusdomain.updateBookingBtnAction(mock(ActionEvent.class));
             verify(mockFrame).dispose();
             verify(mockUpdate).setSize(1150, 900);
             verify(mockUpdate).setVisible(true);
+            assertTrue(cusdomain.getUpdateObj().isVisible());
         });
     }
 
     @Test
     public void testCancelBookingBtnAction() {
         SwingUtilities.invokeLater(() -> {
-            cusdomain.setCancels(mockCancels);
+            cusdomain.setCancelsObj(mockCancels);
             cusdomain.cancelBookingBtnAction(mock(ActionEvent.class));
             verify(mockFrame).dispose();
             verify(mockCancels).setVisible(true);
+            assertTrue(cusdomain.getCancelsObj().isVisible());
         });
     }
 
     @Test
     public void testViewTicketBtnAction() {
         SwingUtilities.invokeLater(() -> {
-            cusdomain.setViewTicket(mockViewTicket);
+            cusdomain.setVT(mockViewTicket);
             cusdomain.viewTicketBtnAction(mock(ActionEvent.class));
             verify(mockFrame).dispose();
             verify(mockViewTicket).setVisible(true);
+            assertTrue(cusdomain.getVT().isVisible());
         });
     }
 }
