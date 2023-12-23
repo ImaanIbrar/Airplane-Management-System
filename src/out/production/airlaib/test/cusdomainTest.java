@@ -19,7 +19,10 @@ import java.awt.event.ActionEvent;
 
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
-
+/**
+ * JUnit test class for the {@code cusdomain} class.
+ * Author: Marriam and Laiba
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class cusdomainTest {
 
@@ -38,7 +41,9 @@ public class cusdomainTest {
     @Mock
     private viewTicket mockViewTicket;
     private cusdomain cusdomain;
-
+    /**
+     * Set up the test environment by creating mock objects and initializing the {@code cusdomain} object.
+     */
     @Before
     public void setUp() {
     	  mockFrame = mock(JFrame.class);
@@ -52,12 +57,17 @@ public class cusdomainTest {
         cusdomain.setExtendedState(JFrame.MAXIMIZED_BOTH);
         cusdomain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
+    /**
+     * Reset mock objects after each test to ensure a clean state for subsequent tests.
+     */
     @After
     public void tearDown() {
         reset(mockFrame, mockTicket, mockAddCustomer, mockWelcome, mockUpdate, mockCancels, mockViewTicket);
     }
-
+    /**
+     * Test the {@code makeBookingBtnAction} method.
+     * Verifies that the frame is disposed, the ticket object is set to visible, and the ticket object is visible.
+     */
     @Test
     public void testMakeBookingBtnAction() {
         SwingUtilities.invokeLater(() -> {
@@ -68,7 +78,10 @@ public class cusdomainTest {
             assertTrue(cusdomain.getTicketObj().isVisible());
         });
     }
-
+    /**
+     * Test the {@code registerBtnAction} method.
+     * Verifies that the frame is disposed, the addCustomer object is set to visible, and the addCustomer object is visible.
+     */
     @Test
     public void testRegisterBtnAction() {
         SwingUtilities.invokeLater(() -> {
@@ -79,7 +92,10 @@ public class cusdomainTest {
             assertTrue(cusdomain.getAddCustomerObj().isVisible());
         });
     }
-
+    /**
+     * Test the {@code mainMenuBtnAction} method.
+     * Verifies that the frame is disposed, the welcome object is set to visible, and the welcome object is visible.
+     */
     @Test
     public void testMainMenuBtnAction() {
         SwingUtilities.invokeLater(() -> {
@@ -91,7 +107,10 @@ public class cusdomainTest {
             
         });
     }
-
+    /**
+     * Test the {@code updateBookingBtnAction} method.
+     * Verifies that the frame is disposed, the update object is sized and set to visible, and the update object is visible.
+     */
     @Test
     public void testUpdateBookingBtnAction() {
         SwingUtilities.invokeLater(() -> {
@@ -103,7 +122,10 @@ public class cusdomainTest {
             assertTrue(cusdomain.getUpdateObj().isVisible());
         });
     }
-
+    /**
+     * Test the {@code cancelBookingBtnAction} method.
+     * Verifies that the frame is disposed, the cancels object is set to visible, and the cancels object is visible.
+     */
     @Test
     public void testCancelBookingBtnAction() {
         SwingUtilities.invokeLater(() -> {
@@ -114,7 +136,10 @@ public class cusdomainTest {
             assertTrue(cusdomain.getCancelsObj().isVisible());
         });
     }
-
+    /**
+     * Test the {@code viewTicketBtnAction} method.
+     * Verifies that the frame is disposed, the viewTicket object is set to visible, and the viewTicket object is visible.
+     */
     @Test
     public void testViewTicketBtnAction() {
         SwingUtilities.invokeLater(() -> {
