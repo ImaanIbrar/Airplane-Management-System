@@ -21,12 +21,22 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
+
+/**
+ * JUnit test class for the {@Login} class.
+ * Author: Imaan Ibrar
+ */
 public class LoginTest {
 
     private Connection mockConnection;
     private PreparedStatement mockPreparedStatement;
     private ResultSet mockResultSet;
 
+    /**
+     * Set up the mock database connection, statement, and result set.
+     * 
+     * @throws SQLException If a SQL exception occurs during setup.
+     */ 
     @Before
     public void setUp() throws SQLException {
         // Mock the database connection, statement, and result set
@@ -41,6 +51,11 @@ public class LoginTest {
         when(mockResultSet.next()).thenReturn(true);
     }
 
+    /**
+     * Close the mock connection after each test.
+     * 
+     * @throws SQLException If a SQL exception occurs during teardown.
+     */
     @After
     public void tearDown() throws SQLException {
         // Close the mock connection after each test
@@ -49,9 +64,15 @@ public class LoginTest {
         }
     }
 
+    /**
+     * Test the {@code loginBtnAction} method when a login is successful.
+     * Verifies that the admin domain window is opened.
+     * 
+     * @throws SQLException If a SQL exception occurs during the test.
+     */
     @Test
     public void testLoginSuccessful() throws SQLException {
-    	//Arrange 
+        // Arrange
         Login login = new Login();
         login.con = mockConnection;
         login.getUsernameText().setText("imaan");
@@ -67,6 +88,12 @@ public class LoginTest {
         assertTrue(login.getAdmindomainObj().isVisible());
     }
 
+    /**
+     * Test the {@code loginBtnAction} method when a login is unsuccessful.
+     * Verifies that appropriate error-handling behavior occurs.
+     * 
+     * @throws SQLException If a SQL exception occurs during the test.
+     */
     @Test
     public void testLoginUnsuccessful() throws SQLException {
         // Arrange
@@ -84,6 +111,4 @@ public class LoginTest {
         assertEquals("", login.getPaswordText().getText());
         // Add more assertions based on your specific behavior
     }
-
-    
 }
