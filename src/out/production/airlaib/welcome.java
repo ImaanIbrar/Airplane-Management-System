@@ -1,5 +1,4 @@
 package out.production.airlaib;
-
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
@@ -67,34 +66,36 @@ public class welcome extends javax.swing.JFrame {
 
         javax.swing.GroupLayout gl_headerPanel = new javax.swing.GroupLayout(headerPanel);
         gl_headerPanel.setHorizontalGroup(
-                gl_headerPanel.createParallelGroup(Alignment.TRAILING)
-                        .addGap(0, 1576, Short.MAX_VALUE));
+        	gl_headerPanel.createParallelGroup(Alignment.TRAILING)
+        		.addGap(0, 1576, Short.MAX_VALUE)
+        );
         gl_headerPanel.setVerticalGroup(
-                gl_headerPanel.createParallelGroup(Alignment.LEADING)
-                        .addGap(0, 72, Short.MAX_VALUE));
+        	gl_headerPanel.createParallelGroup(Alignment.LEADING)
+        		.addGap(0, 72, Short.MAX_VALUE)
+        );
         headerPanel.setLayout(gl_headerPanel);
 
         footerPanel.setBackground(new java.awt.Color(0, 102, 102));
 
         jPanel4.setBackground(new java.awt.Color(0, 102, 102));
         worldClassIcon = new javax.swing.JLabel();
-
-        worldClassIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/worldclass.png"))); // NOI18N
-        worldClassIcon.setText("jLabel6");
+        
+                worldClassIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/worldclass.png"))); // NOI18N
+                worldClassIcon.setText("jLabel6");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4Layout.setHorizontalGroup(
-                jPanel4Layout.createParallelGroup(Alignment.TRAILING)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addContainerGap(22, Short.MAX_VALUE)
-                                .addComponent(worldClassIcon, GroupLayout.PREFERRED_SIZE, 308,
-                                        GroupLayout.PREFERRED_SIZE)));
+        	jPanel4Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanel4Layout.createSequentialGroup()
+        			.addContainerGap(22, Short.MAX_VALUE)
+        			.addComponent(worldClassIcon, GroupLayout.PREFERRED_SIZE, 308, GroupLayout.PREFERRED_SIZE))
+        );
         jPanel4Layout.setVerticalGroup(
-                jPanel4Layout.createParallelGroup(Alignment.LEADING)
-                        .addGroup(Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addContainerGap(12, Short.MAX_VALUE)
-                                .addComponent(worldClassIcon, GroupLayout.PREFERRED_SIZE, 99,
-                                        GroupLayout.PREFERRED_SIZE)));
+        	jPanel4Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        			.addContainerGap(12, Short.MAX_VALUE)
+        			.addComponent(worldClassIcon, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE))
+        );
         jPanel4.setLayout(jPanel4Layout);
 
         contactUsLabel.setFont(new Font("Segoe UI", Font.BOLD, 17)); // NOI18N
@@ -113,39 +114,38 @@ public class welcome extends javax.swing.JFrame {
 
         javax.swing.GroupLayout gl_footerPanel = new javax.swing.GroupLayout(footerPanel);
         gl_footerPanel.setHorizontalGroup(
-                gl_footerPanel.createParallelGroup(Alignment.LEADING)
-                        .addGroup(gl_footerPanel.createSequentialGroup()
-                                .addGap(24)
-                                .addGroup(gl_footerPanel.createParallelGroup(Alignment.LEADING)
-                                        .addComponent(phoneNoLabel)
-                                        .addComponent(contactUsLabel, GroupLayout.PREFERRED_SIZE, 172,
-                                                GroupLayout.PREFERRED_SIZE))
-                                .addGap(33)
-                                .addComponent(instaIcon)
-                                .addGap(41)
-                                .addComponent(linkedInIcon, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-                                .addGap(614)
-                                .addComponent(jPanel4, GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
-                                .addGap(38)));
+        	gl_footerPanel.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_footerPanel.createSequentialGroup()
+        			.addGap(24)
+        			.addGroup(gl_footerPanel.createParallelGroup(Alignment.LEADING)
+        				.addComponent(phoneNoLabel)
+        				.addComponent(contactUsLabel, GroupLayout.PREFERRED_SIZE, 172, GroupLayout.PREFERRED_SIZE))
+        			.addGap(33)
+        			.addComponent(instaIcon)
+        			.addGap(41)
+        			.addComponent(linkedInIcon, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+        			.addGap(614)
+        			.addComponent(jPanel4, GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+        			.addGap(38))
+        );
         gl_footerPanel.setVerticalGroup(
-                gl_footerPanel.createParallelGroup(Alignment.LEADING)
-                        .addGroup(gl_footerPanel.createSequentialGroup()
-                                .addGroup(gl_footerPanel.createParallelGroup(Alignment.LEADING)
-                                        .addGroup(gl_footerPanel.createSequentialGroup()
-                                                .addGap(14)
-                                                .addGroup(gl_footerPanel.createParallelGroup(Alignment.LEADING)
-                                                        .addComponent(instaIcon)
-                                                        .addGroup(gl_footerPanel.createSequentialGroup()
-                                                                .addComponent(contactUsLabel)
-                                                                .addPreferredGap(ComponentPlacement.RELATED)
-                                                                .addComponent(phoneNoLabel))
-                                                        .addComponent(linkedInIcon, GroupLayout.PREFERRED_SIZE, 48,
-                                                                GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(gl_footerPanel.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addComponent(jPanel4, GroupLayout.PREFERRED_SIZE,
-                                                        GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(51, Short.MAX_VALUE)));
+        	gl_footerPanel.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_footerPanel.createSequentialGroup()
+        			.addGroup(gl_footerPanel.createParallelGroup(Alignment.LEADING)
+        				.addGroup(gl_footerPanel.createSequentialGroup()
+        					.addGap(14)
+        					.addGroup(gl_footerPanel.createParallelGroup(Alignment.LEADING)
+        						.addComponent(instaIcon)
+        						.addGroup(gl_footerPanel.createSequentialGroup()
+        							.addComponent(contactUsLabel)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(phoneNoLabel))
+        						.addComponent(linkedInIcon, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)))
+        				.addGroup(gl_footerPanel.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(51, Short.MAX_VALUE))
+        );
         footerPanel.setLayout(gl_footerPanel);
 
         homeImage.setIcon(new ImageIcon(welcome.class.getResource("/classes/blur.png")));
@@ -159,7 +159,7 @@ public class welcome extends javax.swing.JFrame {
         adminButton.setText("ADMIN");
         adminButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                openAdminDomain(evt);
             }
         });
 
@@ -169,7 +169,7 @@ public class welcome extends javax.swing.JFrame {
         passengerButton.setText("PASSENGER");
         passengerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                openCustomerDomain(evt);
             }
         });
 
@@ -179,79 +179,70 @@ public class welcome extends javax.swing.JFrame {
         exitButton.setText("EXIT");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                exitWindow(evt);
             }
         });
 
         javax.swing.GroupLayout gl_backgroundPanel = new javax.swing.GroupLayout(backgroundPanel);
         gl_backgroundPanel.setHorizontalGroup(
-                gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-                        .addGroup(gl_backgroundPanel.createSequentialGroup()
-                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
-                                                .addGroup(gl_backgroundPanel
-                                                        .createParallelGroup(Alignment.LEADING, false)
-                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
-                                                                .addGap(298)
-                                                                .addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE,
-                                                                        1, GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
-                                                                .addGap(450)
-                                                                .addComponent(adminButton, GroupLayout.PREFERRED_SIZE,
-                                                                        148, GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(88)
-                                                                .addComponent(passengerButton,
-                                                                        GroupLayout.PREFERRED_SIZE, 149,
-                                                                        GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(92)
-                                                                .addComponent(exitButton, GroupLayout.PREFERRED_SIZE,
-                                                                        142, GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(527))
-                                        .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.TRAILING, false)
-                                                .addComponent(homeImage, 0, 0, Short.MAX_VALUE)
-                                                .addComponent(footerPanel, GroupLayout.DEFAULT_SIZE, 1543,
-                                                        Short.MAX_VALUE))
-                                        .addComponent(headerPanel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 1596,
-                                                Short.MAX_VALUE))
-                                .addContainerGap()));
+        	gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_backgroundPanel.createSequentialGroup()
+        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+        				.addGroup(gl_backgroundPanel.createSequentialGroup()
+        					.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING, false)
+        						.addGroup(gl_backgroundPanel.createSequentialGroup()
+        							.addGap(298)
+        							.addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE))
+        						.addGroup(gl_backgroundPanel.createSequentialGroup()
+        							.addGap(450)
+        							.addComponent(adminButton, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
+        							.addGap(88)
+        							.addComponent(passengerButton, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)
+        							.addGap(92)
+        							.addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 142, GroupLayout.PREFERRED_SIZE)))
+        					.addGap(527))
+        				.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.TRAILING, false)
+        					.addComponent(homeImage, 0, 0, Short.MAX_VALUE)
+        					.addComponent(footerPanel, GroupLayout.DEFAULT_SIZE, 1543, Short.MAX_VALUE))
+        				.addComponent(headerPanel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 1596, Short.MAX_VALUE))
+        			.addContainerGap())
+        );
         gl_backgroundPanel.setVerticalGroup(
-                gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-                        .addGroup(gl_backgroundPanel.createSequentialGroup()
-                                .addComponent(headerPanel, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(ComponentPlacement.RELATED)
-                                .addComponent(homeImage, GroupLayout.PREFERRED_SIZE, 421, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(ComponentPlacement.RELATED)
-                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
-                                                .addGap(9)
-                                                .addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE,
-                                                        GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
-                                                .addGap(67)
-                                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-                                                        .addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 60,
-                                                                GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(passengerButton, GroupLayout.PREFERRED_SIZE, 60,
-                                                                GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(adminButton, GroupLayout.PREFERRED_SIZE, 58,
-                                                                GroupLayout.PREFERRED_SIZE))))
-                                .addGap(66)
-                                .addComponent(footerPanel, GroupLayout.PREFERRED_SIZE, 172, GroupLayout.PREFERRED_SIZE)
-                                .addGap(238)));
+        	gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_backgroundPanel.createSequentialGroup()
+        			.addComponent(headerPanel, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(homeImage, GroupLayout.PREFERRED_SIZE, 421, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+        				.addGroup(gl_backgroundPanel.createSequentialGroup()
+        					.addGap(9)
+        					.addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(gl_backgroundPanel.createSequentialGroup()
+        					.addGap(67)
+        					.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(passengerButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(adminButton, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))))
+        			.addGap(66)
+        			.addComponent(footerPanel, GroupLayout.PREFERRED_SIZE, 172, GroupLayout.PREFERRED_SIZE)
+        			.addGap(238))
+        );
         backgroundPanel.setLayout(gl_backgroundPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
-                layout.createParallelGroup(Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addComponent(backgroundPanel, GroupLayout.PREFERRED_SIZE, 1606,
-                                        GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addComponent(backgroundPanel, GroupLayout.PREFERRED_SIZE, 1606, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(Alignment.LEADING)
-                        .addGroup(Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(backgroundPanel, GroupLayout.DEFAULT_SIZE, 1071, Short.MAX_VALUE)
-                                .addContainerGap()));
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        			.addComponent(backgroundPanel, GroupLayout.DEFAULT_SIZE, 1071, Short.MAX_VALUE)
+        			.addContainerGap())
+        );
         getContentPane().setLayout(layout);
 
         pack();
@@ -264,7 +255,7 @@ public class welcome extends javax.swing.JFrame {
      * 
      * @param evt The action event.
      */
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+    private void openAdminDomain(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_openAdminDomain
         super.dispose();
         L1 = new Login();
         L1.setVisible(true);
@@ -277,7 +268,7 @@ public class welcome extends javax.swing.JFrame {
      * 
      * @param evt The action event.
      */
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
+    private void openCustomerDomain(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_openCustomerDomain
         super.dispose();
         C1 = new cusdomain();
         C1.setVisible(true);
@@ -289,7 +280,7 @@ public class welcome extends javax.swing.JFrame {
      * 
      * @param evt The action event.
      */
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
+    private void exitWindow(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_exitWindow
         super.dispose();
     }
 
@@ -333,9 +324,9 @@ public class welcome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton adminButton;
-    private javax.swing.JButton passengerButton;
-    private javax.swing.JButton exitButton;
+    public javax.swing.JButton adminButton;
+    public javax.swing.JButton passengerButton;
+    public javax.swing.JButton exitButton;
     private javax.swing.JLabel contactUsLabel;
     private javax.swing.JLabel phoneNoLabel;
     private javax.swing.JLabel homeImage;
@@ -350,4 +341,13 @@ public class welcome extends javax.swing.JFrame {
     private cusdomain C1;
     private Login L1;
     // End of variables declaration//GEN-END:variables
+	public void setLogin(Login mockLogin) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setCusdomain(cusdomain mockCusdomain) {
+		// TODO Auto-generated method stub
+		
+	}
 }

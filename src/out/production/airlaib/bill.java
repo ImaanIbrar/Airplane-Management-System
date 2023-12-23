@@ -3,11 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package out.production.airlaib;
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.*;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
@@ -41,7 +39,7 @@ public class bill extends javax.swing.JFrame {
         billprint(id, ticket);
     }
 
-    Connection con;
+    public Connection con;
     PreparedStatement pst;
 
     /**
@@ -513,7 +511,7 @@ public class bill extends javax.swing.JFrame {
      * @throws ClassNotFoundException If the JDBC driver is not found.
      * @throws SQLException         If a database access error occurs.
      */
-    private void billprint(String id, String ticket) throws ClassNotFoundException, SQLException {
+    public void billprint(String id, String ticket) throws ClassNotFoundException, SQLException {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -634,4 +632,21 @@ public class bill extends javax.swing.JFrame {
     private javax.swing.JPanel backgroundPanel;
     private cusdomain C1;
     // End of variables declaration//GEN-END:variables
+    public void setConnection(Connection mockConnection) throws SQLException {
+		mockConnection = connectionManager.getConnection();	
+	}
+	public Object getFNameTxt() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getFlightNoText() {
+		// TODO Auto-generated method stub
+		return flightNoText;
+	}
+
+	public Object getFlightNameText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -423,7 +423,7 @@ public class admindomain extends javax.swing.JFrame {
          * 
          * @params ActionEvent evt - The action event triggered by the button click
          */
-        private void addFlightBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addFlightBtnAction
+        public void addFlightBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addFlightBtnAction
                 // TODO add your handling code here:
                 this.setVisible(false);
                 addFlightObj = new addflight();
@@ -436,7 +436,7 @@ public class admindomain extends javax.swing.JFrame {
          * 
          * @params ActionEvent evt - The action event triggered by the button click
          */
-        private void searchCustomerBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_searchCustomerBtnAction
+        public void searchCustomerBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_searchCustomerBtnAction
                 // TODO add your handling code here:
                 this.setVisible(false);
                 searchCustomerObj = new searchCustomer();
@@ -449,7 +449,7 @@ public class admindomain extends javax.swing.JFrame {
          * 
          * @params ActionEvent evt - The action event triggered by the button click
          */
-        private void generateTicketBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_generateTicketBtnAction
+        public void generateTicketBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_generateTicketBtnAction
                 // TODO add your handling code here:
                 this.setVisible(false);
                 ticketReportObj = new ticketreport();
@@ -462,7 +462,7 @@ public class admindomain extends javax.swing.JFrame {
          * 
          * @params ActionEvent evt - The action event triggered by the button click
          */
-        private void logoutBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_logoutBtnAction
+        public void logoutBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_logoutBtnAction
                 super.dispose();
                 welcomeObj = new welcome();
                 welcomeObj.setVisible(true);
@@ -476,7 +476,7 @@ public class admindomain extends javax.swing.JFrame {
          * 
          * @params ActionEvent evt - The action event triggered by the button click
          */
-        private void createUserBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_createUserBtnAction
+        public void createUserBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_createUserBtnAction
                 super.dispose();
                 userCreationObj = new userCreation();
                 userCreationObj.setVisible(true);
@@ -507,4 +507,28 @@ public class admindomain extends javax.swing.JFrame {
         private searchCustomer searchCustomerObj;
         private ticketreport ticketReportObj;
         private welcome welcomeObj;
+		public void setAddFlightObj(addflight mockAddFlight) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setSearchCustomerObj(searchCustomer mockSearchCustomer) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setTicketReportObj(ticketreport mockTicketReport) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setWelcomeObj(welcome mockWelcome) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setUserCreationObj(userCreation mockUserCreation) {
+			// TODO Auto-generated method stub
+			
+		}
 }
