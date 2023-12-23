@@ -1,4 +1,5 @@
 package out.production.airlaib.test;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
@@ -10,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import org.junit.After;
@@ -20,6 +20,7 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
 import out.production.airlaib.bill;
+
 /**
  * JUnit test class for the {@code bill} class.
  * Author: Laiba Atiq
@@ -29,6 +30,7 @@ public class billTest {
     private Connection mockConnection;
     private PreparedStatement mockPreparedStatement;
     private ResultSet mockResultSet;
+
     /**
      * Set up the mock database connection, statement, and result set.
      * 
@@ -45,6 +47,7 @@ public class billTest {
 
         when(mockResultSet.next()).thenReturn(true);
     }
+
     /**
      * Close the mock connection after each test.
      * 
@@ -56,16 +59,17 @@ public class billTest {
             mockConnection.close();
         }
     }
+
     /**
      * Test the {@code billprint} method when a record is found.
      * Verifies that the expected customer and ticket details are set.
      * 
-     * @throws SQLException If a SQL exception occurs during the test.
+     * @throws SQLException           If a SQL exception occurs during the test.
      * @throws ClassNotFoundException If a class is not found during the test.
      */
     @Test
     public void testBillPrintRecordFound() throws SQLException, ClassNotFoundException {
-    	 // Arrange
+        // Arrange
         bill billInstance = new bill("CS003", "TO002");
         billInstance.setConnection(mockConnection);
 
@@ -95,28 +99,28 @@ public class billTest {
         assertEquals("CS003", billInstance.getCusIDLabel());
         assertEquals("FO008", billInstance.getFlightNoText());
         assertEquals("Melanka", billInstance.getFlightNameText());
-        assertEquals("17801-1234556-9", billInstance.getCnic()); 
-        assertEquals("PK7890987", billInstance.getPassport()); 
-        assertEquals("Male", billInstance.getGen()); 
-        assertEquals("9.00AM", billInstance.getDeparts()); 
+        assertEquals("17801-1234556-9", billInstance.getCnic());
+        assertEquals("PK7890987", billInstance.getPassport());
+        assertEquals("Male", billInstance.getGen());
+        assertEquals("9.00AM", billInstance.getDeparts());
         assertEquals("Business", billInstance.getSeatClass());
-        assertEquals("45000", billInstance.getBill()); 
-        assertEquals("2", billInstance.getSeatss()); 
-        assertEquals("Pakistan", billInstance.getSources()); 
-        assertEquals("Srilanka", billInstance.getDepartss()); 
-        
+        assertEquals("45000", billInstance.getBill());
+        assertEquals("2", billInstance.getSeatss());
+        assertEquals("Pakistan", billInstance.getSources());
+        assertEquals("Srilanka", billInstance.getDepartss());
+
     }
 
     /**
      * Test the {@code billprint} method when a record is not found.
      * Verifies that the expected error message is shown using JOptionPane.
      * 
-     * @throws SQLException If a SQL exception occurs during the test.
+     * @throws SQLException           If a SQL exception occurs during the test.
      * @throws ClassNotFoundException If a class is not found during the test.
      */
     @Test
     public void testBillPrintRecordNotFound() throws SQLException, ClassNotFoundException {
-    	  // Arrange
+        // Arrange
         bill billInstance = new bill("nonexistentID", "nonexistentTicket");
         billInstance.setConnection(mockConnection);
 
