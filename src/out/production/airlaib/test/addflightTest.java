@@ -1,25 +1,20 @@
 package out.production.airlaib.test;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.awt.event.KeyEvent;
 
-
 import out.production.airlaib.addflight;
 
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import java.awt.Color;
-import java.awt.Component;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -58,10 +53,9 @@ public class addflightTest {
         }
     }
 
-
     @Test
     public void testSuccessfulFlightAddition() throws SQLException {
-    	addFlight.setConnection(mockConnection);
+        addFlight.setConnection(mockConnection);
 
         // Set initial values using setText method
         addFlight.getFlightIdText().setText("FO037");
@@ -71,22 +65,21 @@ public class addflightTest {
         addFlight.getDepartureTimeText().setText("12:00");
         addFlight.getArrivalTimeText().setText("14:00");
         addFlight.getFlightChargeText().setText("50000");
-        
 
         // Action
         addFlight.AddBtnAction(null);
 
         // After the action, the button should be disabled
         System.out.println("After Action: Is Button Enabled: " + addFlight.getAddBtn().isEnabled());
-        
+
         // Check the state after the action
         assertFalse("Button should be disabled after action", addFlight.getAddBtn().isEnabled());
     }
 
     @Test
     public void testUnsuccessfulFlightAddition() throws SQLException {
-    	addFlight.setConnection(mockConnection);
-    	 // Set initial values using setText method
+        addFlight.setConnection(mockConnection);
+        // Set initial values using setText method
         addFlight.getFlightIdText().setText("FO038");
         addFlight.getFlightNameText().setText("Test Flight");
         addFlight.getSourceText().setSelectedItem("Pakistan");
@@ -99,15 +92,16 @@ public class addflightTest {
 
         assertTrue(addFlight.getAddBtn().isEnabled());
     }
+
     @Test
     public void testBackBtnAction() {
         // Action: Call the back button action
         addFlight.backBtnAction(null);
 
         // After the action, check if the adminDomainObj window is visible
-        assertTrue("Admin Domain window should be visible after back button action", addFlight.getAdminDomainObj().isVisible());
+        assertTrue("Admin Domain window should be visible after back button action",
+                addFlight.getAdminDomainObj().isVisible());
     }
-
 
     @Test
     public void testTxtdtimeKeyReleased() {
@@ -119,7 +113,8 @@ public class addflightTest {
         addFlight.txtdtimeKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNull(addFlight.getWarningDepartureTime().getText()); // Assuming you have a method to get the warning label
+        assertNull(addFlight.getWarningDepartureTime().getText()); // Assuming you have a method to get the warning
+                                                                   // label
     }
 
     @Test
@@ -132,7 +127,8 @@ public class addflightTest {
         addFlight.txtarrtimeKeyReleased(mockKeyEvent);
 
         // After the action, check the state
-        assertNull("Warning label for arrival time should be null after action", addFlight.getWarningArrivalTime().getText());
+        assertNull("Warning label for arrival time should be null after action",
+                addFlight.getWarningArrivalTime().getText());
     }
 
     @Test
@@ -145,7 +141,8 @@ public class addflightTest {
         addFlight.txtflightchargeKeyReleased(mockKeyEvent);
 
         // After the action, check the state
-        assertNull("Warning label for flight charge should be null after action", addFlight.getWarningFlightCharge().getText());
+        assertNull("Warning label for flight charge should be null after action",
+                addFlight.getWarningFlightCharge().getText());
     }
 
 }
