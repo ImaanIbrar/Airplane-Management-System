@@ -19,10 +19,14 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import com.toedter.calendar.JDateChooser;
+
 import java.util.regex.*;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 
 /*
@@ -722,7 +726,7 @@ public class addCustomer extends javax.swing.JFrame {
          * @param evt the ActionEvent triggered by selecting an image file.
          * @throws IOException if an I/O exception occurs while reading the image file.
          */
-        private void browseBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_browseBtnAction
+        public void browseBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_browseBtnAction
                 // TODO add your handling code here:
 
                 try {
@@ -760,7 +764,7 @@ public class addCustomer extends javax.swing.JFrame {
          * @throws SQLException           if a SQL exception occurs while interacting
          *                                with the database.
          */
-        private void addCustomerBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addCustomerBtnAction
+        public void addCustomerBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addCustomerBtnAction
                 // TODO add your handling code here:
 
                 String id = IdText.getText();
@@ -833,6 +837,7 @@ public class addCustomer extends javax.swing.JFrame {
                                 Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                         }
                 }
+                AddBtn.setEnabled(false);
         }// GEN-LAST:event_addCustomerBtnAction
 
         /**
@@ -841,7 +846,7 @@ public class addCustomer extends javax.swing.JFrame {
          *
          * @param evt the ActionEvent triggered by clicking the "Cancel" button.
          */
-        private void cancelBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cancelBtnAction
+        public void cancelBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cancelBtnAction
                 // TODO add your handling code here:
                 this.dispose();
                 cusDomainObj = new cusdomain();
@@ -854,7 +859,7 @@ public class addCustomer extends javax.swing.JFrame {
          * 
          * @param evt The key release event.
          */
-        private void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
+        public void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[A-Za-z]{3,29}$";
                 Pattern patt = Pattern.compile(regex);
@@ -872,7 +877,7 @@ public class addCustomer extends javax.swing.JFrame {
          * 
          * @param evt The key release event.
          */
-        private void txtLastNameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtLastNameKeyReleased
+        public void txtLastNameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtLastNameKeyReleased
                 // TODO add your handling code here
                 String regex = "^[A-Za-z]{3,29}$";
                 Pattern patt = Pattern.compile(regex);
@@ -891,7 +896,7 @@ public class addCustomer extends javax.swing.JFrame {
          * @param evt The key release event.
          */
 
-        private void txtpassportKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtpassportKeyReleased
+        public void txtpassportKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtpassportKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[A-Za-z0-9]{9}$";
                 Pattern patt = Pattern.compile(regex);
@@ -920,7 +925,7 @@ public class addCustomer extends javax.swing.JFrame {
          * @param evt The key release event.
          */
 
-        private void txtCnicKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtCnicKeyReleased
+        public void txtCnicKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtCnicKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[0-9]{5}-[0-9]{7}-[0-9]$";
                 Pattern patt = Pattern.compile(regex);
@@ -948,7 +953,7 @@ public class addCustomer extends javax.swing.JFrame {
          * 
          * @param evt The key release event.
          */
-        private void txtcontactKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtcontactKeyReleased
+        public void txtcontactKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtcontactKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[0-9]{4}-[0-9]{7}$";
                 Pattern patt = Pattern.compile(regex);
@@ -1019,4 +1024,119 @@ public class addCustomer extends javax.swing.JFrame {
         private javax.swing.JLabel photoLabel;
         private javax.swing.ButtonGroup buttonGrp;
         private cusdomain cusDomainObj;
+        
+     // Set the connection for the class
+        // @param mockConnection The mock connection to set
+        // @throws SQLException If there is an issue with the connection
+        public void setConnection(Connection mockConnection) throws SQLException {
+            mockConnection = connectionManager.getConnection();	
+        }
+        
+        // Get the customer domain object
+        // @return The customer domain object
+        public cusdomain getCusDomainObj() {
+            return cusDomainObj;
+        }
+
+        // Get the male radio button
+        // @return The male radio button
+        public JRadioButton getMaleRadioBtn() {
+            return maleRadioBtn;
+        }
+
+        // Get the ID label
+        // @return The ID label
+        public javax.swing.JLabel getIdText() {
+            return IdText;
+        }
+        
+        // Get the date of birth text field
+        // @return The date of birth text field
+        public JDateChooser getDateOfBirthText() {
+            return dateOfBirthText;
+        }
+
+        // Get the first name text field
+        // @return The first name text field
+        public javax.swing.JTextField getFirstNameText() {
+            return firstNameText;
+        }
+
+        // Get the last name text field
+        // @return The last name text field
+        public javax.swing.JTextField getLastNameText() {
+            return lastNameText;
+        }
+
+        // Get the CNIC text field
+        // @return The CNIC text field
+        public javax.swing.JTextField getCnicText() {
+            return cnicText;
+        }
+
+        // Get the passport text field
+        // @return The passport text field
+        public javax.swing.JTextField getPassportText() {
+            return passportText;
+        }
+
+        // Get the address text area
+        // @return The address text area
+        public javax.swing.JTextArea getAddressText() {
+            return addressText;
+        }
+
+        // Get the contact text field
+        // @return The contact text field
+        public javax.swing.JTextField getContactText() {
+            return contactText;
+        }
+
+        // Check if the window is disposed
+        // @return true if the window is disposed, false otherwise
+        public boolean isWindowDisposed() {
+            return false;
+        }
+
+        // Get the warning label for the first name
+        // @return The warning label for the first name
+        public JLabel getWarningFirstName() {
+            return warningFirstName;
+        }
+
+        // Get the warning label for the last name
+        // @return The warning label for the last name
+        public JLabel getWarningLastName() {
+            return warningLastName;
+        }
+
+        // Get the warning label for the passport ID
+        // @return The warning label for the passport ID
+        public JLabel getWarningPassportId() {
+            return warningPassportId;
+        }
+
+        // Get the warning label for the contact
+        // @return The warning label for the contact
+        public JLabel getWarningContact() {
+            return warningContact;
+        }
+
+        // Get the warning label for the CNIC
+        // @return The warning label for the CNIC
+        public JLabel getWarningCNIC() {
+            return warningCNIC;
+        }
+
+        // Get the add button component
+        // @return The add button component
+        public Component getAddBtn() {
+            return AddBtn;
+        }
+
+        // Get the user image object
+        // @return The user image object
+        public Object getUserImage() {
+            return photoLabel;
+        }
 }
