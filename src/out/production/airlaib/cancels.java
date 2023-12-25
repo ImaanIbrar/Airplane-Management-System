@@ -198,60 +198,43 @@ public class cancels extends javax.swing.JFrame {
 
                 javax.swing.GroupLayout groupLayoutPanel1 = new javax.swing.GroupLayout(panel1);
                 groupLayoutPanel1.setHorizontalGroup(
-                                groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                                                .addComponent(panel2, GroupLayout.PREFERRED_SIZE, 686, Short.MAX_VALUE)
-                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
-                                                                .addGap(210)
-                                                                .addComponent(successfulMessaage,
-                                                                                GroupLayout.PREFERRED_SIZE, 400,
-                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                .addContainerGap(924, Short.MAX_VALUE))
-                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
-                                                                .addGap(519)
-                                                                .addComponent(instructionLabel,
-                                                                                GroupLayout.PREFERRED_SIZE, 222,
-                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18)
-                                                                .addComponent(idTextField, GroupLayout.PREFERRED_SIZE,
-                                                                                132, GroupLayout.PREFERRED_SIZE)
-                                                                .addContainerGap(643, Short.MAX_VALUE))
-                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
-                                                                .addGap(53)
-                                                                .addComponent(backBtn, GroupLayout.PREFERRED_SIZE, 142,
-                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                .addContainerGap(1339, Short.MAX_VALUE))
-                                                .addGroup(Alignment.TRAILING, groupLayoutPanel1.createSequentialGroup()
-                                                                .addContainerGap(831, Short.MAX_VALUE)
-                                                                .addComponent(proceedBtn, GroupLayout.PREFERRED_SIZE,
-                                                                                142, GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(561))
-                                                .addComponent(panel3, GroupLayout.DEFAULT_SIZE, 1540, Short.MAX_VALUE));
+                	groupLayoutPanel1.createParallelGroup(Alignment.TRAILING)
+                		.addComponent(panel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                		.addGroup(groupLayoutPanel1.createSequentialGroup()
+                			.addGap(210)
+                			.addComponent(successfulMessaage, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
+                			.addContainerGap(930, Short.MAX_VALUE))
+                		.addGroup(groupLayoutPanel1.createSequentialGroup()
+                			.addGap(519)
+                			.addComponent(instructionLabel, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE)
+                			.addGap(18)
+                			.addComponent(idTextField, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
+                			.addContainerGap(649, Short.MAX_VALUE))
+                		.addComponent(panel3, GroupLayout.DEFAULT_SIZE, 1540, Short.MAX_VALUE)
+                		.addGroup(Alignment.LEADING, groupLayoutPanel1.createSequentialGroup()
+                			.addGap(487)
+                			.addComponent(proceedBtn, GroupLayout.PREFERRED_SIZE, 142, GroupLayout.PREFERRED_SIZE)
+                			.addGap(189)
+                			.addComponent(backBtn, GroupLayout.PREFERRED_SIZE, 142, GroupLayout.PREFERRED_SIZE)
+                			.addContainerGap(580, Short.MAX_VALUE))
+                );
                 groupLayoutPanel1.setVerticalGroup(
-                                groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
-                                                                .addComponent(panel2, GroupLayout.PREFERRED_SIZE,
-                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(44)
-                                                                .addComponent(backBtn, GroupLayout.PREFERRED_SIZE, 40,
-                                                                                GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(92)
-                                                                .addGroup(groupLayoutPanel1
-                                                                                .createParallelGroup(Alignment.BASELINE)
-                                                                                .addComponent(instructionLabel)
-                                                                                .addComponent(idTextField,
-                                                                                                GroupLayout.PREFERRED_SIZE,
-                                                                                                GroupLayout.DEFAULT_SIZE,
-                                                                                                GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(41)
-                                                                .addComponent(proceedBtn, GroupLayout.PREFERRED_SIZE,
-                                                                                40, GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(79)
-                                                                .addComponent(successfulMessaage)
-                                                                .addPreferredGap(ComponentPlacement.RELATED, 225,
-                                                                                Short.MAX_VALUE)
-                                                                .addComponent(panel3, GroupLayout.PREFERRED_SIZE, 103,
-                                                                                GroupLayout.PREFERRED_SIZE)));
+                	groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                		.addGroup(groupLayoutPanel1.createSequentialGroup()
+                			.addComponent(panel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                			.addGap(176)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                				.addComponent(instructionLabel)
+                				.addComponent(idTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                			.addGap(48)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                				.addComponent(proceedBtn, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                				.addComponent(backBtn, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
+                			.addGap(64)
+                			.addComponent(successfulMessaage)
+                			.addPreferredGap(ComponentPlacement.RELATED, 279, Short.MAX_VALUE)
+                			.addComponent(panel3, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE))
+                );
                 panel1.setLayout(groupLayoutPanel1);
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -202,86 +202,45 @@ public class ticket extends javax.swing.JFrame {
                 dateLabel.setText("Date");
 
                 javax.swing.GroupLayout groupLayoutPanel1 = new javax.swing.GroupLayout(panel1);
-                panel1.setLayout(groupLayoutPanel1);
                 groupLayoutPanel1.setHorizontalGroup(
-                                groupLayoutPanel1.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addGroup(groupLayoutPanel1.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addComponent(departureLabel)
-                                                                                .addComponent(sourceLabel)
-                                                                                .addGroup(groupLayoutPanel1
-                                                                                                .createSequentialGroup()
-                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                                                false)
-                                                                                                                .addComponent(txtsource,
-                                                                                                                                0,
-                                                                                                                                173,
-                                                                                                                                Short.MAX_VALUE)
-                                                                                                                .addComponent(txtdepart,
-                                                                                                                                0,
-                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                Short.MAX_VALUE))
-                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                .createSequentialGroup()
-                                                                                                                                .addGap(43, 43, 43)
-                                                                                                                                .addComponent(seachBtn))
-                                                                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                                                                                groupLayoutPanel1
-                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                .addPreferredGap(
-                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                                                                                                58,
-                                                                                                                                                                Short.MAX_VALUE)
-                                                                                                                                                .addGroup(groupLayoutPanel1
-                                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                                                .addComponent(dateLabel)
-                                                                                                                                                                .addComponent(txtdate,
-                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                146,
-                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                                                                .addContainerGap(241, Short.MAX_VALUE)));
+                	groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                		.addGroup(groupLayoutPanel1.createSequentialGroup()
+                			.addContainerGap()
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                				.addComponent(departureLabel)
+                				.addComponent(sourceLabel)
+                				.addGroup(groupLayoutPanel1.createSequentialGroup()
+                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING, false)
+                						.addComponent(txtsource, 0, 173, Short.MAX_VALUE)
+                						.addComponent(txtdepart, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                					.addPreferredGap(ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.TRAILING)
+                						.addComponent(seachBtn)
+                						.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                							.addComponent(dateLabel)
+                							.addComponent(txtdate, GroupLayout.PREFERRED_SIZE, 190, GroupLayout.PREFERRED_SIZE)))))
+                			.addContainerGap(241, Short.MAX_VALUE))
+                );
                 groupLayoutPanel1.setVerticalGroup(
-                                groupLayoutPanel1.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
-                                                                .addGap(38, 38, 38)
-                                                                .addGroup(groupLayoutPanel1.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                .addComponent(sourceLabel)
-                                                                                .addComponent(dateLabel))
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addGroup(groupLayoutPanel1.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                .addComponent(txtsource,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(txtdate,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(21, 21, 21)
-                                                                .addComponent(departureLabel)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)
-                                                                .addGroup(groupLayoutPanel1.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(txtdepart,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(seachBtn))
-                                                                .addGap(40, 40, 40)));
+                	groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                		.addGroup(groupLayoutPanel1.createSequentialGroup()
+                			.addGap(38)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.TRAILING)
+                				.addComponent(sourceLabel)
+                				.addComponent(dateLabel))
+                			.addPreferredGap(ComponentPlacement.UNRELATED)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.TRAILING)
+                				.addComponent(txtsource, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                				.addComponent(txtdate, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                			.addGap(21)
+                			.addComponent(departureLabel)
+                			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
+                				.addComponent(txtdepart, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                				.addComponent(seachBtn))
+                			.addGap(40))
+                );
+                panel1.setLayout(groupLayoutPanel1);
 
                 panel3.setBackground(new java.awt.Color(151, 190, 190));
 

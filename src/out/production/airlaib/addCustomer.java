@@ -765,8 +765,6 @@ public class addCustomer extends javax.swing.JFrame {
          *                                with the database.
          */
         public void addCustomerBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addCustomerBtnAction
-                // TODO add your handling code here:
-
                 String id = IdText.getText();
                 String firstname = firstNameText.getText();
                 String lastname = lastNameText.getText();
@@ -812,8 +810,8 @@ public class addCustomer extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Please upload your photo ");
                 }else {
                         try {
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                con = DriverManager.getConnection("jdbc:mysql://localhost/airline", "root", "1234");
+                               
+                                con =connectionManager.getConnection();
                                 pst = con.prepareStatement(
                                                 "insert into customer(id,firstname,lastname,nic,passport,address,dob,gender,contact,photo)values(?,?,?,?,?,?,?,?,?,?)");
 
@@ -831,13 +829,10 @@ public class addCustomer extends javax.swing.JFrame {
 
                                 JOptionPane.showMessageDialog(null, "Registration Created");
                                 AddBtn.setEnabled(false);
-                        } catch (ClassNotFoundException ex) {
-                                Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                         } catch (SQLException ex) {
                                 Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                         }
                 }
-                AddBtn.setEnabled(false);
         }// GEN-LAST:event_addCustomerBtnAction
 
         /**
