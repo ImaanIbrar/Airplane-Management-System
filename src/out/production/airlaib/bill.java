@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package out.production.airlaib;
 
 import javax.swing.*;
@@ -14,7 +10,8 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 /**
- * The `bill` class represents the GUI for generating a bill for a customer's ticket.
+ * The `bill` class represents the GUI for generating a bill for a customer's
+ * ticket.
  * It displays customer information and ticket details.
  *
  * @author Laiba Atiq
@@ -29,9 +26,9 @@ public class bill extends javax.swing.JFrame {
     /**
      * Creates a new instance of the `bill` class.
      *
-     * @param id      The customer ID.
-     * @param ticket  The ticket ID.
-     * @throws SQLException         If a database access error occurs.
+     * @param id     The customer ID.
+     * @param ticket The ticket ID.
+     * @throws SQLException           If a database access error occurs.
      * @throws ClassNotFoundException If the JDBC driver is not found.
      */
     public bill(String id, String ticket) throws SQLException, ClassNotFoundException {
@@ -40,10 +37,10 @@ public class bill extends javax.swing.JFrame {
     }
 
     public bill() {
-		// TODO Auto-generated constructor stub
-	}
+        // TODO Auto-generated constructor stub
+    }
 
-	public Connection con;
+    public Connection con;
     PreparedStatement pst;
 
     /**
@@ -263,218 +260,362 @@ public class bill extends javax.swing.JFrame {
 
         javax.swing.GroupLayout gl_backgroundPanel = new javax.swing.GroupLayout(backgroundPanel);
         gl_backgroundPanel.setHorizontalGroup(
-        	gl_backgroundPanel.createParallelGroup(Alignment.TRAILING)
-        		.addGroup(gl_backgroundPanel.createSequentialGroup()
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        				.addGroup(gl_backgroundPanel.createSequentialGroup()
-        					.addGap(20)
-        					.addComponent(ticketLabel)
-        					.addGap(18)
-        					.addComponent(ticketNoLabel, GroupLayout.PREFERRED_SIZE, 192, GroupLayout.PREFERRED_SIZE)
-        					.addGap(18)
-        					.addComponent(jSkyIcon))
-        				.addGroup(gl_backgroundPanel.createSequentialGroup()
-        					.addGap(24)
-        					.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addComponent(flightNoLabel, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
-        							.addPreferredGap(ComponentPlacement.RELATED)
-        							.addComponent(flightNoText, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE))
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING, false)
-        								.addComponent(flightNameLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addComponent(departureLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        							.addPreferredGap(ComponentPlacement.UNRELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        							.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        								.addComponent(flightNameText, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)
-        								.addComponent(departureText))))
-        					.addGap(59)
-        					.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addComponent(depTimeLabel)
-        							.addGap(34)
-        							.addComponent(depTimeText, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE))
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.TRAILING, false)
-        								.addComponent(arrivalLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addComponent(classLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        							.addPreferredGap(ComponentPlacement.UNRELATED)
-        							.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        								.addGroup(gl_backgroundPanel.createSequentialGroup()
-        									.addGap(6)
-        									.addComponent(arrivalText, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE))
-        								.addComponent(classText, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE)))))
-        				.addGroup(gl_backgroundPanel.createSequentialGroup()
-        					.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING, false)
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addContainerGap()
-        							.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.TRAILING, false)
-        								.addComponent(lineLabel1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addComponent(lineLabel3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        								.addComponent(lineLabel2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addGap(19)
-        							.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        								.addGroup(gl_backgroundPanel.createSequentialGroup()
-        									.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        										.addGroup(gl_backgroundPanel.createSequentialGroup()
-        											.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        												.addComponent(fNameLabel, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
-        												.addComponent(lastNameLabel, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE))
-        											.addPreferredGap(ComponentPlacement.UNRELATED)
-        											.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        												.addComponent(fNameTxt, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE)
-        												.addComponent(lastNameText, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE)))
-        										.addGroup(gl_backgroundPanel.createSequentialGroup()
-        											.addComponent(customerIdLabel)
-        											.addGap(18)
-        											.addComponent(cusIDLabel, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)))
-        									.addGap(4)
-        									.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        										.addGroup(gl_backgroundPanel.createSequentialGroup()
-        											.addComponent(cnicLabel)
-        											.addGap(18)
-        											.addComponent(cnicText, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE))
-        										.addGroup(gl_backgroundPanel.createSequentialGroup()
-        											.addGap(2)
-        											.addComponent(genderLabel, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
-        											.addPreferredGap(ComponentPlacement.RELATED)
-        											.addComponent(genText, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE))
-        										.addGroup(gl_backgroundPanel.createSequentialGroup()
-        											.addComponent(passportNoLabel)
-        											.addPreferredGap(ComponentPlacement.RELATED)
-        											.addComponent(passNoText, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE))))
-        								.addComponent(personalDetailsLabel)))
-        						.addComponent(lineLabel4)
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addContainerGap()
-        							.addComponent(lineLabel5))
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addGap(19)
-        							.addComponent(jLabel20, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE))
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addContainerGap()
-        							.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        								.addGroup(gl_backgroundPanel.createSequentialGroup()
-        									.addComponent(cocacolaLabel, GroupLayout.PREFERRED_SIZE, 221, GroupLayout.PREFERRED_SIZE)
-        									.addGap(47)
-        									.addComponent(sonyLabel, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-        									.addGap(63)
-        									.addComponent(laysLabel, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))
-        								.addGroup(gl_backgroundPanel.createSequentialGroup()
-        									.addComponent(generatedTimeLabel, GroupLayout.PREFERRED_SIZE, 142, GroupLayout.PREFERRED_SIZE)
-        									.addPreferredGap(ComponentPlacement.UNRELATED)
-        									.addComponent(generatedTimeText, GroupLayout.PREFERRED_SIZE, 162, GroupLayout.PREFERRED_SIZE)
-        									.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        									.addComponent(exitButton, GroupLayout.PREFERRED_SIZE, 175, GroupLayout.PREFERRED_SIZE)
-        									.addGap(22))))
-        						.addComponent(lineLabel7)
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addContainerGap()
-        							.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        								.addComponent(lineLabel6)
-        								.addComponent(costLabel, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)))
-        						.addGroup(gl_backgroundPanel.createSequentialGroup()
-        							.addContainerGap()
-        							.addComponent(seatsLabel, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-        							.addGap(18)
-        							.addComponent(seatsText)
-        							.addGap(166)
-        							.addComponent(billLabel)
-        							.addGap(18)
-        							.addComponent(billText, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)))
-        					.addGap(0, 28, Short.MAX_VALUE)))
-        			.addContainerGap())
-        );
+                gl_backgroundPanel.createParallelGroup(Alignment.TRAILING)
+                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                .addGap(20)
+                                                .addComponent(ticketLabel)
+                                                .addGap(18)
+                                                .addComponent(ticketNoLabel, GroupLayout.PREFERRED_SIZE, 192,
+                                                        GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18)
+                                                .addComponent(jSkyIcon))
+                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                .addGap(24)
+                                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addComponent(flightNoLabel, GroupLayout.PREFERRED_SIZE,
+                                                                        112, GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(ComponentPlacement.RELATED)
+                                                                .addComponent(flightNoText, GroupLayout.PREFERRED_SIZE,
+                                                                        119, GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addGroup(gl_backgroundPanel
+                                                                        .createParallelGroup(Alignment.LEADING, false)
+                                                                        .addComponent(flightNameLabel,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                        .addComponent(departureLabel,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE))
+                                                                .addPreferredGap(ComponentPlacement.UNRELATED,
+                                                                        GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addGroup(gl_backgroundPanel
+                                                                        .createParallelGroup(Alignment.LEADING)
+                                                                        .addComponent(flightNameText,
+                                                                                GroupLayout.PREFERRED_SIZE, 116,
+                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(departureText))))
+                                                .addGap(59)
+                                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addComponent(depTimeLabel)
+                                                                .addGap(34)
+                                                                .addComponent(depTimeText, GroupLayout.PREFERRED_SIZE,
+                                                                        110, GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addGroup(gl_backgroundPanel
+                                                                        .createParallelGroup(Alignment.TRAILING, false)
+                                                                        .addComponent(arrivalLabel,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                        .addComponent(classLabel,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE))
+                                                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                                                .addGroup(gl_backgroundPanel
+                                                                        .createParallelGroup(Alignment.LEADING)
+                                                                        .addGroup(gl_backgroundPanel
+                                                                                .createSequentialGroup()
+                                                                                .addGap(6)
+                                                                                .addComponent(arrivalText,
+                                                                                        GroupLayout.PREFERRED_SIZE, 78,
+                                                                                        GroupLayout.PREFERRED_SIZE))
+                                                                        .addComponent(classText,
+                                                                                GroupLayout.PREFERRED_SIZE, 121,
+                                                                                GroupLayout.PREFERRED_SIZE)))))
+                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                .addGroup(gl_backgroundPanel
+                                                        .createParallelGroup(Alignment.LEADING, false)
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addGroup(gl_backgroundPanel
+                                                                        .createParallelGroup(Alignment.TRAILING, false)
+                                                                        .addComponent(lineLabel1, Alignment.LEADING,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                        .addComponent(lineLabel3, Alignment.LEADING,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                        .addComponent(lineLabel2, Alignment.LEADING,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)))
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addGap(19)
+                                                                .addGroup(gl_backgroundPanel
+                                                                        .createParallelGroup(Alignment.LEADING)
+                                                                        .addGroup(gl_backgroundPanel
+                                                                                .createSequentialGroup()
+                                                                                .addGroup(gl_backgroundPanel
+                                                                                        .createParallelGroup(
+                                                                                                Alignment.LEADING)
+                                                                                        .addGroup(gl_backgroundPanel
+                                                                                                .createSequentialGroup()
+                                                                                                .addGroup(
+                                                                                                        gl_backgroundPanel
+                                                                                                                .createParallelGroup(
+                                                                                                                        Alignment.LEADING)
+                                                                                                                .addComponent(
+                                                                                                                        fNameLabel,
+                                                                                                                        GroupLayout.PREFERRED_SIZE,
+                                                                                                                        124,
+                                                                                                                        GroupLayout.PREFERRED_SIZE)
+                                                                                                                .addComponent(
+                                                                                                                        lastNameLabel,
+                                                                                                                        GroupLayout.PREFERRED_SIZE,
+                                                                                                                        115,
+                                                                                                                        GroupLayout.PREFERRED_SIZE))
+                                                                                                .addPreferredGap(
+                                                                                                        ComponentPlacement.UNRELATED)
+                                                                                                .addGroup(
+                                                                                                        gl_backgroundPanel
+                                                                                                                .createParallelGroup(
+                                                                                                                        Alignment.LEADING)
+                                                                                                                .addComponent(
+                                                                                                                        fNameTxt,
+                                                                                                                        GroupLayout.PREFERRED_SIZE,
+                                                                                                                        141,
+                                                                                                                        GroupLayout.PREFERRED_SIZE)
+                                                                                                                .addComponent(
+                                                                                                                        lastNameText,
+                                                                                                                        GroupLayout.PREFERRED_SIZE,
+                                                                                                                        170,
+                                                                                                                        GroupLayout.PREFERRED_SIZE)))
+                                                                                        .addGroup(gl_backgroundPanel
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(
+                                                                                                        customerIdLabel)
+                                                                                                .addGap(18)
+                                                                                                .addComponent(
+                                                                                                        cusIDLabel,
+                                                                                                        GroupLayout.PREFERRED_SIZE,
+                                                                                                        74,
+                                                                                                        GroupLayout.PREFERRED_SIZE)))
+                                                                                .addGap(4)
+                                                                                .addGroup(gl_backgroundPanel
+                                                                                        .createParallelGroup(
+                                                                                                Alignment.LEADING)
+                                                                                        .addGroup(gl_backgroundPanel
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(cnicLabel)
+                                                                                                .addGap(18)
+                                                                                                .addComponent(cnicText,
+                                                                                                        GroupLayout.PREFERRED_SIZE,
+                                                                                                        169,
+                                                                                                        GroupLayout.PREFERRED_SIZE))
+                                                                                        .addGroup(gl_backgroundPanel
+                                                                                                .createSequentialGroup()
+                                                                                                .addGap(2)
+                                                                                                .addComponent(
+                                                                                                        genderLabel,
+                                                                                                        GroupLayout.PREFERRED_SIZE,
+                                                                                                        95,
+                                                                                                        GroupLayout.PREFERRED_SIZE)
+                                                                                                .addPreferredGap(
+                                                                                                        ComponentPlacement.RELATED)
+                                                                                                .addComponent(genText,
+                                                                                                        GroupLayout.PREFERRED_SIZE,
+                                                                                                        122,
+                                                                                                        GroupLayout.PREFERRED_SIZE))
+                                                                                        .addGroup(gl_backgroundPanel
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(
+                                                                                                        passportNoLabel)
+                                                                                                .addPreferredGap(
+                                                                                                        ComponentPlacement.RELATED)
+                                                                                                .addComponent(
+                                                                                                        passNoText,
+                                                                                                        GroupLayout.PREFERRED_SIZE,
+                                                                                                        132,
+                                                                                                        GroupLayout.PREFERRED_SIZE))))
+                                                                        .addComponent(personalDetailsLabel)))
+                                                        .addComponent(lineLabel4)
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(lineLabel5))
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addGap(19)
+                                                                .addComponent(jLabel20, GroupLayout.PREFERRED_SIZE, 193,
+                                                                        GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addGroup(gl_backgroundPanel
+                                                                        .createParallelGroup(Alignment.LEADING)
+                                                                        .addGroup(gl_backgroundPanel
+                                                                                .createSequentialGroup()
+                                                                                .addComponent(cocacolaLabel,
+                                                                                        GroupLayout.PREFERRED_SIZE, 221,
+                                                                                        GroupLayout.PREFERRED_SIZE)
+                                                                                .addGap(47)
+                                                                                .addComponent(sonyLabel,
+                                                                                        GroupLayout.PREFERRED_SIZE, 85,
+                                                                                        GroupLayout.PREFERRED_SIZE)
+                                                                                .addGap(63)
+                                                                                .addComponent(laysLabel,
+                                                                                        GroupLayout.PREFERRED_SIZE, 144,
+                                                                                        GroupLayout.PREFERRED_SIZE))
+                                                                        .addGroup(gl_backgroundPanel
+                                                                                .createSequentialGroup()
+                                                                                .addComponent(generatedTimeLabel,
+                                                                                        GroupLayout.PREFERRED_SIZE, 142,
+                                                                                        GroupLayout.PREFERRED_SIZE)
+                                                                                .addPreferredGap(
+                                                                                        ComponentPlacement.UNRELATED)
+                                                                                .addComponent(generatedTimeText,
+                                                                                        GroupLayout.PREFERRED_SIZE, 162,
+                                                                                        GroupLayout.PREFERRED_SIZE)
+                                                                                .addPreferredGap(
+                                                                                        ComponentPlacement.RELATED,
+                                                                                        GroupLayout.DEFAULT_SIZE,
+                                                                                        Short.MAX_VALUE)
+                                                                                .addComponent(exitButton,
+                                                                                        GroupLayout.PREFERRED_SIZE, 175,
+                                                                                        GroupLayout.PREFERRED_SIZE)
+                                                                                .addGap(22))))
+                                                        .addComponent(lineLabel7)
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addGroup(gl_backgroundPanel
+                                                                        .createParallelGroup(Alignment.LEADING)
+                                                                        .addComponent(lineLabel6)
+                                                                        .addComponent(costLabel,
+                                                                                GroupLayout.PREFERRED_SIZE, 160,
+                                                                                GroupLayout.PREFERRED_SIZE)))
+                                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(seatsLabel, GroupLayout.PREFERRED_SIZE,
+                                                                        91, GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18)
+                                                                .addComponent(seatsText)
+                                                                .addGap(166)
+                                                                .addComponent(billLabel)
+                                                                .addGap(18)
+                                                                .addComponent(billText, GroupLayout.PREFERRED_SIZE, 90,
+                                                                        GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(0, 28, Short.MAX_VALUE)))
+                                .addContainerGap()));
         gl_backgroundPanel.setVerticalGroup(
-        	gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        		.addGroup(gl_backgroundPanel.createSequentialGroup()
-        			.addContainerGap()
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        				.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        					.addComponent(ticketLabel, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(ticketNoLabel, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE))
-        				.addComponent(jSkyIcon))
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(lineLabel1)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(lineLabel2)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(personalDetailsLabel, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(lineLabel3)
-        			.addGap(18)
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(fNameLabel)
-        				.addComponent(fNameTxt, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(cnicLabel)
-        				.addComponent(cnicText, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(lastNameLabel)
-        				.addComponent(lastNameText, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(passportNoLabel)
-        				.addComponent(passNoText, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE))
-        			.addGap(6)
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
-        				.addComponent(genderLabel, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
-        				.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        					.addComponent(customerIdLabel, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(cusIDLabel, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-        					.addComponent(genText, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(lineLabel4)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jLabel20, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-        			.addGap(18)
-        			.addComponent(lineLabel5)
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(flightNoLabel, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(flightNoText, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(depTimeLabel, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(depTimeText, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
-        			.addGap(4)
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(flightNameLabel, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(flightNameText)
-        				.addComponent(classLabel, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(classText, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(departureLabel)
-        				.addComponent(arrivalLabel)
-        				.addComponent(departureText)
-        				.addComponent(arrivalText, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE))
-        			.addGap(11)
-        			.addComponent(lineLabel6)
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addComponent(costLabel, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(lineLabel7)
-        			.addGap(12)
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.TRAILING)
-        				.addGroup(gl_backgroundPanel.createSequentialGroup()
-        					.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        						.addComponent(seatsLabel, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-        						.addComponent(seatsText, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
-        					.addPreferredGap(ComponentPlacement.UNRELATED)
-        					.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        						.addComponent(generatedTimeLabel, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-        						.addComponent(generatedTimeText, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-        						.addComponent(exitButton))
-        					.addPreferredGap(ComponentPlacement.RELATED))
-        				.addGroup(gl_backgroundPanel.createSequentialGroup()
-        					.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        						.addComponent(billLabel, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-        						.addComponent(billText, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
-        					.addGap(67)))
-        			.addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(sonyLabel)
-        				.addComponent(cocacolaLabel, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(laysLabel))
-        			.addGap(31))
-        );
+                gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+                                        .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                                .addComponent(ticketLabel, GroupLayout.PREFERRED_SIZE, 52,
+                                                        GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(ticketNoLabel, GroupLayout.PREFERRED_SIZE, 37,
+                                                        GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jSkyIcon))
+                                .addPreferredGap(ComponentPlacement.RELATED)
+                                .addComponent(lineLabel1)
+                                .addPreferredGap(ComponentPlacement.RELATED)
+                                .addComponent(lineLabel2)
+                                .addPreferredGap(ComponentPlacement.RELATED)
+                                .addComponent(personalDetailsLabel, GroupLayout.PREFERRED_SIZE, 38,
+                                        GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(ComponentPlacement.RELATED)
+                                .addComponent(lineLabel3)
+                                .addGap(18)
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                        .addComponent(fNameLabel)
+                                        .addComponent(fNameTxt, GroupLayout.PREFERRED_SIZE, 29,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cnicLabel)
+                                        .addComponent(cnicText, GroupLayout.PREFERRED_SIZE, 25,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                        .addComponent(lastNameLabel)
+                                        .addComponent(lastNameText, GroupLayout.PREFERRED_SIZE, 26,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(passportNoLabel)
+                                        .addComponent(passNoText, GroupLayout.PREFERRED_SIZE, 27,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addGap(6)
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.LEADING)
+                                        .addComponent(genderLabel, GroupLayout.PREFERRED_SIZE, 27,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                                .addComponent(customerIdLabel, GroupLayout.PREFERRED_SIZE, 25,
+                                                        GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(cusIDLabel, GroupLayout.PREFERRED_SIZE, 33,
+                                                        GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(genText, GroupLayout.DEFAULT_SIZE,
+                                                        GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(ComponentPlacement.RELATED)
+                                .addComponent(lineLabel4)
+                                .addPreferredGap(ComponentPlacement.RELATED)
+                                .addComponent(jLabel20, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+                                .addGap(18)
+                                .addComponent(lineLabel5)
+                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                        .addComponent(flightNoLabel, GroupLayout.PREFERRED_SIZE, 22,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(flightNoText, GroupLayout.PREFERRED_SIZE, 18,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(depTimeLabel, GroupLayout.PREFERRED_SIZE, 31,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(depTimeText, GroupLayout.PREFERRED_SIZE, 24,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addGap(4)
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                        .addComponent(flightNameLabel, GroupLayout.PREFERRED_SIZE, 28,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(flightNameText)
+                                        .addComponent(classLabel, GroupLayout.PREFERRED_SIZE, 22,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(classText, GroupLayout.PREFERRED_SIZE, 30,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                        .addComponent(departureLabel)
+                                        .addComponent(arrivalLabel)
+                                        .addComponent(departureText)
+                                        .addComponent(arrivalText, GroupLayout.PREFERRED_SIZE, 23,
+                                                GroupLayout.PREFERRED_SIZE))
+                                .addGap(11)
+                                .addComponent(lineLabel6)
+                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                .addComponent(costLabel, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(ComponentPlacement.RELATED)
+                                .addComponent(lineLabel7)
+                                .addGap(12)
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.TRAILING)
+                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                                        .addComponent(seatsLabel, GroupLayout.PREFERRED_SIZE, 36,
+                                                                GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(seatsText, GroupLayout.PREFERRED_SIZE, 36,
+                                                                GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(ComponentPlacement.UNRELATED)
+                                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                                        .addComponent(generatedTimeLabel, GroupLayout.PREFERRED_SIZE,
+                                                                37, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(generatedTimeText, GroupLayout.PREFERRED_SIZE, 37,
+                                                                GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(exitButton))
+                                                .addPreferredGap(ComponentPlacement.RELATED))
+                                        .addGroup(gl_backgroundPanel.createSequentialGroup()
+                                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                                        .addComponent(billLabel, GroupLayout.PREFERRED_SIZE, 38,
+                                                                GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(billText, GroupLayout.PREFERRED_SIZE, 38,
+                                                                GroupLayout.PREFERRED_SIZE))
+                                                .addGap(67)))
+                                .addGroup(gl_backgroundPanel.createParallelGroup(Alignment.BASELINE)
+                                        .addComponent(sonyLabel)
+                                        .addComponent(cocacolaLabel, GroupLayout.PREFERRED_SIZE, 94,
+                                                GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(laysLabel))
+                                .addGap(31)));
         backgroundPanel.setLayout(gl_backgroundPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -507,13 +648,14 @@ public class bill extends javax.swing.JFrame {
         C1 = new cusdomain();
         C1.setVisible(true);
     }
+
     /**
      * Prints the bill by retrieving and displaying customer and ticket information.
      *
      * @param id     The customer ID.
      * @param ticket The ticket ID.
      * @throws ClassNotFoundException If the JDBC driver is not found.
-     * @throws SQLException         If a database access error occurs.
+     * @throws SQLException           If a database access error occurs.
      */
     private String fname;
     private String lname;
@@ -529,9 +671,7 @@ public class bill extends javax.swing.JFrame {
     private String sources;
     private String departss;
     private String cusId;
-    
-    
-    
+
     public void billprint(String id, String ticket) throws ClassNotFoundException, SQLException {
 
         try {
@@ -550,7 +690,7 @@ public class bill extends javax.swing.JFrame {
                 Cnic = rs.getString("nic");
                 passport = rs.getString("passport");
                 gen = rs.getString("gender");
-                cusId=rs.getString("id");
+                cusId = rs.getString("id");
 
                 ticketNoLabel.setText(ticket);
                 cusIDLabel.setText(id.trim());
@@ -624,7 +764,7 @@ public class bill extends javax.swing.JFrame {
     private javax.swing.JLabel classLabel;
     private javax.swing.JLabel jLabel26;
     javax.swing.JLabel flightNoText;
-     javax.swing.JLabel flightNameText;
+    javax.swing.JLabel flightNameText;
     private javax.swing.JLabel depTimeText;
     private javax.swing.JLabel lineLabel2;
     private javax.swing.JLabel classText;
@@ -646,13 +786,14 @@ public class bill extends javax.swing.JFrame {
     private javax.swing.JLabel arrivalLabel;
     private javax.swing.JLabel departureText;
     private javax.swing.JLabel arrivalText;
-    		javax.swing.JLabel fNameTxt;
+    javax.swing.JLabel fNameTxt;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JLabel lastNameText;
     private javax.swing.JLabel passNoText;
     private javax.swing.JLabel cnicLabel;
     private javax.swing.JPanel backgroundPanel;
     private cusdomain C1;
+
     /**
      * Sets the connection for the instance.
      *

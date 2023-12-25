@@ -1,19 +1,11 @@
 package out.production.airlaib;
+
 import java.sql.Connection;
-import javax.crypto.Cipher;
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
-import javax.crypto.spec.SecretKeySpec;
-import java.security.spec.KeySpec;
-import java.util.Base64;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -415,7 +407,8 @@ public class userCreation extends javax.swing.JFrame {
                                                                                                                 Short.MAX_VALUE))))
                                                 .addGroup(groupLayoutPanel1.createSequentialGroup()
                                                                 .addGap(710)
-                                                                .addComponent(getAddBtn(), GroupLayout.PREFERRED_SIZE, 109,
+                                                                .addComponent(getAddBtn(), GroupLayout.PREFERRED_SIZE,
+                                                                                109,
                                                                                 GroupLayout.PREFERRED_SIZE)
                                                                 .addContainerGap(735, Short.MAX_VALUE))
                                                 .addGroup(groupLayoutPanel1.createSequentialGroup()
@@ -482,7 +475,8 @@ public class userCreation extends javax.swing.JFrame {
                                                                                                 22,
                                                                                                 GroupLayout.PREFERRED_SIZE))
                                                                 .addGap(48)
-                                                                .addComponent(getAddBtn(), GroupLayout.PREFERRED_SIZE, 48,
+                                                                .addComponent(getAddBtn(), GroupLayout.PREFERRED_SIZE,
+                                                                                48,
                                                                                 GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(ComponentPlacement.RELATED, 113,
                                                                                 Short.MAX_VALUE)
@@ -511,30 +505,30 @@ public class userCreation extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         /**
-		 * @return the warningLastName
-		 */
-		public javax.swing.JLabel getWarningLastName() {
-			return warningLastName;
-		}
+         * @return the warningLastName
+         */
+        public javax.swing.JLabel getWarningLastName() {
+                return warningLastName;
+        }
 
-		/**
-		 * @param warningLastName the warningLastName to set
-		 */
-		public void setWarningLastName(javax.swing.JLabel warningLastName) {
-			this.warningLastName = warningLastName;
-		}
+        /**
+         * @param warningLastName the warningLastName to set
+         */
+        public void setWarningLastName(javax.swing.JLabel warningLastName) {
+                this.warningLastName = warningLastName;
+        }
 
-		protected void txtlastnameActionPerformed(ActionEvent evt) {
-			// TODO Auto-generated method stub
-			
-		}
+        protected void txtlastnameActionPerformed(ActionEvent evt) {
+                // TODO Auto-generated method stub
 
-		protected void txtfirstnameActionPerformed(ActionEvent evt) {
-			// TODO Auto-generated method stub
-			
-		}
+        }
 
-		/**
+        protected void txtfirstnameActionPerformed(ActionEvent evt) {
+                // TODO Auto-generated method stub
+
+        }
+
+        /**
          * Handles the event when the "Create User" button is clicked.
          * Validates user input and inserts user details into the database.
          * Displays appropriate messages based on the success or failure of the
@@ -561,10 +555,11 @@ public class userCreation extends javax.swing.JFrame {
                 else if (!firstname.matches("^[A-Za-z]{3,29}$") || !lastname.matches("^[A-Za-z]{3,29}$")) {
                         JOptionPane.showMessageDialog(this, "Please correct Name");
 
-                }else if (!isStrongPassword(password)) {
-                    JOptionPane.showMessageDialog(this, "Password is not strong. Please use a stronger password. Password should have atleast 8 letters."
-                    		+ " Use Atleast One Capital Letter, One Special Character, And a  Number");} 
-                else {
+                } else if (!isStrongPassword(password)) {
+                        JOptionPane.showMessageDialog(this,
+                                        "Password is not strong. Please use a stronger password. Password should have atleast 8 letters."
+                                                        + " Use Atleast One Capital Letter, One Special Character, And a  Number");
+                } else {
                         try {
 
                                 con = connectionManager.getConnection();
@@ -599,8 +594,6 @@ public class userCreation extends javax.swing.JFrame {
                         }
                 }
         }// GEN-LAST:event_addBtnAction
-        
-        
 
         public void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
                 // TODO add your handling code here:
@@ -608,6 +601,7 @@ public class userCreation extends javax.swing.JFrame {
                 adminDomainObj = new admindomain();
                 adminDomainObj.setVisible(true);
         }// GEN-LAST:event_backBtnAction
+
         public void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[A-Za-z]{3,29}$";
@@ -665,7 +659,7 @@ public class userCreation extends javax.swing.JFrame {
                         Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                 }
         }
-        
+
         /**
          * Checks whether the given password is strong or weak.
          *
@@ -673,97 +667,99 @@ public class userCreation extends javax.swing.JFrame {
          * @return True if the password is strong, false if weak.
          */
         public boolean isStrongPassword(String password) {
-            // Add your criteria for a strong password (e.g., minimum length, mix of uppercase, lowercase, digits, special characters)
-            return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
+                // Add your criteria for a strong password (e.g., minimum length, mix of
+                // uppercase, lowercase, digits, special characters)
+                return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
         }
 
         /**
-		 * @return the txtuserid
-		 */
-		public javax.swing.JLabel getTxtuserid() {
-			return txtuserid;
-		}
+         * @return the txtuserid
+         */
+        public javax.swing.JLabel getTxtuserid() {
+                return txtuserid;
+        }
 
-		/**
-		 * @param txtuserid the txtuserid to set
-		 */
-		public void setTxtuserid(javax.swing.JLabel txtuserid) {
-			this.txtuserid = txtuserid;
-		}
-
-		/**
-		 * @return the txtfirstname
-		 */
-		public javax.swing.JTextField getTxtfirstname() {
-			return txtfirstname;
-		}
-
-		/**
-		 * @param txtfirstname the txtfirstname to set
-		 */
-		public void setTxtfirstname(javax.swing.JTextField txtfirstname) {
-			this.txtfirstname = txtfirstname;
-		}
-
-		/**
-		 * @return the txtlastname
-		 */
-		public javax.swing.JTextField getTxtlastname() {
-			return txtlastname;
-		}
-
-		/**
-		 * @param txtlastname the txtlastname to set
-		 */
-		public void setTxtlastname(javax.swing.JTextField txtlastname) {
-			this.txtlastname = txtlastname;
-		}
-
-		/**
-		 * @return the txtusername
-		 */
-		public javax.swing.JTextField getTxtusername() {
-			return txtusername;
-		}
-
-		/**
-		 * @param txtusername the txtusername to set
-		 */
-		public void setTxtusername(javax.swing.JTextField txtusername) {
-			this.txtusername = txtusername;
-		}
-
-		/**
-		 * @return the txtpassword
-		 */
-		public javax.swing.JPasswordField getTxtpassword() {
-			return txtpassword;
-		}
-
-		/**
-		 * @param txtpassword the txtpassword to set
-		 */
-		public void setTxtpassword(javax.swing.JPasswordField txtpassword) {
-			this.txtpassword = txtpassword;
-		}
-
-		// Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JLabel warningFirstName;
         /**
-		 * @return the warningFirstName
-		 */
-		public javax.swing.JLabel getWarningFirstName() {
-			return warningFirstName;
-		}
+         * @param txtuserid the txtuserid to set
+         */
+        public void setTxtuserid(javax.swing.JLabel txtuserid) {
+                this.txtuserid = txtuserid;
+        }
 
-		/**
-		 * @param warningFirstName the warningFirstName to set
-		 */
-		public void setWarningFirstName(javax.swing.JLabel warningFirstName) {
-			this.warningFirstName = warningFirstName;
-		}
+        /**
+         * @return the txtfirstname
+         */
+        public javax.swing.JTextField getTxtfirstname() {
+                return txtfirstname;
+        }
 
-		private javax.swing.JButton addBtn;
+        /**
+         * @param txtfirstname the txtfirstname to set
+         */
+        public void setTxtfirstname(javax.swing.JTextField txtfirstname) {
+                this.txtfirstname = txtfirstname;
+        }
+
+        /**
+         * @return the txtlastname
+         */
+        public javax.swing.JTextField getTxtlastname() {
+                return txtlastname;
+        }
+
+        /**
+         * @param txtlastname the txtlastname to set
+         */
+        public void setTxtlastname(javax.swing.JTextField txtlastname) {
+                this.txtlastname = txtlastname;
+        }
+
+        /**
+         * @return the txtusername
+         */
+        public javax.swing.JTextField getTxtusername() {
+                return txtusername;
+        }
+
+        /**
+         * @param txtusername the txtusername to set
+         */
+        public void setTxtusername(javax.swing.JTextField txtusername) {
+                this.txtusername = txtusername;
+        }
+
+        /**
+         * @return the txtpassword
+         */
+        public javax.swing.JPasswordField getTxtpassword() {
+                return txtpassword;
+        }
+
+        /**
+         * @param txtpassword the txtpassword to set
+         */
+        public void setTxtpassword(javax.swing.JPasswordField txtpassword) {
+                this.txtpassword = txtpassword;
+        }
+
+        // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JLabel warningFirstName;
+
+        /**
+         * @return the warningFirstName
+         */
+        public javax.swing.JLabel getWarningFirstName() {
+                return warningFirstName;
+        }
+
+        /**
+         * @param warningFirstName the warningFirstName to set
+         */
+        public void setWarningFirstName(javax.swing.JLabel warningFirstName) {
+                this.warningFirstName = warningFirstName;
+        }
+
+        private javax.swing.JButton addBtn;
         private javax.swing.JButton backBtn;
         private javax.swing.JLabel userIdLabel;
         private javax.swing.JLabel firstNameLabel;
@@ -781,36 +777,36 @@ public class userCreation extends javax.swing.JFrame {
         private javax.swing.JTextField txtusername;
         private admindomain adminDomainObj;
 
-		/**
-		 * @return the adminDomainObj
-		 */
-		public admindomain getAdminDomainObj() {
-			return adminDomainObj;
-		}
+        /**
+         * @return the adminDomainObj
+         */
+        public admindomain getAdminDomainObj() {
+                return adminDomainObj;
+        }
 
-		/**
-		 * @param adminDomainObj the adminDomainObj to set
-		 */
-		public void setAdminDomainObj(admindomain adminDomainObj) {
-			this.adminDomainObj = adminDomainObj;
-		}
+        /**
+         * @param adminDomainObj the adminDomainObj to set
+         */
+        public void setAdminDomainObj(admindomain adminDomainObj) {
+                this.adminDomainObj = adminDomainObj;
+        }
 
-		public void setConnection(Connection mockConnection) throws SQLException {
-			mockConnection = connectionManager.getConnection();	
-			
-		}
+        public void setConnection(Connection mockConnection) throws SQLException {
+                mockConnection = connectionManager.getConnection();
 
-		/**
-		 * @return the addBtn
-		 */
-		public javax.swing.JButton getAddBtn() {
-			return addBtn;
-		}
+        }
 
-		/**
-		 * @param addBtn the addBtn to set
-		 */
-		public void setAddBtn(javax.swing.JButton addBtn) {
-			this.addBtn = addBtn;
-		}
+        /**
+         * @return the addBtn
+         */
+        public javax.swing.JButton getAddBtn() {
+                return addBtn;
+        }
+
+        /**
+         * @param addBtn the addBtn to set
+         */
+        public void setAddBtn(javax.swing.JButton addBtn) {
+                this.addBtn = addBtn;
+        }
 }

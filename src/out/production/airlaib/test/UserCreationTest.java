@@ -144,10 +144,6 @@ public class UserCreationTest {
         userCreationObj.getTxtusername().setText("marriam");
         userCreationObj.getTxtpassword().setText("StrongP@ssWord1");
 
-        // Mock the database connection (not needed for this test)
-        Connection mockConnection = Mockito.mock(Connection.class);
-        // userCreationObj.setConnection(mockConnection);
-
         // Call the method to add a user
         userCreationObj.addBtnAction(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, null));
 
@@ -167,10 +163,6 @@ public class UserCreationTest {
         userCreationObj.getTxtlastname().setText("Naeem");
         userCreationObj.getTxtusername().setText("marriam");
         userCreationObj.getTxtpassword().setText("StrongssWord");
-
-        // Mock the database connection (not needed for this test)
-        Connection mockConnection = Mockito.mock(Connection.class);
-        // userCreationObj.setConnection(mockConnection);
 
         // Call the method to add a user
         userCreationObj.addBtnAction(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, null));
@@ -202,42 +194,42 @@ public class UserCreationTest {
         assertTrue("Admin Domain window should be visible after back button action",
                 userCreationObj.getAdminDomainObj().isVisible());
     }
-    
+
     /**
      * Tests the key released event for the first name text field.
      */
     @Test
     public void testTxtfirstnameKeyReleased() {
-    	
-    	userCreation userCreationObj = new userCreation();
+
+        userCreation userCreationObj = new userCreation();
         // Set initial values
-    	userCreationObj.getTxtfirstname().setText("Marriam123");
+        userCreationObj.getTxtfirstname().setText("Marriam123");
 
         // Call your method with a mock key event
         KeyEvent mockKeyEvent = mock(KeyEvent.class);
         userCreationObj.txtfirstnameKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNotNull(userCreationObj.getWarningFirstName().getText()); 
-                                                                  
+        assertNotNull(userCreationObj.getWarningFirstName().getText());
+
     }
-    
+
     /**
      * Tests the key released event for the last name text field.
      */
     @Test
     public void testTxtLastnameKeyReleased() {
-    	
-    	userCreation userCreationObj = new userCreation();
+
+        userCreation userCreationObj = new userCreation();
         // Set initial values
-    	userCreationObj.getTxtlastname().setText("Naeem123");
+        userCreationObj.getTxtlastname().setText("Naeem123");
 
         // Call your method with a mock key event
         KeyEvent mockKeyEvent = mock(KeyEvent.class);
         userCreationObj.txtlastnameKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNotNull(userCreationObj.getWarningLastName().getText()); 
-                                                                  
+        assertNotNull(userCreationObj.getWarningLastName().getText());
+
     }
 }

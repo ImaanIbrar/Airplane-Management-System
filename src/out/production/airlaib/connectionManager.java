@@ -1,4 +1,5 @@
 package out.production.airlaib;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -48,10 +49,10 @@ public class connectionManager {
     }
   }
 
-/**
- * @return the url
- */
-public static String getUrl() {
-	return URL;
-}
+  /**
+   * @return the url
+   */
+  public static String getUrl() {
+    return URL;
+  }
 }
