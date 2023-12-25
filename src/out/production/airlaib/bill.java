@@ -675,8 +675,7 @@ public class bill extends javax.swing.JFrame {
     public void billprint(String id, String ticket) throws ClassNotFoundException, SQLException {
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/airline", "root", "1234");
+            con = connectionManager.getConnection();
             pst = con.prepareStatement("select * from customer where id = ?");
             pst.setString(1, id);
             ResultSet rs = pst.executeQuery();
@@ -700,14 +699,11 @@ public class bill extends javax.swing.JFrame {
                 passNoText.setText(passport.trim());
                 genText.setText(gen.trim());
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(searchCustomer.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(searchCustomer.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/airline", "root", "1234");
+            con = connectionManager.getConnection();
             pst = con.prepareStatement("SELECT * from ticket WHERE id = ?");
             pst.setString(1, ticket);
             ResultSet rs1 = pst.executeQuery();
@@ -735,8 +731,6 @@ public class bill extends javax.swing.JFrame {
                 Date date = new Date();
                 generatedTimeText.setText(formatter.format(date));
             }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(searchCustomer.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(searchCustomer.class.getName()).log(Level.SEVERE, null, ex);
         }
