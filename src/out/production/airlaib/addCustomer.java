@@ -1,5 +1,5 @@
 package out.production.airlaib;
-import java.awt.EventQueue;
+
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,10 +18,14 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import com.toedter.calendar.JDateChooser;
+
 import java.util.regex.*;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 
 /*
@@ -218,40 +221,56 @@ public class addCustomer extends javax.swing.JFrame {
 
                 javax.swing.GroupLayout groupLayoutPanel2 = new javax.swing.GroupLayout(panel2);
                 groupLayoutPanel2.setHorizontalGroup(
-                	groupLayoutPanel2.createParallelGroup(Alignment.TRAILING)
-                		.addGroup(groupLayoutPanel2.createSequentialGroup()
-                			.addGroup(groupLayoutPanel2.createParallelGroup(Alignment.LEADING)
-                				.addComponent(dateOfBirthLabel)
-                				.addComponent(genderLabel)
-                				.addComponent(contactLabel))
-                			.addGap(36)
-                			.addGroup(groupLayoutPanel2.createParallelGroup(Alignment.LEADING)
-                				.addGroup(groupLayoutPanel2.createSequentialGroup()
-                					.addComponent(maleRadioBtn)
-                					.addGap(18)
-                					.addComponent(femaleRadioBtn))
-                				.addComponent(dateOfBirthText, GroupLayout.PREFERRED_SIZE, 203, GroupLayout.PREFERRED_SIZE)
-                				.addComponent(contactText, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE))
-                			.addGap(46))
-                );
+                                groupLayoutPanel2.createParallelGroup(Alignment.TRAILING)
+                                                .addGroup(groupLayoutPanel2.createSequentialGroup()
+                                                                .addGroup(groupLayoutPanel2
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addComponent(dateOfBirthLabel)
+                                                                                .addComponent(genderLabel)
+                                                                                .addComponent(contactLabel))
+                                                                .addGap(36)
+                                                                .addGroup(groupLayoutPanel2
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addGroup(groupLayoutPanel2
+                                                                                                .createSequentialGroup()
+                                                                                                .addComponent(maleRadioBtn)
+                                                                                                .addGap(18)
+                                                                                                .addComponent(femaleRadioBtn))
+                                                                                .addComponent(dateOfBirthText,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                203,
+                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(contactText,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                132,
+                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                .addGap(46)));
                 groupLayoutPanel2.setVerticalGroup(
-                	groupLayoutPanel2.createParallelGroup(Alignment.LEADING)
-                		.addGroup(groupLayoutPanel2.createSequentialGroup()
-                			.addGap(26)
-                			.addGroup(groupLayoutPanel2.createParallelGroup(Alignment.TRAILING)
-                				.addComponent(dateOfBirthLabel)
-                				.addComponent(dateOfBirthText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                			.addGap(18)
-                			.addGroup(groupLayoutPanel2.createParallelGroup(Alignment.BASELINE)
-                				.addComponent(genderLabel)
-                				.addComponent(maleRadioBtn)
-                				.addComponent(femaleRadioBtn))
-                			.addGap(18)
-                			.addGroup(groupLayoutPanel2.createParallelGroup(Alignment.BASELINE)
-                				.addComponent(contactLabel)
-                				.addComponent(contactText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                			.addContainerGap(127, Short.MAX_VALUE))
-                );
+                                groupLayoutPanel2.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(groupLayoutPanel2.createSequentialGroup()
+                                                                .addGap(26)
+                                                                .addGroup(groupLayoutPanel2
+                                                                                .createParallelGroup(Alignment.TRAILING)
+                                                                                .addComponent(dateOfBirthLabel)
+                                                                                .addComponent(dateOfBirthText,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                .addGap(18)
+                                                                .addGroup(groupLayoutPanel2
+                                                                                .createParallelGroup(Alignment.BASELINE)
+                                                                                .addComponent(genderLabel)
+                                                                                .addComponent(maleRadioBtn)
+                                                                                .addComponent(femaleRadioBtn))
+                                                                .addGap(18)
+                                                                .addGroup(groupLayoutPanel2
+                                                                                .createParallelGroup(Alignment.BASELINE)
+                                                                                .addComponent(contactLabel)
+                                                                                .addComponent(contactText,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                .addContainerGap(127, Short.MAX_VALUE)));
                 panel2.setLayout(groupLayoutPanel2);
 
                 warningFirstName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -274,120 +293,219 @@ public class addCustomer extends javax.swing.JFrame {
                 warningContact.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 warningContact.setForeground(new java.awt.Color(255, 0, 51));
                 BackBtn = new javax.swing.JButton();
-                
-                                BackBtn.setBackground(new java.awt.Color(0, 51, 51));
-                                BackBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                                BackBtn.setForeground(new java.awt.Color(255, 255, 255));
-                                BackBtn.setText("Back");
-                                BackBtn.addActionListener(new java.awt.event.ActionListener() {
-                                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                cancelBtnAction(evt);
-                                        }
-                                });
+
+                BackBtn.setBackground(new java.awt.Color(0, 51, 51));
+                BackBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                BackBtn.setForeground(new java.awt.Color(255, 255, 255));
+                BackBtn.setText("Back");
+                BackBtn.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                cancelBtnAction(evt);
+                        }
+                });
                 AddBtn = new javax.swing.JButton();
-                
-                                AddBtn.setBackground(new java.awt.Color(0, 51, 51));
-                                AddBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                                AddBtn.setForeground(new java.awt.Color(255, 255, 255));
-                                AddBtn.setText("Add");
-                                AddBtn.addActionListener(new java.awt.event.ActionListener() {
-                                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                                addCustomerBtnAction(evt);
-                                        }
-                                });
+
+                AddBtn.setBackground(new java.awt.Color(0, 51, 51));
+                AddBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                AddBtn.setForeground(new java.awt.Color(255, 255, 255));
+                AddBtn.setText("Add");
+                AddBtn.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                addCustomerBtnAction(evt);
+                        }
+                });
 
                 javax.swing.GroupLayout groupLayoutPanel1 = new javax.swing.GroupLayout(panel1);
                 groupLayoutPanel1.setHorizontalGroup(
-                	groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                		.addGroup(groupLayoutPanel1.createSequentialGroup()
-                			.addGap(26)
-                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                				.addGroup(groupLayoutPanel1.createSequentialGroup()
-                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                						.addComponent(firstNameLabel)
-                						.addComponent(lastNameLabel))
-                					.addGap(43)
-                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING, false)
-                						.addComponent(lastNameText)
-                						.addComponent(firstNameText, GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE))
-                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                						.addGroup(groupLayoutPanel1.createSequentialGroup()
-                							.addPreferredGap(ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                							.addComponent(warningFirstName, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE))
-                						.addGroup(groupLayoutPanel1.createSequentialGroup()
-                							.addGap(44)
-                							.addComponent(warningLastName, GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))))
-                				.addGroup(groupLayoutPanel1.createSequentialGroup()
-                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                						.addGroup(groupLayoutPanel1.createSequentialGroup()
-                							.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                								.addComponent(addressLabel)
-                								.addComponent(passportIdLabel)
-                								.addComponent(cnicLabel))
-                							.addGap(38)
-                							.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING, false)
-                								.addComponent(scrollpane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                								.addComponent(passportText)
-                								.addComponent(cnicText)))
-                						.addComponent(panel2, GroupLayout.PREFERRED_SIZE, 361, GroupLayout.PREFERRED_SIZE))
-                					.addPreferredGap(ComponentPlacement.RELATED)
-                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                						.addGroup(groupLayoutPanel1.createSequentialGroup()
-                							.addGap(53)
-                							.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                								.addComponent(warningCNIC, GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                								.addGroup(groupLayoutPanel1.createSequentialGroup()
-                									.addGap(27)
-                									.addComponent(warningPassportId, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)
-                									.addGap(0, 30, Short.MAX_VALUE))
-                								.addGroup(groupLayoutPanel1.createSequentialGroup()
-                									.addPreferredGap(ComponentPlacement.RELATED)
-                									.addComponent(AddBtn, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-                									.addPreferredGap(ComponentPlacement.UNRELATED)
-                									.addComponent(BackBtn, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))))
-                						.addComponent(warningContact, GroupLayout.PREFERRED_SIZE, 189, GroupLayout.PREFERRED_SIZE))))
-                			.addContainerGap())
-                );
+                                groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
+                                                                .addGap(26)
+                                                                .addGroup(groupLayoutPanel1
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addGroup(groupLayoutPanel1
+                                                                                                .createSequentialGroup()
+                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.LEADING)
+                                                                                                                .addComponent(firstNameLabel)
+                                                                                                                .addComponent(lastNameLabel))
+                                                                                                .addGap(43)
+                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.LEADING,
+                                                                                                                                false)
+                                                                                                                .addComponent(lastNameText)
+                                                                                                                .addComponent(firstNameText,
+                                                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                                                242,
+                                                                                                                                Short.MAX_VALUE))
+                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.LEADING)
+                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                .createSequentialGroup()
+                                                                                                                                .addPreferredGap(
+                                                                                                                                                ComponentPlacement.RELATED,
+                                                                                                                                                91,
+                                                                                                                                                Short.MAX_VALUE)
+                                                                                                                                .addComponent(warningFirstName,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                189,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                .createSequentialGroup()
+                                                                                                                                .addGap(44)
+                                                                                                                                .addComponent(warningLastName,
+                                                                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                236,
+                                                                                                                                                Short.MAX_VALUE))))
+                                                                                .addGroup(groupLayoutPanel1
+                                                                                                .createSequentialGroup()
+                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.LEADING)
+                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                .createSequentialGroup()
+                                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                                .createParallelGroup(
+                                                                                                                                                                Alignment.LEADING)
+                                                                                                                                                .addComponent(addressLabel)
+                                                                                                                                                .addComponent(passportIdLabel)
+                                                                                                                                                .addComponent(cnicLabel))
+                                                                                                                                .addGap(38)
+                                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                                .createParallelGroup(
+                                                                                                                                                                Alignment.LEADING,
+                                                                                                                                                                false)
+                                                                                                                                                .addComponent(scrollpane1,
+                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                                                                                .addComponent(passportText)
+                                                                                                                                                .addComponent(cnicText)))
+                                                                                                                .addComponent(panel2,
+                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                361,
+                                                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                                                .addPreferredGap(
+                                                                                                                ComponentPlacement.RELATED)
+                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                .createParallelGroup(
+                                                                                                                                Alignment.LEADING)
+                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                .createSequentialGroup()
+                                                                                                                                .addGap(53)
+                                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                                .createParallelGroup(
+                                                                                                                                                                Alignment.LEADING)
+                                                                                                                                                .addComponent(warningCNIC,
+                                                                                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                                214,
+                                                                                                                                                                Short.MAX_VALUE)
+                                                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                                                .createSequentialGroup()
+                                                                                                                                                                .addGap(27)
+                                                                                                                                                                .addComponent(warningPassportId,
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                                                184,
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                                                                                                .addGap(0, 30, Short.MAX_VALUE))
+                                                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                                                .createSequentialGroup()
+                                                                                                                                                                .addPreferredGap(
+                                                                                                                                                                                ComponentPlacement.RELATED)
+                                                                                                                                                                .addComponent(AddBtn,
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                                                105,
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                                                                                                .addPreferredGap(
+                                                                                                                                                                                ComponentPlacement.UNRELATED)
+                                                                                                                                                                .addComponent(BackBtn,
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                                                100,
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE))))
+                                                                                                                .addComponent(warningContact,
+                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                189,
+                                                                                                                                GroupLayout.PREFERRED_SIZE))))
+                                                                .addContainerGap()));
                 groupLayoutPanel1.setVerticalGroup(
-                	groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                		.addGroup(groupLayoutPanel1.createSequentialGroup()
-                			.addGap(37)
-                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
-                				.addComponent(firstNameLabel)
-                				.addComponent(firstNameText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                				.addComponent(warningFirstName))
-                			.addGap(22)
-                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
-                				.addComponent(lastNameLabel)
-                				.addComponent(lastNameText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                				.addComponent(warningLastName))
-                			.addGap(18)
-                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
-                				.addComponent(cnicLabel)
-                				.addComponent(cnicText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                				.addComponent(warningCNIC))
-                			.addGap(18)
-                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
-                				.addComponent(passportIdLabel)
-                				.addComponent(passportText, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                				.addComponent(warningPassportId))
-                			.addPreferredGap(ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
-                			.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                				.addGroup(Alignment.TRAILING, groupLayoutPanel1.createSequentialGroup()
-                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
-                						.addComponent(addressLabel)
-                						.addComponent(scrollpane1, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
-                					.addGap(18)
-                					.addComponent(panel2, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
-                					.addGap(99))
-                				.addGroup(Alignment.TRAILING, groupLayoutPanel1.createSequentialGroup()
-                					.addComponent(warningContact)
-                					.addGap(18)
-                					.addGroup(groupLayoutPanel1.createParallelGroup(Alignment.BASELINE)
-                						.addComponent(AddBtn, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                						.addComponent(BackBtn, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
-                					.addGap(94))))
-                );
+                                groupLayoutPanel1.createParallelGroup(Alignment.LEADING)
+                                                .addGroup(groupLayoutPanel1.createSequentialGroup()
+                                                                .addGap(37)
+                                                                .addGroup(groupLayoutPanel1
+                                                                                .createParallelGroup(Alignment.BASELINE)
+                                                                                .addComponent(firstNameLabel)
+                                                                                .addComponent(firstNameText,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(warningFirstName))
+                                                                .addGap(22)
+                                                                .addGroup(groupLayoutPanel1
+                                                                                .createParallelGroup(Alignment.BASELINE)
+                                                                                .addComponent(lastNameLabel)
+                                                                                .addComponent(lastNameText,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(warningLastName))
+                                                                .addGap(18)
+                                                                .addGroup(groupLayoutPanel1
+                                                                                .createParallelGroup(Alignment.BASELINE)
+                                                                                .addComponent(cnicLabel)
+                                                                                .addComponent(cnicText,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(warningCNIC))
+                                                                .addGap(18)
+                                                                .addGroup(groupLayoutPanel1
+                                                                                .createParallelGroup(Alignment.BASELINE)
+                                                                                .addComponent(passportIdLabel)
+                                                                                .addComponent(passportText,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(warningPassportId))
+                                                                .addPreferredGap(ComponentPlacement.RELATED, 6,
+                                                                                Short.MAX_VALUE)
+                                                                .addGroup(groupLayoutPanel1
+                                                                                .createParallelGroup(Alignment.LEADING)
+                                                                                .addGroup(Alignment.TRAILING,
+                                                                                                groupLayoutPanel1
+                                                                                                                .createSequentialGroup()
+                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                .createParallelGroup(
+                                                                                                                                                Alignment.LEADING)
+                                                                                                                                .addComponent(addressLabel)
+                                                                                                                                .addComponent(scrollpane1,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                62,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                                                                .addGap(18)
+                                                                                                                .addComponent(panel2,
+                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                160,
+                                                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                                                .addGap(99))
+                                                                                .addGroup(Alignment.TRAILING,
+                                                                                                groupLayoutPanel1
+                                                                                                                .createSequentialGroup()
+                                                                                                                .addComponent(warningContact)
+                                                                                                                .addGap(18)
+                                                                                                                .addGroup(groupLayoutPanel1
+                                                                                                                                .createParallelGroup(
+                                                                                                                                                Alignment.BASELINE)
+                                                                                                                                .addComponent(AddBtn,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                38,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                                                                                .addComponent(BackBtn,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                38,
+                                                                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                                                                .addGap(94)))));
                 panel1.setLayout(groupLayoutPanel1);
 
                 photoLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -722,7 +840,7 @@ public class addCustomer extends javax.swing.JFrame {
          * @param evt the ActionEvent triggered by selecting an image file.
          * @throws IOException if an I/O exception occurs while reading the image file.
          */
-        private void browseBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_browseBtnAction
+        public void browseBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_browseBtnAction
                 // TODO add your handling code here:
 
                 try {
@@ -739,13 +857,14 @@ public class addCustomer extends javax.swing.JFrame {
                         photoLabel.setIcon(imageIcon);
 
                         File image = new File(path);
-                        FileInputStream fis = new FileInputStream(image);
-                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        byte[] buff = new byte[1024];
-                        for (int readNum; (readNum = fis.read(buff)) != -1;) {
-                                baos.write(buff, 0, readNum);
+                        try (FileInputStream fis = new FileInputStream(image)) {
+                                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                                byte[] buff = new byte[1024];
+                                for (int readNum; (readNum = fis.read(buff)) != -1;) {
+                                        baos.write(buff, 0, readNum);
+                                }
+                                userimage = baos.toByteArray();
                         }
-                        userimage = baos.toByteArray();
                 } catch (IOException ex) {
                         Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -760,9 +879,7 @@ public class addCustomer extends javax.swing.JFrame {
          * @throws SQLException           if a SQL exception occurs while interacting
          *                                with the database.
          */
-        private void addCustomerBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addCustomerBtnAction
-                // TODO add your handling code here:
-
+        public void addCustomerBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addCustomerBtnAction
                 String id = IdText.getText();
                 String firstname = firstNameText.getText();
                 String lastname = lastNameText.getText();
@@ -805,11 +922,11 @@ public class addCustomer extends javax.swing.JFrame {
                 } else if (yr > 2004 || yr < 1922) {
                         JOptionPane.showMessageDialog(this, "Under 18 and above 100 not allowed");
                 } else if (userimage == null || userimage.length == 0) {
-                    JOptionPane.showMessageDialog(this, "Please upload your photo ");
-                }else {
+                        JOptionPane.showMessageDialog(this, "Please upload your photo ");
+                } else {
                         try {
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                con = DriverManager.getConnection("jdbc:mysql://localhost/airline", "root", "1234");
+
+                                con = connectionManager.getConnection();
                                 pst = con.prepareStatement(
                                                 "insert into customer(id,firstname,lastname,nic,passport,address,dob,gender,contact,photo)values(?,?,?,?,?,?,?,?,?,?)");
 
@@ -827,8 +944,6 @@ public class addCustomer extends javax.swing.JFrame {
 
                                 JOptionPane.showMessageDialog(null, "Registration Created");
                                 AddBtn.setEnabled(false);
-                        } catch (ClassNotFoundException ex) {
-                                Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                         } catch (SQLException ex) {
                                 Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -841,7 +956,7 @@ public class addCustomer extends javax.swing.JFrame {
          *
          * @param evt the ActionEvent triggered by clicking the "Cancel" button.
          */
-        private void cancelBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cancelBtnAction
+        public void cancelBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cancelBtnAction
                 // TODO add your handling code here:
                 this.dispose();
                 cusDomainObj = new cusdomain();
@@ -854,7 +969,7 @@ public class addCustomer extends javax.swing.JFrame {
          * 
          * @param evt The key release event.
          */
-        private void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
+        public void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[A-Za-z]{3,29}$";
                 Pattern patt = Pattern.compile(regex);
@@ -872,7 +987,7 @@ public class addCustomer extends javax.swing.JFrame {
          * 
          * @param evt The key release event.
          */
-        private void txtLastNameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtLastNameKeyReleased
+        public void txtLastNameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtLastNameKeyReleased
                 // TODO add your handling code here
                 String regex = "^[A-Za-z]{3,29}$";
                 Pattern patt = Pattern.compile(regex);
@@ -891,7 +1006,7 @@ public class addCustomer extends javax.swing.JFrame {
          * @param evt The key release event.
          */
 
-        private void txtpassportKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtpassportKeyReleased
+        public void txtpassportKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtpassportKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[A-Za-z0-9]{9}$";
                 Pattern patt = Pattern.compile(regex);
@@ -920,7 +1035,7 @@ public class addCustomer extends javax.swing.JFrame {
          * @param evt The key release event.
          */
 
-        private void txtCnicKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtCnicKeyReleased
+        public void txtCnicKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtCnicKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[0-9]{5}-[0-9]{7}-[0-9]$";
                 Pattern patt = Pattern.compile(regex);
@@ -948,7 +1063,7 @@ public class addCustomer extends javax.swing.JFrame {
          * 
          * @param evt The key release event.
          */
-        private void txtcontactKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtcontactKeyReleased
+        public void txtcontactKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtcontactKeyReleased
                 // TODO add your handling code here:
                 String regex = "^[0-9]{4}-[0-9]{7}$";
                 Pattern patt = Pattern.compile(regex);
@@ -1019,4 +1134,119 @@ public class addCustomer extends javax.swing.JFrame {
         private javax.swing.JLabel photoLabel;
         private javax.swing.ButtonGroup buttonGrp;
         private cusdomain cusDomainObj;
+
+        // Set the connection for the class
+        // @param mockConnection The mock connection to set
+        // @throws SQLException If there is an issue with the connection
+        public void setConnection(Connection mockConnection) throws SQLException {
+                mockConnection = connectionManager.getConnection();
+        }
+
+        // Get the customer domain object
+        // @return The customer domain object
+        public cusdomain getCusDomainObj() {
+                return cusDomainObj;
+        }
+
+        // Get the male radio button
+        // @return The male radio button
+        public JRadioButton getMaleRadioBtn() {
+                return maleRadioBtn;
+        }
+
+        // Get the ID label
+        // @return The ID label
+        public javax.swing.JLabel getIdText() {
+                return IdText;
+        }
+
+        // Get the date of birth text field
+        // @return The date of birth text field
+        public JDateChooser getDateOfBirthText() {
+                return dateOfBirthText;
+        }
+
+        // Get the first name text field
+        // @return The first name text field
+        public javax.swing.JTextField getFirstNameText() {
+                return firstNameText;
+        }
+
+        // Get the last name text field
+        // @return The last name text field
+        public javax.swing.JTextField getLastNameText() {
+                return lastNameText;
+        }
+
+        // Get the CNIC text field
+        // @return The CNIC text field
+        public javax.swing.JTextField getCnicText() {
+                return cnicText;
+        }
+
+        // Get the passport text field
+        // @return The passport text field
+        public javax.swing.JTextField getPassportText() {
+                return passportText;
+        }
+
+        // Get the address text area
+        // @return The address text area
+        public javax.swing.JTextArea getAddressText() {
+                return addressText;
+        }
+
+        // Get the contact text field
+        // @return The contact text field
+        public javax.swing.JTextField getContactText() {
+                return contactText;
+        }
+
+        // Check if the window is disposed
+        // @return true if the window is disposed, false otherwise
+        public boolean isWindowDisposed() {
+                return false;
+        }
+
+        // Get the warning label for the first name
+        // @return The warning label for the first name
+        public JLabel getWarningFirstName() {
+                return warningFirstName;
+        }
+
+        // Get the warning label for the last name
+        // @return The warning label for the last name
+        public JLabel getWarningLastName() {
+                return warningLastName;
+        }
+
+        // Get the warning label for the passport ID
+        // @return The warning label for the passport ID
+        public JLabel getWarningPassportId() {
+                return warningPassportId;
+        }
+
+        // Get the warning label for the contact
+        // @return The warning label for the contact
+        public JLabel getWarningContact() {
+                return warningContact;
+        }
+
+        // Get the warning label for the CNIC
+        // @return The warning label for the CNIC
+        public JLabel getWarningCNIC() {
+                return warningCNIC;
+        }
+
+        // Get the add button component
+        // @return The add button component
+        public Component getAddBtn() {
+                return AddBtn;
+        }
+
+        // Get the user image object
+        // @return The user image object
+        public Object getUserImage() {
+                return photoLabel;
+        }
 }

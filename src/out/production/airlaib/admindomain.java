@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package out.production.airlaib;
+
 import javax.swing.JFrame;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
@@ -507,13 +504,14 @@ public class admindomain extends javax.swing.JFrame {
         private searchCustomer searchCustomerObj;
         private ticketreport ticketReportObj;
         private welcome welcomeObj;
+
         /**
          * Gets the AddFlight object.
          *
          * @return The AddFlight object.
          */
         public addflight getAddFlightObj() {
-            return addFlightObj;
+                return addFlightObj;
         }
 
         /**
@@ -522,7 +520,7 @@ public class admindomain extends javax.swing.JFrame {
          * @param setAddFlightObj The AddFlight object to set.
          */
         public void setAddFlightObj(addflight setAddFlightObj) {
-            this.addFlightObj = setAddFlightObj;
+                this.addFlightObj = setAddFlightObj;
         }
 
         /**
@@ -531,7 +529,7 @@ public class admindomain extends javax.swing.JFrame {
          * @return The UserCreation object.
          */
         public userCreation getUserCreationObj() {
-            return userCreationObj;
+                return userCreationObj;
         }
 
         /**
@@ -540,7 +538,7 @@ public class admindomain extends javax.swing.JFrame {
          * @param setUserCreationObj The UserCreation object to set.
          */
         public void setUserCreationObj(userCreation setUserCreationObj) {
-            this.userCreationObj = setUserCreationObj;
+                this.userCreationObj = setUserCreationObj;
         }
 
         /**
@@ -549,7 +547,7 @@ public class admindomain extends javax.swing.JFrame {
          * @return The SearchCustomer object.
          */
         public searchCustomer getSearchCustomerObj() {
-            return searchCustomerObj;
+                return searchCustomerObj;
         }
 
         /**
@@ -558,7 +556,7 @@ public class admindomain extends javax.swing.JFrame {
          * @param setSearchCustomerObj The SearchCustomer object to set.
          */
         public void setSearchCustomerObj(searchCustomer setSearchCustomerObj) {
-            this.searchCustomerObj = setSearchCustomerObj;
+                this.searchCustomerObj = setSearchCustomerObj;
         }
 
         /**
@@ -567,7 +565,7 @@ public class admindomain extends javax.swing.JFrame {
          * @return The TicketReport object.
          */
         public ticketreport getTicketReportObj() {
-            return ticketReportObj;
+                return ticketReportObj;
         }
 
         /**
@@ -576,7 +574,7 @@ public class admindomain extends javax.swing.JFrame {
          * @param setTicketReportObj The TicketReport object to set.
          */
         public void setTicketReportObj(ticketreport setTicketReportObj) {
-            this.ticketReportObj = setTicketReportObj;
+                this.ticketReportObj = setTicketReportObj;
         }
 
         /**
@@ -585,7 +583,7 @@ public class admindomain extends javax.swing.JFrame {
          * @return The Welcome object.
          */
         public welcome getWelcomeObj() {
-            return welcomeObj;
+                return welcomeObj;
         }
 
         /**
@@ -594,6 +592,6 @@ public class admindomain extends javax.swing.JFrame {
          * @param setWelcomeObj The Welcome object to set.
          */
         public void setWelcomeObj(welcome setWelcomeObj) {
-            this.welcomeObj = setWelcomeObj;
+                this.welcomeObj = setWelcomeObj;
         }
 }

@@ -7,7 +7,6 @@ package out.production.airlaib;
 
 import javax.swing.*;
 
-import java.awt.EventQueue;
 import java.sql.*;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -363,44 +362,44 @@ public class viewTicket extends javax.swing.JFrame {
         private javax.swing.JTextField ticketText;
         private cusdomain cusdomainObj;
         private bill billObj;
+
         // End of variables declaration//GEN-END:variables
-		public void setConnection(Connection mockConnection) throws SQLException {
-			mockConnection = connectionManager.getConnection();
-			
-		}
+        public void setConnection(Connection mockConnection) throws SQLException {
+                mockConnection = connectionManager.getConnection();
 
-		public javax.swing.JTextField getTicketText() {
-			// TODO Auto-generated method stub
-			return ticketText;
-		}
+        }
 
-		public void setCusdomainObj(cusdomain cusdomainMock) {
-			this.cusdomainObj = cusdomainMock;
-		}
+        public javax.swing.JTextField getTicketText() {
+                // TODO Auto-generated method stub
+                return ticketText;
+        }
 
-		/**
-		 * Gets the value of the showMessageDialogMessage field.
-		 *
-		 * @return The value of the showMessageDialogMessage field.
-		 */
-		public Object getShowMessageDialogMessage() {
-		    // TODO: Implement the logic to return the value of showMessageDialogMessage
-		    return "Record not Found"; // Placeholder, replace with actual logic
-		}
+        public void setCusdomainObj(cusdomain cusdomainMock) {
+                this.cusdomainObj = cusdomainMock;
+        }
 
-		/**
-		 * @return the billObj
-		 */
-		public bill getBillObj() {
-			return billObj;
-		}
+        /**
+         * Gets the value of the showMessageDialogMessage field.
+         *
+         * @return The value of the showMessageDialogMessage field.
+         */
+        public Object getShowMessageDialogMessage() {
+                // TODO: Implement the logic to return the value of showMessageDialogMessage
+                return "Record not Found"; // Placeholder, replace with actual logic
+        }
 
-		/**
-		 * @param billObj the billObj to set
-		 */
-		public void setBillObj(bill billObj) {
-			this.billObj = billObj;
-		}
+        /**
+         * @return the billObj
+         */
+        public bill getBillObj() {
+                return billObj;
+        }
 
-	
+        /**
+         * @param billObj the billObj to set
+         */
+        public void setBillObj(bill billObj) {
+                this.billObj = billObj;
+        }
+
 }
