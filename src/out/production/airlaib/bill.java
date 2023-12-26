@@ -58,6 +58,7 @@ public class bill extends javax.swing.JFrame {
         jSkyIcon = new javax.swing.JLabel();
         ticketLabel = new javax.swing.JLabel();
         lineLabel1 = new javax.swing.JLabel();
+        
         lineLabel2 = new javax.swing.JLabel();
         fNameLabel = new javax.swing.JLabel();
         fNameTxt = new javax.swing.JLabel();
@@ -114,9 +115,11 @@ public class bill extends javax.swing.JFrame {
 
         lineLabel1.setText(
                 "------------------------------------------------------------------------------------------------------------------------------------------");
+        
+                lineLabel2.setText("<html>Kindly pay your ticket amount and send the Payment Receipt along with Ticket to payment@jsky.com<br>"
+                + "------------------------------------------------------------------------------------------------------------------------------------------</html>");
+        
 
-        lineLabel2.setText(
-                "------------------------------------------------------------------------------------------------------------------------------------------");
 
         fNameLabel.setFont(new java.awt.Font("RomanT", 0, 14)); // NOI18N
         fNameLabel.setText("FIRST NAME:");
@@ -740,6 +743,7 @@ public class bill extends javax.swing.JFrame {
     private javax.swing.JButton exitButton;
     private javax.swing.JLabel ticketLabel;
     private javax.swing.JLabel passportNoLabel;
+    
     private javax.swing.JLabel personalDetailsLabel;
     private javax.swing.JLabel lineLabel3;
     private javax.swing.JLabel cnicText;
