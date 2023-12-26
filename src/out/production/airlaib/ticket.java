@@ -1098,8 +1098,8 @@ public class ticket extends javax.swing.JFrame {
                                 SimpleDateFormat df = new SimpleDateFormat("yyyy");
                                 String year = df.format(txtdate.getDate());
                                 int yr = Integer.parseInt(year);
-                                if (!(yr == 2024)) {
-                                        JOptionPane.showMessageDialog(this, "Can only book for the current year");
+                                if (!(yr == 2023 || yr == 2024)) {
+                                        JOptionPane.showMessageDialog(this, "Can only book for the year 2023 or 2024");
                                 } else {
                                         con = connectionManager.getConnection();
                                         pst = con.prepareStatement(

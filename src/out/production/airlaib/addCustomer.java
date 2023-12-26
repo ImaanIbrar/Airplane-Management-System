@@ -286,10 +286,8 @@ public class addCustomer extends javax.swing.JFrame {
 
                 warningCNIC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 warningCNIC.setForeground(new java.awt.Color(255, 0, 51));
-
                 warningPassportId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 warningPassportId.setForeground(new java.awt.Color(255, 0, 51));
-
                 warningContact.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
                 warningContact.setForeground(new java.awt.Color(255, 0, 51));
                 BackBtn = new javax.swing.JButton();
@@ -304,7 +302,6 @@ public class addCustomer extends javax.swing.JFrame {
                         }
                 });
                 AddBtn = new javax.swing.JButton();
-
                 AddBtn.setBackground(new java.awt.Color(0, 51, 51));
                 AddBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                 AddBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -919,7 +916,7 @@ public class addCustomer extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "Please enter cnic in correct format");
                 } else if (!passport.matches("^[A-Za-z0-9]{9}$") || !contact.matches("^[0-9]{4}-[0-9]{7}$")) {
                         JOptionPane.showMessageDialog(this, "Please enter in correct format");
-                } else if (yr > 2004 || yr < 1922) {
+                } else if (yr > 2005 || yr < 1923) {
                         JOptionPane.showMessageDialog(this, "Under 18 and above 100 not allowed");
                 } else if (userimage == null || userimage.length == 0) {
                         JOptionPane.showMessageDialog(this, "Please upload your photo ");
