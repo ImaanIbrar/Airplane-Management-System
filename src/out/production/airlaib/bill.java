@@ -723,10 +723,10 @@ public class bill extends javax.swing.JFrame {
                 flightNameText.setText(flightName.trim());
                 depTimeText.setText(departs.trim());
                 classText.setText(seatClass.trim());
-                seatsText.setText(String.valueOf(seats));
+                seatsText.setText(String.valueOf(seatss));
                 billText.setText(String.valueOf(bill));
-                departureText.setText(source);
-                arrivalText.setText(depart);
+                departureText.setText(sources);
+                arrivalText.setText(departss);
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Date date = new Date();
                 generatedTimeText.setText(formatter.format(date));
