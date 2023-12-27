@@ -19,11 +19,26 @@ import out.production.airlaib.bill;
 import out.production.airlaib.viewTicket;
 
 /**
- * Javadoc for ViewTicketTest class.
- *
  * JUnit test class for the {@code viewTicket} class.
  * Author: Abdullah Tahir
+ * 
+ * Testing strategy for the ViewTicket class.
+ *
+ * Partition the inputs as follows:
+ *
+ * 1. Case when a record is found (positive case):
+ *    - Set up a mock connection to return a record when queried.
+ *    - Call proceedBtnAction with a valid ticket ID.
+ *    - Verify that the billing window is opened and visible.
+ *
+ * 2. Case when a record is not found (negative case):
+ *    - Set up a mock connection to not return a record when queried.
+ *    - Call proceedBtnAction with a nonexistent ticket ID.
+ *    - Verify that the billing window is null.
+ *
+ * Note: The testing strategy may evolve based on the actual implementation of the ViewTicket class.
  */
+ 
 public class ViewTicketTest {
 
     // Fields for mock objects
