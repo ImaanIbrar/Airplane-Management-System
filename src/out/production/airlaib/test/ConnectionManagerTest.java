@@ -9,7 +9,22 @@ import java.sql.SQLException;
 import org.junit.Test;
 
 import out.production.airlaib.connectionManager;
-
+/**
+ * Testing strategy for ConnectionManagerTest class:
+ *
+ * The primary goal of ConnectionManagerTest is to ensure that the connectionManager class
+ * successfully establishes a connection to the MySQL database.
+ *
+ * Test case:
+ *
+ * 1. **testGetConnectionSuccess:**
+ *    - Description: Tests the successful establishment of a database connection.
+ *    - Steps:
+ *        - Call the `getConnection` method of `connectionManager`.
+ *        - Verify that the returned connection is not null.
+ *        - Close the connection.
+ *    - Expected Result: Connection should not be null, and the connection should be successfully closed.
+ */
 /**
  * Javadoc for ConnectionManagerTest class.
  *
@@ -20,6 +35,7 @@ import out.production.airlaib.connectionManager;
  * @version 1.0
  * @since 23-12-2023
  */
+
 public class ConnectionManagerTest {
 
     /**
