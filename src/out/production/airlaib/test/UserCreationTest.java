@@ -20,15 +20,84 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import out.production.airlaib.userCreation;
-
 /**
- * JavaDoc for the UserCreationTest class.
+ *  JavaDoc for the UserCreationTest class.
  * 
  * JUnit test class for the {@code userCreation} class.
  * 
  * @author Marriam Naeem
  * @version 1.0
  * @since 2023-12-24
+ * 
+ * Testing strategy for UserCreationTest class:
+ *
+ * The primary goal of UserCreationTest is to verify the functionality of the userCreation class,
+ * focusing on the addBtnAction method, isStrongPassword method, backBtnAction method, and key released events.
+ *
+ * Test cases:
+ *
+ * 1. **testAddButtonActionWithValidInput:**
+ *    - Description: Tests the add button action with valid input.
+ *    - Steps:
+ *        - Set valid input values.
+ *        - Mock the database connection and prepared statement.
+ *        - Call the addBtnAction method.
+ *        - Verify that the add button is disabled after the action.
+ *    - Expected Result: The add button should be disabled after adding a user with valid input.
+ *
+ * 2. **testAddButtonActionWithMissingFields:**
+ *    - Description: Tests the add button action with missing fields.
+ *    - Steps:
+ *        - Leave some fields empty.
+ *        - Mock the database connection (not needed for this test).
+ *        - Call the addBtnAction method.
+ *        - Verify that JOptionPane is called with the correct message.
+ *    - Expected Result: JOptionPane should be called with the correct message when fields are missing.
+ *
+ * 3. **testAddButtonActionWithIncorrectNameEntry:**
+ *    - Description: Tests the add button action with incorrect name entry.
+ *    - Steps:
+ *        - Set invalid characters in the first name.
+ *        - Call the addBtnAction method.
+ *        - Verify that JOptionPane is called with the correct message.
+ *    - Expected Result: JOptionPane should be called with the correct message for incorrect name entry.
+ *
+ * 4. **testAddButtonActionWithWeakPassword:**
+ *    - Description: Tests the add button action with a weak password.
+ *    - Steps:
+ *        - Set a weak password.
+ *        - Call the addBtnAction method.
+ *        - Verify that JOptionPane is called with the correct message.
+ *    - Expected Result: JOptionPane should be called with the correct message for a weak password.
+ *
+ * 5. **testIsStrongPassword:**
+ *    - Description: Tests the isStrongPassword method.
+ *    - Steps:
+ *        - Call isStrongPassword with a strong and weak password.
+ *    - Expected Result: isStrongPassword should correctly identify strong and weak passwords.
+ *
+ * 6. **testBackBtnAction:**
+ *    - Description: Tests the back button action.
+ *    - Steps:
+ *        - Call the back button action.
+ *        - Verify that the adminDomainObj window is visible after the action.
+ *    - Expected Result: The adminDomainObj window should be visible after the back button action.
+ *
+ * 7. **testTxtfirstnameKeyReleased:**
+ *    - Description: Tests the key released event for the first name text field.
+ *    - Steps:
+ *        - Set initial values for the first name text field.
+ *        - Call txtfirstnameKeyReleased with a mock key event.
+ *        - Assert any relevant behavior or state changes.
+ *    - Expected Result: The warning label for the first name should be set after the key released event.
+ *
+ * 8. **testTxtLastnameKeyReleased:**
+ *    - Description: Tests the key released event for the last name text field.
+ *    - Steps:
+ *        - Set initial values for the last name text field.
+ *        - Call txtlastnameKeyReleased with a mock key event.
+ *        - Assert any relevant behavior or state changes.
+ *    - Expected Result: The warning label for the last name should be set after the key released event.
  */
 public class UserCreationTest {
 
