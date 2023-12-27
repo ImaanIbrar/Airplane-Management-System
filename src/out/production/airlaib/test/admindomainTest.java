@@ -20,8 +20,54 @@ import java.awt.event.ActionEvent;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 /**
- * JUnit test class for the admindomain class.
- * Author: Laiba Atiq
+ * Testing strategy for AdminDomainTest class:
+ *
+ * The primary goal of AdminDomainTest is to verify the functionality of the admindomain class,
+ * specifically focusing on the addFlightBtnAction, searchCustomerBtnAction, generateTicketBtnAction,
+ * logoutBtnAction, and createUserBtnAction methods.
+ *
+ * Test cases:
+ *
+ * 1. **testAddFlightBtnAction:**
+ *    - Description: Tests the addFlightBtnAction method of the admindomain class.
+ *    - Steps:
+ *        - Set up the mock addFlight window.
+ *        - Call the addFlightBtnAction method.
+ *        - Verify that the frame is hidden, addFlight window is shown, and the window is visible.
+ *    - Expected Result: The addFlight window should be visible after calling the addFlightBtnAction method.
+ *
+ * 2. **testSearchCustomerBtnAction:**
+ *    - Description: Tests the searchCustomerBtnAction method of the admindomain class.
+ *    - Steps:
+ *        - Set up the mock searchCustomer window.
+ *        - Call the searchCustomerBtnAction method.
+ *        - Verify that the frame is hidden, searchCustomer window is shown, and the window is visible.
+ *    - Expected Result: The searchCustomer window should be visible after calling the searchCustomerBtnAction method.
+ *
+ * 3. **testGenerateTicketBtnAction:**
+ *    - Description: Tests the generateTicketBtnAction method of the admindomain class.
+ *    - Steps:
+ *        - Set up the mock ticketReport window.
+ *        - Call the generateTicketBtnAction method.
+ *        - Verify that the frame is hidden, ticketReport window is shown, and the window is visible.
+ *    - Expected Result: The ticketReport window should be visible after calling the generateTicketBtnAction method.
+ *
+ * 4. **testLogoutBtnAction:**
+ *    - Description: Tests the logoutBtnAction method of the admindomain class.
+ *    - Steps:
+ *        - Set up the mock welcome window.
+ *        - Call the logoutBtnAction method.
+ *        - Verify that the frame is disposed, welcome window is shown, and the window is visible.
+ *    - Expected Result: The welcome window should be visible after calling the logoutBtnAction method.
+ *
+ * 5. **testCreateUserBtnAction:**
+ *    - Description: Tests the createUserBtnAction method of the admindomain class.
+ *    - Steps:
+ *        - Set up the mock userCreation window.
+ *        - Call the createUserBtnAction method.
+ *        - Verify that the frame is disposed, userCreation window is shown, and the window is visible.
+ *    - Expected Result: The userCreation window should be visible after calling the createUserBtnAction method.
+ *
  */
 @RunWith(MockitoJUnitRunner.class)
 public class admindomainTest {
