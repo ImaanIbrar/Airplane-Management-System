@@ -1,12 +1,3 @@
-/**
- * This class contains JUnit test cases for the 'ticket' class functionalities.
- * It utilizes Mockito for mocking database interactions and covers various scenarios.
- * The test cases include booking tickets, updating destination dropdown, and handling date selection.
- *
- * @author Marriam Naeem
- * @version 1.0
- * @since 2023-12-23
- */
 
 package out.production.airlaib.test;
 
@@ -32,6 +23,58 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import javax.swing.JComboBox;
+/**
+
+ * @author Marriam Naeem
+ * @version 1.0
+ * @since 2023-12-23
+ * 
+ * Testing strategy for TicketTest class:
+ *
+ * The primary goal of the TicketTest is to verify the functionality of the ticket class,
+ * focusing on booking tickets, updating the destination dropdown, and handling date selection.
+ *
+ * Test cases:
+ *
+ * 1. **testBookSuccessful:**
+ *    - Description: Tests the successful booking of a ticket.
+ *    - Steps:
+ *        - Mock the necessary fields for a successful booking.
+ *        - Call the bookBtnAction method.
+ *        - Verify that the expected changes occur (button is disabled, bill object is visible).
+ *    - Expected Result: The bookBtnAction method should successfully book a ticket, disable the button, and show the bill object.
+ *
+ * 2. **testBookUnSuccessful:**
+ *    - Description: Tests the unsuccessful booking of a ticket.
+ *    - Steps:
+ *        - Mock the necessary fields for an unsuccessful booking.
+ *        - Call the bookBtnAction method.
+ *        - Verify that the expected changes do not occur (bill object is not visible).
+ *    - Expected Result: The bookBtnAction method should not book a ticket and should not show the bill object.
+ *
+ * 3. **testupdateDestinationDropdown:**
+ *    - Description: Tests the update of the destination dropdown based on the selected source.
+ *    - Steps:
+ *        - Set the selected source.
+ *        - Call the updateDestinationDropdown method.
+ *        - Verify that the destination dropdown is updated accordingly.
+ *    - Expected Result: The updateDestinationDropdown method should update the destination dropdown based on the selected source.
+ *
+ * 4. **testDisablePastDates:**
+ *    - Description: Tests the method to disable past dates in the date chooser component.
+ *    - Steps:
+ *        - Set a past date in the date chooser component.
+ *        - Call the disablePastDates method.
+ *        - Verify that the date is reset to the current date.
+ *    - Expected Result: The disablePastDates method should reset the date to the current date if a past date is selected.
+ *
+ * 5. **testBackBtnAction:**
+ *    - Description: Tests the back button action.
+ *    - Steps:
+ *        - Call the backBtnAction method.
+ *        - Verify that the adminDomainObj window is visible.
+ *    - Expected Result: The backBtnAction method should make the adminDomainObj window visible.
+ */
 
 public class TicketTest {
 
