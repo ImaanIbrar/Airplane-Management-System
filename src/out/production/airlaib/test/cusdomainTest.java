@@ -20,9 +20,67 @@ import java.awt.event.ActionEvent;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 /**
- * JUnit test class for the {@code cusdomain} class.
- * Author: Marriam and Laiba
+ * 
+ * * JUnit test class for the {@code cusdomain} class.
+ * Author: Imaan
+ * 
+ * Testing strategy for CusDomainTest class:
+ *
+ * The primary goal of CusDomainTest is to verify the functionality of the cusdomain class,
+ * specifically focusing on the makeBookingBtnAction, registerBtnAction, mainMenuBtnAction,
+ * updateBookingBtnAction, cancelBookingBtnAction, and viewTicketBtnAction methods.
+ *
+ * Test cases:
+ *
+ * 1. **testMakeBookingBtnAction:**
+ *    - Description: Tests the makeBookingBtnAction method of the cusdomain class.
+ *    - Steps:
+ *        - Set up the mock ticket window.
+ *        - Call the makeBookingBtnAction method.
+ *        - Verify that the frame is disposed, ticket window is shown, and the window is visible.
+ *    - Expected Result: The ticket window should be visible after calling the makeBookingBtnAction method.
+ *
+ * 2. **testRegisterBtnAction:**
+ *    - Description: Tests the registerBtnAction method of the cusdomain class.
+ *    - Steps:
+ *        - Set up the mock addCustomer window.
+ *        - Call the registerBtnAction method.
+ *        - Verify that the frame is disposed, addCustomer window is shown, and the window is visible.
+ *    - Expected Result: The addCustomer window should be visible after calling the registerBtnAction method.
+ *
+ * 3. **testMainMenuBtnAction:**
+ *    - Description: Tests the mainMenuBtnAction method of the cusdomain class.
+ *    - Steps:
+ *        - Set up the mock welcome window.
+ *        - Call the mainMenuBtnAction method.
+ *        - Verify that the frame is disposed, welcome window is shown, and the window is visible.
+ *    - Expected Result: The welcome window should be visible after calling the mainMenuBtnAction method.
+ *
+ * 4. **testUpdateBookingBtnAction:**
+ *    - Description: Tests the updateBookingBtnAction method of the cusdomain class.
+ *    - Steps:
+ *        - Set up the mock update window.
+ *        - Call the updateBookingBtnAction method.
+ *        - Verify that the frame is disposed, update window is sized and shown, and the window is visible.
+ *    - Expected Result: The update window should be visible after calling the updateBookingBtnAction method.
+ *
+ * 5. **testCancelBookingBtnAction:**
+ *    - Description: Tests the cancelBookingBtnAction method of the cusdomain class.
+ *    - Steps:
+ *        - Set up the mock cancels window.
+ *        - Call the cancelBookingBtnAction method.
+ *        - Verify that the frame is disposed, cancels window is shown, and the window is visible.
+ *    - Expected Result: The cancels window should be visible after calling the cancelBookingBtnAction method.
+ *
+ * 6. **testViewTicketBtnAction:**
+ *    - Description: Tests the viewTicketBtnAction method of the cusdomain class.
+ *    - Steps:
+ *        - Set up the mock viewTicket window.
+ *        - Call the viewTicketBtnAction method.
+ *        - Verify that the frame is disposed, viewTicket window is shown, and the window is visible.
+ *    - Expected Result: The viewTicket window should be visible after calling the viewTicketBtnAction method.
  */
+
 @RunWith(MockitoJUnitRunner.class)
 public class cusdomainTest {
 
