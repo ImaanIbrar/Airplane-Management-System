@@ -23,8 +23,23 @@ import org.mockito.Mockito;
 import out.production.airlaib.cancels;
 
 /**
- * JUnit test class for the {@cancels} class.
+ * JUnit test class for the {@code cancels} class.
  * Author: Marriam Naeem
+ *
+ * Testing strategy:
+ * - Partition the inputs for testProceedBtnActionRecordFound:
+ *   - Existing record found: mock the result set to return true for next().
+ *   - Existing record not found: mock the result set to return false for next().
+ *   - Verify the behavior of the proceed button and success message.
+ *
+ * - Partition the inputs for testProceedBtnActionRecordNotFound:
+ *   - Existing record found: mock the result set to return true for next().
+ *   - Existing record not found: mock the result set to return false for next().
+ *   - Verify the behavior of the JOptionPane.showMessageDialog for record not found.
+ *
+ * - Additional considerations:
+ *   - Mock the behavior of the database connection, statement, and result set for various scenarios.
+ *   - Test with SQL exceptions to ensure proper exception handling.
  */
 public class CancelsTest {
 
@@ -64,9 +79,14 @@ public class CancelsTest {
         }
     }
 
-    /**
+     /**
      * Test the {@code proceedBtnAction} method when a record is found.
      * Verifies that the proceed button is disabled and the success message is set.
+     * 
+     * Test cases:
+     * 1. Existing record found: mock the result set to return true for next().
+     * 2. Existing record not found: mock the result set to return false for next().
+     * 3. Verify the behavior of the proceed button and success message.
      * 
      * @throws SQLException If a SQL exception occurs during the test.
      */
@@ -90,6 +110,11 @@ public class CancelsTest {
     /**
      * Test the {@code proceedBtnAction} method when a record is not found.
      * Verifies that the expected error message is shown using JOptionPane.
+     * 
+     * Test cases:
+     * 1. Existing record found: mock the result set to return true for next().
+     * 2. Existing record not found: mock the result set to return false for next().
+     * 3. Verify the behavior of the JOptionPane.showMessageDialog for record not found.
      * 
      * @throws SQLException If a SQL exception occurs during the test.
      */
