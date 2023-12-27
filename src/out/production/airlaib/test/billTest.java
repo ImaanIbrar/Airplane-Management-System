@@ -20,11 +20,34 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
 import out.production.airlaib.bill;
-
 /**
  * JUnit test class for the {@code bill} class.
  * Author: Laiba Atiq
+ * Testing strategy for BillTest class:
+ *
+ * The primary goal of the BillTest is to verify the functionality of the bill class,
+ * focusing on the billprint method when a record is found and when a record is not found.
+ *
+ * Test cases:
+ *
+ * 1. **testBillPrintRecordFound:**
+ *    - Description: Tests the billprint method when a record is found.
+ *    - Steps:
+ *        - Mock the customer and ticket query results.
+ *        - Call the billprint method.
+ *        - Verify that the expected customer and ticket details are set.
+ *    - Expected Result: The billprint method should set the expected customer and ticket details when a record is found.
+ *
+ * 2. **testBillPrintRecordNotFound:**
+ *    - Description: Tests the billprint method when a record is not found.
+ *    - Steps:
+ *        - Mock the ResultSet.next() method to return false (record not found).
+ *        - Mock JOptionPane.showMessageDialog.
+ *        - Call the billprint method.
+ *        - Verify that the expected error message is shown using JOptionPane.
+ *    - Expected Result: The billprint method should show the expected error message when a record is not found.
  */
+
 public class billTest {
 
     private Connection mockConnection;
