@@ -19,8 +19,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * JUnit test class for the {@Login} class.
+ * JUnit test class for the {@link Login} class.
  * Author: Imaan Ibrar
+ *
+ * Testing Strategy:
+ *
+ * Partition the inputs for login credentials as follows:
+ * 1. Valid username and password.
+ * 2. Invalid username and password combination.
+ *
+ * Additionally, verify the behavior of the loginBtnAction method:
+ * 4. Verify that, on successful login, the admin domain window is opened.
+ * 5. Verify that, on unsuccessful login, appropriate error-handling behavior occurs (e.g., fields are cleared).
+ *
+ * Mock the database connection, statement, and result set for each test case using Mockito.
+ * Ensure that the result set returns a user for the valid credentials case and does not return a user for invalid credentials.
+ *
+ * Test Cases:
+ *
+ * Test 1: Valid login credentials
+ * - Set up: Set valid username and password in the Login instance.
+ * - Action: Call loginBtnAction.
+ * - Assert: Verify that the admin domain window is opened (check the visibility of the admin domain window).
+ *
+ * Test 2: Invalid login credentials
+ * - Set up: Set invalid username and password in the Login instance.
+ * - Action: Call loginBtnAction.
+ * - Assert: Verify that the username and password fields are cleared.
+ *
+ * 
  */
 public class LoginTest {
 
