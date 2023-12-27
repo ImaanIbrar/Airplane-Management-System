@@ -19,10 +19,42 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
-
 /**
  * JUnit test class for the {@code welcome} class.
  * Author: Laiba Atiq
+ * 
+ * Testing strategy for WelcomeTest class:
+ *
+ * The primary goal of WelcomeTest is to verify the functionality of the welcome class,
+ * focusing on the adminButtonActionPerformed, passengerButtonActionPerformed, and
+ * exitButtonActionPerformed methods.
+ *
+ * Test cases:
+ *
+ * 1. **testAdminButtonActionPerformed:**
+ *    - Description: Tests the adminButtonActionPerformed method of the welcome class.
+ *    - Steps:
+ *        - Set up the mock login window.
+ *        - Call the adminButtonActionPerformed method.
+ *        - Verify that the frame is disposed, login window is shown, and the window is visible.
+ *    - Expected Result: The login window should be visible after calling the adminButtonActionPerformed method.
+ *
+ * 2. **testPassengerButtonActionPerformed:**
+ *    - Description: Tests the passengerButtonActionPerformed method of the welcome class.
+ *    - Steps:
+ *        - Set up the mock cusdomain window.
+ *        - Call the passengerButtonActionPerformed method.
+ *        - Verify that the frame is disposed, cusdomain window is shown, and the window is visible.
+ *    - Expected Result: The cusdomain window should be visible after calling the passengerButtonActionPerformed method.
+ *
+ * 3. **testExitButtonActionPerformed:**
+ *    - Description: Tests the exitButtonActionPerformed method of the welcome class.
+ *    - Steps:
+ *        - Set up the mock login and cusdomain windows.
+ *        - Mock the static JOptionPane method to simulate a user clicking the "Yes" button in the confirmation dialog.
+ *        - Call the exitButtonActionPerformed method.
+ *        - Verify that the frame is disposed, login and cusdomain windows are not visible.
+ *    - Expected Result: The login and cusdomain windows should not be visible after calling the exitButtonActionPerformed method.
  */
 @RunWith(MockitoJUnitRunner.class)
 public class welcomeTest {
