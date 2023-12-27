@@ -24,14 +24,50 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-
 /**
- * JUnit test class for the {@link update} class.
+ *  JUnit test class for the {@link update} class.
  *
  * @author Marriam Naeem
  * @author Imaan Ibrar
  * @version 1.0
  * @since 2023-25-12
+ *
+ * Testing Strategy:
+ *
+ * - searchExistingTicketButtonActionPerformed:
+ *   - Provide a valid ticket ID.
+ *   - Ensure that the displayed ticket details match the expected values.
+ *
+ * - updateButtonActionPerformed (Successful Update):
+ *   - Provide valid data for updating a ticket.
+ *   - Verify that the update is successful.
+ *   - Ensure that the billing window is opened.
+ *
+ * - updateButtonActionPerformed (Unsuccessful Update):
+ *   - Provide invalid or incomplete data for updating a ticket.
+ *   - Verify that the update fails.
+ *   - Ensure that the billing window is not opened.
+ *
+ * - backButtonActionPerformed:
+ *   - Test the action of the "Back" button.
+ *   - Verify that the update window is closed, and the customer domain window is visible.
+ *
+ * - updateDestinationDropdown:
+ *   - Test the update of the destination dropdown based on the selected source.
+ *   - Ensure that the destination dropdown is updated correctly for different source selections.
+ *
+ * - disablePastDates:
+ *   - Test the method to disable past dates in the date chooser component.
+ *   - Provide a past date and verify that it is disabled.
+ *   - Provide a current or future date and ensure it remains enabled.
+ *
+ * - Additional considerations:
+ *   - Mock the behavior of the database connection, statement, and result set for various scenarios.
+ *   - Test with SQL exceptions to ensure proper exception handling.
+ *   - Check boundary cases for the ticket data, such as maximum and minimum values.
+ *   - Ensure proper handling of edge cases, such as empty or null values.
+ *   - Verify that appropriate warning messages are displayed for invalid inputs.
+ *   - Test the behavior when the ticket ID provided for updating does not exist.
  */
 
 public class updateTest {
