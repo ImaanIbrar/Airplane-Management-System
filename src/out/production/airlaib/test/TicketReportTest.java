@@ -19,15 +19,54 @@ import org.junit.Test;
 
 import out.production.airlaib.admindomain;
 import out.production.airlaib.ticketreport;
-
 /**
- * Javadoc for TicketReportTest class.
+ *  * Javadoc for TicketReportTest class.
  *
  * JUnit test class for the {@code ticketreport} class.
  *
  * @author Abdullah Tahir
  * @version 1.0
  * @since 2023-11-21
+ * Testing strategy for TicketReportTest class:
+ *
+ * The primary goal of TicketReportTest is to verify the functionality of the ticketreport class,
+ * specifically focusing on the LoadData, confirmButtonActionPerformed, and backBtnAction methods.
+ *
+ * Test cases:
+ *
+ * 1. **testLoadData:**
+ *    - Description: Tests the LoadData method of the ticketreport class.
+ *    - Steps:
+ *        - Create an instance of the ticketreport class.
+ *        - Call the LoadData method.
+ *        - Verify that the table has data (rows and columns) after the method call.
+ *    - Expected Result: The table should have data after calling the LoadData method.
+ *
+ * 2. **testConfirmButtonActionPerformed:**
+ *    - Description: Tests the confirmButtonActionPerformed method of the ticketreport class.
+ *    - Steps:
+ *        - Create an instance of the ticketreport class and set a mock connection.
+ *        - Set up mock objects for PreparedStatement and ResultSet to simulate a successful update.
+ *        - Select a row in the table.
+ *        - Call the confirmButtonActionPerformed method.
+ *        - Verify that the confirmation status is "Successful."
+ *    - Expected Result: The confirmation status should be "Successful" after confirming a ticket.
+ *
+ * 3. **testBackBtnAction:**
+ *    - Description: Tests the backBtnAction method of the ticketreport class.
+ *    - Steps:
+ *        - Create an instance of the ticketreport class.
+ *        - Set up a mock admin domain window.
+ *        - Call the backBtnAction method.
+ *        - Verify that the current window is closed, and the admin domain window is opened.
+ *    - Expected Result: The admin domain window should be opened after clicking the back button.
+ *
+ * 4. **Edge cases and Error scenarios:**
+ *    - Currently, there are no specific edge cases or error scenarios considered in the provided test.
+ *    - Depending on the implementation of the ticketreport class, additional tests could be added for:
+ *        - Handling scenarios where LoadData is called with no data in the database.
+ *        - Verifying the behavior when confirmButtonActionPerformed is called with no selected row.
+ *        - Testing the behavior when the back button is clicked with different states of the UI.
  */
 public class TicketReportTest {
 
