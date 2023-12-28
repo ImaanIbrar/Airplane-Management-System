@@ -95,7 +95,7 @@ public class CancelsTest {
         // Arrange
         cancels cancels = new cancels();
         cancels.setConnection(mockConnection);
-        cancels.getIdTextField().setText("TO001");
+        cancels.getIdTextField().setText("TO003");
 
         // Act
         cancels.proceedBtnAction(null);
@@ -136,7 +136,7 @@ public class CancelsTest {
 
         // Assert
         // Verify that showMessageDialog was called
-        assertEquals("Record not Found", messageCaptor.capture());
+        assertEquals("Record not Found", cancels.getShowMessageDialogMessage());
 
     }
 }

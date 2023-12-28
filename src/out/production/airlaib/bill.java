@@ -15,8 +15,11 @@ import javax.swing.LayoutStyle.ComponentPlacement;
  * It displays customer information and ticket details.
  *
  * @author Laiba Atiq
- * 
+ * @version 1.0
+ * @since 2022-10-21
  */
+
+
 public class bill extends javax.swing.JFrame {
     public String id;
     public String depart;
@@ -35,7 +38,7 @@ public class bill extends javax.swing.JFrame {
         initComponents();
         billprint(id, ticket);
     }
-
+    
     public bill() {
         // TODO Auto-generated constructor stub
     }

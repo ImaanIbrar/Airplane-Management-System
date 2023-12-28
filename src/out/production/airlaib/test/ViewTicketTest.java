@@ -86,7 +86,7 @@ public class ViewTicketTest {
         // Arrange
         viewTicket viewTicket = new viewTicket();
         viewTicket.setConnection(mockConnection);
-        viewTicket.getTicketText().setText("TO002");
+        viewTicket.getTicketText().setText("TO007");
 
         // Act
         viewTicket.proceedBtnAction(null);

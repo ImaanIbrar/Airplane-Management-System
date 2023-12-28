@@ -17,119 +17,118 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 /** 
-  JUnit test class for the {@code addCustomer} class.
- * Author: Laiba Atiq
- * 
- * Testing strategy for addCustomerTest class:
- *
- * The primary goal of the addCustomerTest is to verify the functionality of the addCustomer class,
- * focusing on methods like autoID, browseBtnAction, addCustomerBtnAction, cancelBtnAction, and keyReleased methods.
- *
- * Test cases:
- *
- * 1. **testAutoID:**
- *    - Description: Test for the autoID method.
- *    - Steps:
- *        - Call the autoID method.
- *    - Expected Result: The autoID method should generate a non-null auto-generated ID for the customer.
- *
- * 2. **testBrowseBtnAction:**
- *    - Description: Test for the browseBtnAction method.
- *    - Steps:
- *        - Call the browseBtnAction method with a mock ActionEvent.
- *    - Expected Result: The browseBtnAction method should set the user image to a non-null value after the action.
- *
- * 3. **testAddCustomerBtnAction_Successful:**
- *    - Description: Test for the addCustomerBtnAction method with successful execution.
- *    - Steps:
- *        - Set initial values for the customer fields.
- *        - Call the addCustomerBtnAction method.
- *    - Expected Result: The addCustomerBtnAction method should disable the button after successful execution.
- *
- * 4. **testAddCustomerBtnAction_Unsuccessful:**
- *    - Description: Test for the addCustomerBtnAction method with unsuccessful execution.
- *    - Steps:
- *        - Set initial values for the customer fields that would cause validation errors.
- *        - Call the addCustomerBtnAction method.
- *    - Expected Result: The addCustomerBtnAction method should not disable the button after unsuccessful execution.
- *
- * 5. **testCancelBtnAction:**
- *    - Description: Test for the cancelBtnAction method.
- *    - Steps:
- *        - Call the cancelBtnAction method with a mock ActionEvent.
- *    - Expected Result: The cancelBtnAction method should make the cusDomainObj window visible after the action.
- *
- * 6. **testTxtfirstnameKeyReleased_Valid:**
- *    - Description: Test for the txtfirstnameKeyReleased method with valid input.
- *    - Steps:
- *        - Set a valid first name.
- *        - Call the txtfirstnameKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for the first name should be null after the action.
- *
- * 7. **testTxtfirstnameKeyReleased_Invalid:**
- *    - Description: Test for the txtfirstnameKeyReleased method with invalid input.
- *    - Steps:
- *        - Set an invalid first name.
- *        - Call the txtfirstnameKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for an invalid first name should not be null after the action.
- *
- * 8. **testTxtLastNameKeyReleased_Valid:**
- *    - Description: Test for the txtLastNameKeyReleased method with valid input.
- *    - Steps:
- *        - Set a valid last name.
- *        - Call the txtLastNameKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for the last name should be null after the action.
- *
- * 9. **testTxtLastNameKeyReleased_Invalid:**
- *    - Description: Test for the txtLastNameKeyReleased method with invalid input.
- *    - Steps:
- *        - Set an invalid last name.
- *        - Call the txtLastNameKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for an invalid last name should not be null after the action.
- *
- * 10. **testTxtpassportKeyReleased_Valid:**
- *    - Description: Test for the txtpassportKeyReleased method with valid input.
- *    - Steps:
- *        - Set a valid passport ID.
- *        - Call the txtpassportKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for the passport should be null after the action.
- *
- * 11. **testTxtpassportKeyReleased_Invalid:**
- *    - Description: Test for the txtpassportKeyReleased method with invalid input.
- *    - Steps:
- *        - Set an invalid passport ID.
- *        - Call the txtpassportKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for an invalid passport should not be null after the action.
- *
- * 12. **testTxtCnicKeyReleased_Valid:**
- *    - Description: Test for the txtCnicKeyReleased method with valid input.
- *    - Steps:
- *        - Set a valid CNIC.
- *        - Call the txtCnicKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for the CNIC should be null after the action.
- *
- * 13. **testTxtCnicKeyReleased_Invalid:**
- *    - Description: Test for the txtCnicKeyReleased method with invalid input.
- *    - Steps:
- *        - Set an invalid CNIC.
- *        - Call the txtCnicKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for an invalid CNIC should not be null after the action.
- *
- * 14. **testTxtcontactKeyReleased_Valid:**
- *    - Description: Test for the txtcontactKeyReleased method with valid input.
- *    - Steps:
- *        - Set a valid contact number.
- *        - Call the txtcontactKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for the contact should be null after the action.
- *
- * 15. **testTxtcontactKeyReleased_Invalid:**
- *    - Description: Test for the txtcontactKeyReleased method with invalid input.
- *    - Steps:
- *        - Set an invalid contact number.
- *        - Call the txtcontactKeyReleased method with a mock KeyEvent.
- *    - Expected Result: The warning label for an invalid contact should not be null after the action.
- */
-
+JUnit test class for the {@code addCustomer} class.
+* Author: Laiba Atiq
+* 
+* Testing strategy for addCustomerTest class:
+*
+* The primary goal of the addCustomerTest is to verify the functionality of the addCustomer class,
+* focusing on methods like autoID, browseBtnAction, addCustomerBtnAction, cancelBtnAction, and keyReleased methods.
+*
+* Test cases:
+*
+* 1. *testAutoID:*
+*    - Description: Test for the autoID method.
+*    - Steps:
+*        - Call the autoID method.
+*    - Expected Result: The autoID method should generate a non-null auto-generated ID for the customer.
+*
+* 2. *testBrowseBtnAction:*
+*    - Description: Test for the browseBtnAction method.
+*    - Steps:
+*        - Call the browseBtnAction method with a mock ActionEvent.
+*    - Expected Result: The browseBtnAction method should set the user image to a non-null value after the action.
+*
+* 3. *testAddCustomerBtnAction_Successful:*
+*    - Description: Test for the addCustomerBtnAction method with successful execution.
+*    - Steps:
+*        - Set initial values for the customer fields.
+*        - Call the addCustomerBtnAction method.
+*    - Expected Result: The addCustomerBtnAction method should disable the button after successful execution.
+*
+* 4. *testAddCustomerBtnAction_Unsuccessful:*
+*    - Description: Test for the addCustomerBtnAction method with unsuccessful execution.
+*    - Steps:
+*        - Set initial values for the customer fields that would cause validation errors.
+*        - Call the addCustomerBtnAction method.
+*    - Expected Result: The addCustomerBtnAction method should not disable the button after unsuccessful execution.
+*
+* 5. *testCancelBtnAction:*
+*    - Description: Test for the cancelBtnAction method.
+*    - Steps:
+*        - Call the cancelBtnAction method with a mock ActionEvent.
+*    - Expected Result: The cancelBtnAction method should make the cusDomainObj window visible after the action.
+*
+* 6. *testTxtfirstnameKeyReleased_Valid:*
+*    - Description: Test for the txtfirstnameKeyReleased method with valid input.
+*    - Steps:
+*        - Set a valid first name.
+*        - Call the txtfirstnameKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for the first name should be null after the action.
+*
+* 7. *testTxtfirstnameKeyReleased_Invalid:*
+*    - Description: Test for the txtfirstnameKeyReleased method with invalid input.
+*    - Steps:
+*        - Set an invalid first name.
+*        - Call the txtfirstnameKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for an invalid first name should not be null after the action.
+*
+* 8. *testTxtLastNameKeyReleased_Valid:*
+*    - Description: Test for the txtLastNameKeyReleased method with valid input.
+*    - Steps:
+*        - Set a valid last name.
+*        - Call the txtLastNameKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for the last name should be null after the action.
+*
+* 9. *testTxtLastNameKeyReleased_Invalid:*
+*    - Description: Test for the txtLastNameKeyReleased method with invalid input.
+*    - Steps:
+*        - Set an invalid last name.
+*        - Call the txtLastNameKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for an invalid last name should not be null after the action.
+*
+* 10. *testTxtpassportKeyReleased_Valid:*
+*    - Description: Test for the txtpassportKeyReleased method with valid input.
+*    - Steps:
+*        - Set a valid passport ID.
+*        - Call the txtpassportKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for the passport should be null after the action.
+*
+* 11. *testTxtpassportKeyReleased_Invalid:*
+*    - Description: Test for the txtpassportKeyReleased method with invalid input.
+*    - Steps:
+*        - Set an invalid passport ID.
+*        - Call the txtpassportKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for an invalid passport should not be null after the action.
+*
+* 12. *testTxtCnicKeyReleased_Valid:*
+*    - Description: Test for the txtCnicKeyReleased method with valid input.
+*    - Steps:
+*        - Set a valid CNIC.
+*        - Call the txtCnicKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for the CNIC should be null after the action.
+*
+* 13. *testTxtCnicKeyReleased_Invalid:*
+*    - Description: Test for the txtCnicKeyReleased method with invalid input.
+*    - Steps:
+*        - Set an invalid CNIC.
+*        - Call the txtCnicKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for an invalid CNIC should not be null after the action.
+*
+* 14. *testTxtcontactKeyReleased_Valid:*
+*    - Description: Test for the txtcontactKeyReleased method with valid input.
+*    - Steps:
+*        - Set a valid contact number.
+*        - Call the txtcontactKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for the contact should be null after the action.
+*
+* 15. *testTxtcontactKeyReleased_Invalid:*
+*    - Description: Test for the txtcontactKeyReleased method with invalid input.
+*    - Steps:
+*        - Set an invalid contact number.
+*        - Call the txtcontactKeyReleased method with a mock KeyEvent.
+*    - Expected Result: The warning label for an invalid contact should not be null after the action.
+*/
 public class addCustomerTest {
 
     private Connection mockConnection;
