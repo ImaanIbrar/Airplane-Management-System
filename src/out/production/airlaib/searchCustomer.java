@@ -1,7 +1,4 @@
 package out.production.airlaib;
-
-import com.mysql.cj.util.StringUtils;
-
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -10,11 +7,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Blob;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,6 +21,8 @@ import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import java.awt.Component;
 import java.awt.Font;
 import javax.swing.GroupLayout.Alignment;
 
@@ -810,7 +807,7 @@ public class searchCustomer extends javax.swing.JFrame {
          * @param evt the ActionEvent triggered by the button click
          * @throws IOException if an I/O error occurs during image processing
          */
-        private void browseBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_browseBtnAction
+        public void browseBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_browseBtnAction
                 try {
                         JFileChooser picchooser = new JFileChooser();
                         picchooser.showOpenDialog(null);
@@ -849,7 +846,7 @@ public class searchCustomer extends javax.swing.JFrame {
          * @throws SQLException if a database access error occurs
          */
 
-        private void updateBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_updateBtnAction
+        public void updateBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_updateBtnAction
                 // TODO add your handling code here:
                 // String id = txtcustid.getText();
                 String firstname = txtfirstname.getText();
@@ -938,7 +935,7 @@ public class searchCustomer extends javax.swing.JFrame {
          * 
          * @params ActionEvent evt - The action event triggered by the button click
          */
-        private void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
+        public void backBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backBtnAction
                 // TODO add your handling code here:
                 this.dispose();
                 A1 = new admindomain();
@@ -957,7 +954,7 @@ public class searchCustomer extends javax.swing.JFrame {
          * @throws ParseException         if date parsing fails
          */
 
-        private void searchBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_searchBtnAction
+        public void searchBtnAction(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_searchBtnAction
                 id = txtCustomertId.getText();
 
                 try {
@@ -974,7 +971,6 @@ public class searchCustomer extends javax.swing.JFrame {
                                 txtpassport.setText(null);
                                 txtaddress.setText(null);
                                 txtcontact.setText(null);
-                                txtdob.setDate(null);
                                 txtPhoto.setIcon(null);
 
                                 JOptionPane.showMessageDialog(this, "Record not Found");
@@ -997,8 +993,10 @@ public class searchCustomer extends javax.swing.JFrame {
                                 String nic = rs.getString("nic");
                                 String passport = rs.getString("passport");
                                 String address = rs.getString("address");
+                             // Modified code
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                                 String dob = rs.getString("dob");
-                                Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(dob);
+                                Date date1 = dateFormat.parse(dob);
                                 String gender = rs.getString("gender");
 
                                 Blob blob = rs.getBlob("photo");
@@ -1031,8 +1029,22 @@ public class searchCustomer extends javax.swing.JFrame {
                 }
 
         }// GEN-LAST:event_searchBtnAction
+		
+		/**
+		 * @return the txtCustomertId
+		 */
+		public javax.swing.JTextField getTxtCustomertId() {
+			return txtCustomertId;
+		}
 
-        private void txtfirstnameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtfirstnameActionPerformed
+		/**
+		 * @param txtCustomertId the txtCustomertId to set
+		 */
+		public void setTxtCustomertId(javax.swing.JTextField txtCustomertId) {
+			this.txtCustomertId = txtCustomertId;
+		}
+
+		private void txtfirstnameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtfirstnameActionPerformed
         }// GEN-LAST:event_txtfirstnameActionPerformed
 
         private void txtnicActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtnicActionPerformed
@@ -1049,7 +1061,7 @@ public class searchCustomer extends javax.swing.JFrame {
          * @throws IllegalArgumentException if the entered name is invalid
          */
 
-        private void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
+        public void txtfirstnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtfirstnameKeyReleased
                 String regex = "^[A-Za-z]{3,29}$";
                 Pattern patt = Pattern.compile(regex);
                 Matcher match = patt.matcher(txtfirstname.getText());
@@ -1068,7 +1080,7 @@ public class searchCustomer extends javax.swing.JFrame {
          * @param evt the ActionEvent triggered by the text field
          * @throws IllegalArgumentException if the entered name is invalid
          */
-        private void txtlastnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtlastnameKeyReleased
+        public void txtlastnameKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtlastnameKeyReleased
                 String regex = "^[A-Za-z]{3,29}$";
                 Pattern patt = Pattern.compile(regex);
                 Matcher match = patt.matcher(txtlastname.getText());
@@ -1087,7 +1099,7 @@ public class searchCustomer extends javax.swing.JFrame {
          * @throws IllegalArgumentException if the entered NIC is invalid
          */
 
-        private void txtnicKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtnicKeyReleased
+        public void txtnicKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtnicKeyReleased
                 String regex = "^[0-9]{5}-[0-9]{7}-[0-9]$";
                 Pattern patt = Pattern.compile(regex);
                 Matcher match = patt.matcher(txtCnic.getText());
@@ -1107,7 +1119,7 @@ public class searchCustomer extends javax.swing.JFrame {
          * @throws IllegalArgumentException if the entered passport number is invalid
          */
 
-        private void txtpassportKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtpassportKeyReleased
+        public void txtpassportKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtpassportKeyReleased
                 String regex = "^[A-Za-z0-9]{9}$";
                 Pattern patt = Pattern.compile(regex);
                 Matcher match = patt.matcher(txtpassport.getText());
@@ -1127,7 +1139,7 @@ public class searchCustomer extends javax.swing.JFrame {
          * @throws IllegalArgumentException if the entered contact number is invalid
          */
 
-        private void txtcontactKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtcontactKeyReleased
+        public void txtcontactKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txtcontactKeyReleased
                 String regex = "^[0-9]{4}-[0-9]{7}$";
                 Pattern patt = Pattern.compile(regex);
                 String con = txtcontact.getText();
@@ -1156,7 +1168,6 @@ public class searchCustomer extends javax.swing.JFrame {
                 txtcontact.setEditable(false);
                 txtdob.setEnabled(false);
                 txtPhoto.setEnabled(false);
-
         }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1208,4 +1219,112 @@ public class searchCustomer extends javax.swing.JFrame {
         private String id;
         private admindomain A1;
         // End of variables declaration//GEN-END:variables
+        /**
+         * Sets the connection for the instance.
+         *
+         * @param mockConnection The mock connection to set.
+         * @throws SQLException If there is an issue with the SQL connection.
+         */
+        public void setConnection(Connection mockConnection) throws SQLException {
+            mockConnection = connectionManager.getConnection();
+        }
+
+		public Object getTxtPhoto() {
+			return txtPhoto;
+		}
+
+		public Object getUserimage() {
+			// TODO Auto-generated method stub
+			return userimage;
+		}
+
+		public javax.swing.JTextField getTxtfirstname() {
+			// TODO Auto-generated method stub
+			return txtfirstname;
+		}
+
+		public javax.swing.JTextField getTxtlastname() {
+			// TODO Auto-generated method stub
+			return txtlastname;
+		}
+
+		public javax.swing.JTextField getTxtCnic() {
+			// TODO Auto-generated method stub
+			return txtCnic;
+		}
+
+		public javax.swing.JTextField getTxtpassport() {
+			// TODO Auto-generated method stub
+			return txtpassport;
+		}
+
+		public javax.swing.JTextArea getTxtaddress() {
+			// TODO Auto-generated method stub
+			return txtaddress;
+		}
+
+		public javax.swing.JTextField getTxtcontact() {
+			// TODO Auto-generated method stub
+			return txtcontact;
+		}
+
+		public Component getUpdateBtn() {
+			// TODO Auto-generated method stub
+			return updateBtn;
+		}
+		public Component getBrowseBtn() {
+			// TODO Auto-generated method stub
+			return browseBtn;
+		}
+		
+
+		public Component getA1() {
+			// TODO Auto-generated method stub
+			return A1;
+		}
+
+        // Get the warning label for the first name
+        // @return The warning label for the first name
+        public JLabel getWarningFirstName() {
+            return warningFirstName;
+        }
+
+        // Get the warning label for the last name
+        // @return The warning label for the last name
+        public JLabel getWarningLastName() {
+            return warningLastName;
+        }
+
+        // Get the warning label for the passport ID
+        // @return The warning label for the passport ID
+        public JLabel getWarningPassportId() {
+            return warningPassportId;
+        }
+
+        // Get the warning label for the contact
+        // @return The warning label for the contact
+        public JLabel getWarningContact() {
+            return warningContact;
+        }
+
+        // Get the warning label for the CNIC
+        // @return The warning label for the CNIC
+        public JLabel getWarningCnic() {
+            return warningCnic;
+        }
+
+		public javax.swing.JRadioButton getMaleRadioBtn() {
+			// TODO Auto-generated method stub
+			return maleRadioBtn;
+		}
+
+		public javax.swing.JRadioButton getFemaleRadioBtn() {
+			// TODO Auto-generated method stub
+			return femaleRadioBtn;
+		}
+
+		public com.toedter.calendar.JDateChooser getTxtdob() {
+			// TODO Auto-generated method stub
+			return txtdob;
+		}
 }
