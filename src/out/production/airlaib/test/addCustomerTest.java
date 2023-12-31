@@ -16,179 +16,141 @@ import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-/** 
-JUnit test class for the {@code addCustomer} class.
-* Author: Laiba Atiq
-* 
-* Testing strategy for addCustomerTest class:
-*
-* The primary goal of the addCustomerTest is to verify the functionality of the addCustomer class,
-* focusing on methods like autoID, browseBtnAction, addCustomerBtnAction, cancelBtnAction, and keyReleased methods.
-*
-* Test cases:
-*
-<<<<<<< HEAD
-* 1. **testAutoID:**
-=======
-* 1. *testAutoID:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the autoID method.
-*    - Steps:
-*        - Call the autoID method.
-*    - Expected Result: The autoID method should generate a non-null auto-generated ID for the customer.
-*
-<<<<<<< HEAD
-* 2. **testBrowseBtnAction:**
-=======
-* 2. *testBrowseBtnAction:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the browseBtnAction method.
-*    - Steps:
-*        - Call the browseBtnAction method with a mock ActionEvent.
-*    - Expected Result: The browseBtnAction method should set the user image to a non-null value after the action.
-*
-<<<<<<< HEAD
-* 3. **testAddCustomerBtnAction_Successful:**
-=======
-* 3. *testAddCustomerBtnAction_Successful:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the addCustomerBtnAction method with successful execution.
-*    - Steps:
-*        - Set initial values for the customer fields.
-*        - Call the addCustomerBtnAction method.
-*    - Expected Result: The addCustomerBtnAction method should disable the button after successful execution.
-*
-<<<<<<< HEAD
-* 4. **testAddCustomerBtnAction_Unsuccessful:**
-=======
-* 4. *testAddCustomerBtnAction_Unsuccessful:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the addCustomerBtnAction method with unsuccessful execution.
-*    - Steps:
-*        - Set initial values for the customer fields that would cause validation errors.
-*        - Call the addCustomerBtnAction method.
-*    - Expected Result: The addCustomerBtnAction method should not disable the button after unsuccessful execution.
-*
-<<<<<<< HEAD
-* 5. **testCancelBtnAction:**
-=======
-* 5. *testCancelBtnAction:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the cancelBtnAction method.
-*    - Steps:
-*        - Call the cancelBtnAction method with a mock ActionEvent.
-*    - Expected Result: The cancelBtnAction method should make the cusDomainObj window visible after the action.
-*
-<<<<<<< HEAD
-* 6. **testTxtfirstnameKeyReleased_Valid:**
-=======
-* 6. *testTxtfirstnameKeyReleased_Valid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtfirstnameKeyReleased method with valid input.
-*    - Steps:
-*        - Set a valid first name.
-*        - Call the txtfirstnameKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for the first name should be null after the action.
-*
-<<<<<<< HEAD
-* 7. **testTxtfirstnameKeyReleased_Invalid:**
-=======
-* 7. *testTxtfirstnameKeyReleased_Invalid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtfirstnameKeyReleased method with invalid input.
-*    - Steps:
-*        - Set an invalid first name.
-*        - Call the txtfirstnameKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for an invalid first name should not be null after the action.
-*
-<<<<<<< HEAD
-* 8. **testTxtLastNameKeyReleased_Valid:**
-=======
-* 8. *testTxtLastNameKeyReleased_Valid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtLastNameKeyReleased method with valid input.
-*    - Steps:
-*        - Set a valid last name.
-*        - Call the txtLastNameKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for the last name should be null after the action.
-*
-<<<<<<< HEAD
-* 9. **testTxtLastNameKeyReleased_Invalid:**
-=======
-* 9. *testTxtLastNameKeyReleased_Invalid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtLastNameKeyReleased method with invalid input.
-*    - Steps:
-*        - Set an invalid last name.
-*        - Call the txtLastNameKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for an invalid last name should not be null after the action.
-*
-<<<<<<< HEAD
-* 10. **testTxtpassportKeyReleased_Valid:**
-=======
-* 10. *testTxtpassportKeyReleased_Valid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtpassportKeyReleased method with valid input.
-*    - Steps:
-*        - Set a valid passport ID.
-*        - Call the txtpassportKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for the passport should be null after the action.
-*
-<<<<<<< HEAD
-* 11. **testTxtpassportKeyReleased_Invalid:**
-=======
-* 11. *testTxtpassportKeyReleased_Invalid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtpassportKeyReleased method with invalid input.
-*    - Steps:
-*        - Set an invalid passport ID.
-*        - Call the txtpassportKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for an invalid passport should not be null after the action.
-*
-<<<<<<< HEAD
-* 12. **testTxtCnicKeyReleased_Valid:**
-=======
-* 12. *testTxtCnicKeyReleased_Valid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtCnicKeyReleased method with valid input.
-*    - Steps:
-*        - Set a valid CNIC.
-*        - Call the txtCnicKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for the CNIC should be null after the action.
-*
-<<<<<<< HEAD
-* 13. **testTxtCnicKeyReleased_Invalid:**
-=======
-* 13. *testTxtCnicKeyReleased_Invalid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtCnicKeyReleased method with invalid input.
-*    - Steps:
-*        - Set an invalid CNIC.
-*        - Call the txtCnicKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for an invalid CNIC should not be null after the action.
-*
-<<<<<<< HEAD
-* 14. **testTxtcontactKeyReleased_Valid:**
-=======
-* 14. *testTxtcontactKeyReleased_Valid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtcontactKeyReleased method with valid input.
-*    - Steps:
-*        - Set a valid contact number.
-*        - Call the txtcontactKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for the contact should be null after the action.
-*
-<<<<<<< HEAD
-* 15. **testTxtcontactKeyReleased_Invalid:**
-=======
-* 15. *testTxtcontactKeyReleased_Invalid:*
->>>>>>> e59e8b5f10882271d9a975152c6065732085a9f6
-*    - Description: Test for the txtcontactKeyReleased method with invalid input.
-*    - Steps:
-*        - Set an invalid contact number.
-*        - Call the txtcontactKeyReleased method with a mock KeyEvent.
-*    - Expected Result: The warning label for an invalid contact should not be null after the action.
-*/
+
+/**
+ * JUnit test class for the {@code addCustomer} class.
+ * Author: Laiba Atiq
+ * 
+ * Testing strategy for addCustomerTest class:
+ *
+ * The primary goal of the addCustomerTest is to verify the functionality of the
+ * addCustomer class,
+ * focusing on methods like autoID, browseBtnAction, addCustomerBtnAction,
+ * cancelBtnAction, and keyReleased methods.
+ *
+ * Test cases:
+ *
+ * 1. *testAutoID:*
+ * - Description: Test for the autoID method.
+ * - Steps:
+ * - Call the autoID method.
+ * - Expected Result: The autoID method should generate a non-null
+ * auto-generated ID for the customer.
+ *
+ * 2. *testBrowseBtnAction:*
+ * - Description: Test for the browseBtnAction method.
+ * - Steps:
+ * - Call the browseBtnAction method with a mock ActionEvent.
+ * - Expected Result: The browseBtnAction method should set the user image to a
+ * non-null value after the action.
+ *
+ * 3. *testAddCustomerBtnAction_Successful:*
+ * - Description: Test for the addCustomerBtnAction method with successful
+ * execution.
+ * - Steps:
+ * - Set initial values for the customer fields.
+ * - Call the addCustomerBtnAction method.
+ * - Expected Result: The addCustomerBtnAction method should disable the button
+ * after successful execution.
+ *
+ * 4. *testAddCustomerBtnAction_Unsuccessful:*
+ * - Description: Test for the addCustomerBtnAction method with unsuccessful
+ * execution.
+ * - Steps:
+ * - Set initial values for the customer fields that would cause validation
+ * errors.
+ * - Call the addCustomerBtnAction method.
+ * - Expected Result: The addCustomerBtnAction method should not disable the
+ * button after unsuccessful execution.
+ *
+ * 5. *testCancelBtnAction:*
+ * - Description: Test for the cancelBtnAction method.
+ * - Steps:
+ * - Call the cancelBtnAction method with a mock ActionEvent.
+ * - Expected Result: The cancelBtnAction method should make the cusDomainObj
+ * window visible after the action.
+ *
+ * 6. *testTxtfirstnameKeyReleased_Valid:*
+ * - Description: Test for the txtfirstnameKeyReleased method with valid input.
+ * - Steps:
+ * - Set a valid first name.
+ * - Call the txtfirstnameKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for the first name should be null after
+ * the action.
+ *
+ * 7. *testTxtfirstnameKeyReleased_Invalid:*
+ * - Description: Test for the txtfirstnameKeyReleased method with invalid
+ * input.
+ * - Steps:
+ * - Set an invalid first name.
+ * - Call the txtfirstnameKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for an invalid first name should not be
+ * null after the action.
+ *
+ * 8. *testTxtLastNameKeyReleased_Valid:*
+ * - Description: Test for the txtLastNameKeyReleased method with valid input.
+ * - Steps:
+ * - Set a valid last name.
+ * - Call the txtLastNameKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for the last name should be null after
+ * the action.
+ *
+ * 9. *testTxtLastNameKeyReleased_Invalid:*
+ * - Description: Test for the txtLastNameKeyReleased method with invalid input.
+ * - Steps:
+ * - Set an invalid last name.
+ * - Call the txtLastNameKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for an invalid last name should not be
+ * null after the action.
+ *
+ * 10. *testTxtpassportKeyReleased_Valid:*
+ * - Description: Test for the txtpassportKeyReleased method with valid input.
+ * - Steps:
+ * - Set a valid passport ID.
+ * - Call the txtpassportKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for the passport should be null after
+ * the action.
+ *
+ * 11. *testTxtpassportKeyReleased_Invalid:*
+ * - Description: Test for the txtpassportKeyReleased method with invalid input.
+ * - Steps:
+ * - Set an invalid passport ID.
+ * - Call the txtpassportKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for an invalid passport should not be
+ * null after the action.
+ *
+ * 12. *testTxtCnicKeyReleased_Valid:*
+ * - Description: Test for the txtCnicKeyReleased method with valid input.
+ * - Steps:
+ * - Set a valid CNIC.
+ * - Call the txtCnicKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for the CNIC should be null after the
+ * action.
+ *
+ * 13. *testTxtCnicKeyReleased_Invalid:*
+ * - Description: Test for the txtCnicKeyReleased method with invalid input.
+ * - Steps:
+ * - Set an invalid CNIC.
+ * - Call the txtCnicKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for an invalid CNIC should not be null
+ * after the action.
+ *
+ * 14. *testTxtcontactKeyReleased_Valid:*
+ * - Description: Test for the txtcontactKeyReleased method with valid input.
+ * - Steps:
+ * - Set a valid contact number.
+ * - Call the txtcontactKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for the contact should be null after the
+ * action.
+ *
+ * 15. *testTxtcontactKeyReleased_Invalid:*
+ * - Description: Test for the txtcontactKeyReleased method with invalid input.
+ * - Steps:
+ * - Set an invalid contact number.
+ * - Call the txtcontactKeyReleased method with a mock KeyEvent.
+ * - Expected Result: The warning label for an invalid contact should not be
+ * null after the action.
+ */
 public class addCustomerTest {
 
     private Connection mockConnection;
@@ -281,7 +243,7 @@ public class addCustomerTest {
         addCustomer.addCustomerBtnAction(null);
 
         assert true : "button is diabled";
-       
+
     }
 
     /**
@@ -291,8 +253,8 @@ public class addCustomerTest {
      */
     @Test
     public void testAddCustomerBtnAction_Unsuccessful() throws SQLException {
-    	addCustomer.setConnection(mockConnection);
-    	// Set initial values using setText method
+        addCustomer.setConnection(mockConnection);
+        // Set initial values using setText method
         addCustomer.getIdText().setText("CS002");
         addCustomer.getFirstNameText().setText("John");
         addCustomer.getLastNameText().setText("Doe");
@@ -319,7 +281,8 @@ public class addCustomerTest {
         addCustomer.cancelBtnAction(mockActionEvent);
 
         // After the action, check if the cusDomainObj window is visible
-        assertTrue("cusDomainObj window should be visible after cancel button action", addCustomer.getCusDomainObj().isVisible());
+        assertTrue("cusDomainObj window should be visible after cancel button action",
+                addCustomer.getCusDomainObj().isVisible());
     }
 
     /**
@@ -335,7 +298,8 @@ public class addCustomerTest {
         addCustomer.txtfirstnameKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNull("Warning label for first name should be null after action", addCustomer.getWarningFirstName().getText());
+        assertNull("Warning label for first name should be null after action",
+                addCustomer.getWarningFirstName().getText());
     }
 
     /**
@@ -351,7 +315,8 @@ public class addCustomerTest {
         addCustomer.txtfirstnameKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNotNull("Warning label for invalid first name should not be null after action", addCustomer.getWarningFirstName().getText());
+        assertNotNull("Warning label for invalid first name should not be null after action",
+                addCustomer.getWarningFirstName().getText());
     }
 
     /**
@@ -367,7 +332,8 @@ public class addCustomerTest {
         addCustomer.txtLastNameKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNull("Warning label for last name should be null after action", addCustomer.getWarningLastName().getText());
+        assertNull("Warning label for last name should be null after action",
+                addCustomer.getWarningLastName().getText());
     }
 
     /**
@@ -383,7 +349,8 @@ public class addCustomerTest {
         addCustomer.txtLastNameKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNotNull("Warning label for invalid last name should not be null after action", addCustomer.getWarningLastName().getText());
+        assertNotNull("Warning label for invalid last name should not be null after action",
+                addCustomer.getWarningLastName().getText());
     }
 
     /**
@@ -399,7 +366,8 @@ public class addCustomerTest {
         addCustomer.txtpassportKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNull("Warning label for passport should be null after action", addCustomer.getWarningPassportId().getText());
+        assertNull("Warning label for passport should be null after action",
+                addCustomer.getWarningPassportId().getText());
     }
 
     /**
@@ -415,7 +383,8 @@ public class addCustomerTest {
         addCustomer.txtpassportKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNotNull("Warning label for invalid passport should not be null after action", addCustomer.getWarningPassportId().getText());
+        assertNotNull("Warning label for invalid passport should not be null after action",
+                addCustomer.getWarningPassportId().getText());
     }
 
     /**
@@ -447,7 +416,8 @@ public class addCustomerTest {
         addCustomer.txtCnicKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNotNull("Warning label for invalid CNIC should not be null after action", addCustomer.getWarningCNIC().getText());
+        assertNotNull("Warning label for invalid CNIC should not be null after action",
+                addCustomer.getWarningCNIC().getText());
     }
 
     /**
@@ -479,6 +449,7 @@ public class addCustomerTest {
         addCustomer.txtcontactKeyReleased(mockKeyEvent);
 
         // Assert any relevant behavior or state changes
-        assertNotNull("Warning label for invalid contact should not be null after action", addCustomer.getWarningContact().getText());
+        assertNotNull("Warning label for invalid contact should not be null after action",
+                addCustomer.getWarningContact().getText());
     }
 }
